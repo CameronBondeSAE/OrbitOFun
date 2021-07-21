@@ -7,12 +7,12 @@ namespace RileyMcGowan
     public class Spawner : MonoBehaviour
     {
         //Private Vars
-        private float spawnLocationDistance = 12;
         private float spawnVelocity = 1.5f;
         
         //Public Vars
         public GameObject[] spawnablePrefabs;
         public int prefabsToSpawn;
+        public float spawnLocationDistance;
         
         void Start()
         {
