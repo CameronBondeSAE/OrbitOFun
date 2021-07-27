@@ -22,6 +22,9 @@ namespace Zach
         public float yVelocity;
         public float zVelocity;
         
+        public float offset;
+        public float velocity;
+        
         //The actual position for the randomised moon spawn
         public Vector3 position;
         
@@ -30,13 +33,15 @@ namespace Zach
             for (int i = 0; i < amountOfMoons; i++)
             {
                 //Randomising the floats 
-                xOffset = Random.Range(-4f, 4f);
-                yOffset = Random.Range(-4f, 4f);
-                zOffset = Random.Range(-4f, 4f);
+                
+                xOffset = Random.Range(-offset, offset);
+                yOffset = Random.Range(-offset, offset);
+                zOffset = Random.Range(-offset, offset);
                 //Randomising the velocity
-                xVelocity = Random.Range(-2f, 2f);
-                yVelocity = Random.Range(-2f, 2f);
-                zVelocity = Random.Range(-2f, 2f);
+                
+                xVelocity = Random.Range(-velocity, velocity);
+                yVelocity = Random.Range(-velocity, velocity);
+                zVelocity = Random.Range(-velocity, velocity);
 
                 Vector3 transformPosition = transform.position;
                 //Setting the position of the moon that is to be spawned
