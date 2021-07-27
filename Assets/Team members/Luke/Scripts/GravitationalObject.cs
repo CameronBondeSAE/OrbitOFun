@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GravitationalObject : MonoBehaviour
 {
+    //Variables
     private Rigidbody rb;
     public List<GravitationalObject> gravitationalObjects;
     private float maxDistance;
@@ -15,8 +16,7 @@ public class GravitationalObject : MonoBehaviour
 
     //The gravitational constance
     private float g = 50f;
-    
-    
+
     // Start is called before the first frame update
     void Start()
     {
