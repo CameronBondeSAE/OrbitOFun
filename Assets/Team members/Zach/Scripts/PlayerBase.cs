@@ -16,7 +16,7 @@ namespace Zach
         public float maxSpeed;
 
         public float forwardFloat;
-
+        
         // Start is called before the first frame update
         public override void OnStartLocalPlayer()
         {
@@ -38,7 +38,7 @@ namespace Zach
         {
             if (isLocalPlayer)
             {
-                rigidBody.AddRelativeForce(Vector3.forward * speed * forwardFloat);
+                rigidBody.AddRelativeForce(Vector3.up * speed * forwardFloat);
                 rigidBody.angularVelocity = rotateVelocity;
                 if (rigidBody.velocity.magnitude >= maxSpeed)
                 {
@@ -53,10 +53,9 @@ namespace Zach
             //velocity = new Vector3(0, 0, speed * obj.ReadValue<float>());
             forwardFloat = obj.ReadValue<float>();
         }
-
         private void RotateOnPerformed(InputAction.CallbackContext obj)
         {
-            rotateVelocity = new Vector3(0, 15 * obj.ReadValue<float>(), 0);
+            rotateVelocity = new Vector3(0, 0, -15 * obj.ReadValue<float>());
         }
     }
 }

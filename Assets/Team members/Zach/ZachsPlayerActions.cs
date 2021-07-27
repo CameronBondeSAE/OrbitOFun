@@ -33,6 +33,14 @@ public class @ZachsPlayerActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""2DMovement"",
+                    ""type"": ""Value"",
+                    ""id"": ""38de87d4-cf6d-4894-9625-02d06c33137c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -101,6 +109,61 @@ public class @ZachsPlayerActions : IInputActionCollection, IDisposable
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""0f9e14e8-eabb-47a9-a742-a122e99d4bec"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2DMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""14189f92-2200-4032-9551-4ce02ad38680"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2DMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""35a73ab7-5ee1-4c07-acde-afc1fb43dcb8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2DMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""752cfc5d-115a-4f10-8626-66e5ad8b4204"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2DMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""45863c6b-7efb-4594-9389-04706edefb06"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2DMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -111,6 +174,7 @@ public class @ZachsPlayerActions : IInputActionCollection, IDisposable
         m_GeneralMovement = asset.FindActionMap("General Movement", throwIfNotFound: true);
         m_GeneralMovement_Move = m_GeneralMovement.FindAction("Move", throwIfNotFound: true);
         m_GeneralMovement_Rotate = m_GeneralMovement.FindAction("Rotate", throwIfNotFound: true);
+        m_GeneralMovement__2DMovement = m_GeneralMovement.FindAction("2DMovement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -162,12 +226,14 @@ public class @ZachsPlayerActions : IInputActionCollection, IDisposable
     private IGeneralMovementActions m_GeneralMovementActionsCallbackInterface;
     private readonly InputAction m_GeneralMovement_Move;
     private readonly InputAction m_GeneralMovement_Rotate;
+    private readonly InputAction m_GeneralMovement__2DMovement;
     public struct GeneralMovementActions
     {
         private @ZachsPlayerActions m_Wrapper;
         public GeneralMovementActions(@ZachsPlayerActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_GeneralMovement_Move;
         public InputAction @Rotate => m_Wrapper.m_GeneralMovement_Rotate;
+        public InputAction @_2DMovement => m_Wrapper.m_GeneralMovement__2DMovement;
         public InputActionMap Get() { return m_Wrapper.m_GeneralMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -183,6 +249,9 @@ public class @ZachsPlayerActions : IInputActionCollection, IDisposable
                 @Rotate.started -= m_Wrapper.m_GeneralMovementActionsCallbackInterface.OnRotate;
                 @Rotate.performed -= m_Wrapper.m_GeneralMovementActionsCallbackInterface.OnRotate;
                 @Rotate.canceled -= m_Wrapper.m_GeneralMovementActionsCallbackInterface.OnRotate;
+                @_2DMovement.started -= m_Wrapper.m_GeneralMovementActionsCallbackInterface.On_2DMovement;
+                @_2DMovement.performed -= m_Wrapper.m_GeneralMovementActionsCallbackInterface.On_2DMovement;
+                @_2DMovement.canceled -= m_Wrapper.m_GeneralMovementActionsCallbackInterface.On_2DMovement;
             }
             m_Wrapper.m_GeneralMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -193,6 +262,9 @@ public class @ZachsPlayerActions : IInputActionCollection, IDisposable
                 @Rotate.started += instance.OnRotate;
                 @Rotate.performed += instance.OnRotate;
                 @Rotate.canceled += instance.OnRotate;
+                @_2DMovement.started += instance.On_2DMovement;
+                @_2DMovement.performed += instance.On_2DMovement;
+                @_2DMovement.canceled += instance.On_2DMovement;
             }
         }
     }
@@ -201,5 +273,6 @@ public class @ZachsPlayerActions : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
+        void On_2DMovement(InputAction.CallbackContext context);
     }
 }
