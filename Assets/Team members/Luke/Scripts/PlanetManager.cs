@@ -5,29 +5,35 @@ using UnityEngine;
 public class PlanetManager : MonoBehaviour
 {
     public List<GravitationalObject> gravitationalObjects;
-    public Vector3 currentVelocity;
-    public float maxVelocity;
-    public float minVelocity;
+    
+    public float maxPosVelocity;
+    public float minNegVelocity;
+    private float xVelocity;
+    private float yVelocity;
+    private float zVelocity;
+    private Rigidbody currentRb;
 
     // Start is called before the first frame update
     void Start()
     {
         gravitationalObjects.AddRange(FindObjectsOfType<GravitationalObject>());
+        ApplyRandomVelocity();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ApplyRandomVelocity();
+        
     }
 
     public void ApplyRandomVelocity()
     {
         foreach (GravitationalObject obj in gravitationalObjects)
         {
-            currentVelocity = new Vector3(Random.Range(minVelocity, maxVelocity), Random.Range(minVelocity,maxVelocity),0f);
-            obj.GetComponent<Rigidbody>().AddForce(currentVelocity);
+            xVelocity = Random.Range(-minNegVelocity, maxPosVelocity);
+            yVelocity = Random.Range(-minNegVelocity, maxPosVelocity);
+            zVelocity = Random.Range(-minNegVelocity, maxPosVelocity);
+            obj.GetComponent<Rigidbody>().velocity = new Vector3(xVelocity,yVelocity,zVelocity);
         }
-        //Random.Range()
     }
 }

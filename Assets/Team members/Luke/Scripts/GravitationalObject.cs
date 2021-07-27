@@ -11,9 +11,10 @@ public class GravitationalObject : MonoBehaviour
     private Vector3 direction;
     private float forceMagnitude;
     private Vector3 force;
+    private Rigidbody attractedRb;
 
-    [Tooltip("Gravitational Constant")]
-    private float g = 25;
+    //The gravitational constance
+    private float g = 50f;
     
     
     // Start is called before the first frame update
@@ -31,15 +32,15 @@ public class GravitationalObject : MonoBehaviour
 
     public void Attract(GravitationalObject objectToAttract)
     {
-        Rigidbody attractedRb = objectToAttract.rb;
+        attractedRb = objectToAttract.rb;
         
         direction = transform.position - attractedRb.position;
         distance = direction.magnitude;
         
         //newtons universal law of gravity
         forceMagnitude = g * (rb.mass * attractedRb.mass) / Mathf.Pow(distance, 2);
-        force = direction.normalized * forceMagnitude;
         
+        force = direction.normalized * forceMagnitude;
         attractedRb.AddForce(force);
     }
 
