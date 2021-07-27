@@ -23,6 +23,8 @@ namespace Zach
             base.OnStartLocalPlayer();
 
             Debug.Log(isLocalPlayer);
+            
+            //todo refactor to work with system wide new input system
             zachsPlayerActions = new ZachsPlayerActions();
             zachsPlayerActions.Enable();
 
