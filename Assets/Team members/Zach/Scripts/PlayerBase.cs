@@ -17,6 +17,9 @@ namespace Zach
 
         public float forwardFloat;
 
+        //2D movement variables 
+        public Vector2 Vector2D;
+        
         // Start is called before the first frame update
         public override void OnStartLocalPlayer()
         {
@@ -28,18 +31,28 @@ namespace Zach
             zachsPlayerActions = new ZachsPlayerActions();
             zachsPlayerActions.Enable();
 
-            zachsPlayerActions.GeneralMovement.Move.started += Movement;
+            /*zachsPlayerActions.GeneralMovement.Move.started += Movement;
             zachsPlayerActions.GeneralMovement.Move.canceled += Movement;
             zachsPlayerActions.GeneralMovement.Rotate.started += RotateOnPerformed;
-            zachsPlayerActions.GeneralMovement.Rotate.canceled += RotateOnPerformed;
+            zachsPlayerActions.GeneralMovement.Rotate.canceled += RotateOnPerformed;*/
+
+
+            zachsPlayerActions.GeneralMovement._2DMovement.started += Movement2D;
+            zachsPlayerActions.GeneralMovement._2DMovement.canceled += Movement2D;
         }
 
         public void FixedUpdate()
         {
             if (isLocalPlayer)
             {
-                rigidBody.AddRelativeForce(Vector3.forward * speed * forwardFloat);
+                /*rigidBody.AddRelativeForce(Vector3.forward * speed * forwardFloat);
                 rigidBody.angularVelocity = rotateVelocity;
+                if (rigidBody.velocity.magnitude >= maxSpeed)
+                {
+                    rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
+                }*/
+                rigidBody.AddRelativeForce(Vector2.up*speed*Vector2D.y);
+                rigidBody.AddRelativeForce(Vector2.right * speed * Vector2D.x );
                 if (rigidBody.velocity.magnitude >= maxSpeed)
                 {
                     rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
@@ -53,10 +66,14 @@ namespace Zach
             //velocity = new Vector3(0, 0, speed * obj.ReadValue<float>());
             forwardFloat = obj.ReadValue<float>();
         }
-
         private void RotateOnPerformed(InputAction.CallbackContext obj)
         {
             rotateVelocity = new Vector3(0, 15 * obj.ReadValue<float>(), 0);
+        }
+        
+        void Movement2D(InputAction.CallbackContext obj)
+        {
+            Vector2D = obj.ReadValue<Vector2>();
         }
     }
 }
