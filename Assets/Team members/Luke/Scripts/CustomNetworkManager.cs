@@ -16,8 +16,6 @@ namespace Luke
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
             base.OnServerAddPlayer(conn);
-
-
         }
     }
 }
