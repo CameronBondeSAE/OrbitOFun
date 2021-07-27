@@ -53,14 +53,13 @@ public class RobWindowEditor : EditorWindow
         spawnSquare = (GameObject)EditorGUILayout.ObjectField("spawn Square",spawnSquare, typeof(GameObject), true);
         numberToSpawnSquare = EditorGUILayout.IntField("number to spawn Square", numberToSpawnSquare);
         numberToSpawnCircle = EditorGUILayout.IntField("number to spawn Circle", numberToSpawnCircle);
-        minX = EditorGUILayout.FloatField("minX", minX);
-        maxX = EditorGUILayout.FloatField("maxX", maxX);
-        minY = EditorGUILayout.FloatField("minY", minY);
-        maxY = EditorGUILayout.FloatField("maxY", maxY);
-        
-        
+        minX = EditorGUILayout.FloatField("Position min X", minX);
+        maxX = EditorGUILayout.FloatField("Position max X", maxX);
+        minY = EditorGUILayout.FloatField("Position min Y", minY);
+        maxY = EditorGUILayout.FloatField("Position max Y", maxY);
 
         groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
+        
         randomSize = EditorGUILayout.Toggle("RandomSize", randomSize);
         xScale = EditorGUILayout.Vector2Field("X Scale", xScale);
         
@@ -76,6 +75,7 @@ public class RobWindowEditor : EditorWindow
                     if (randomSize)
                     {
                         float randomScale = Random.Range(xScale.x,xScale.y);
+                        
                         if (randomSize)
                         {
                             newSquare.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
