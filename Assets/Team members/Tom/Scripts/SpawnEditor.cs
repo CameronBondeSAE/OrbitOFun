@@ -14,6 +14,7 @@ namespace Tom
         public int numberToSpawn = 1;
         public Vector2 xMinMax, yMinMax;
         public GameObject objectToSpawn;
+        public Transform spawnParent;
 
         public bool randomScaleEnabled = false;
         public Vector2 scaleRange;
@@ -31,6 +32,7 @@ namespace Tom
         {
             GUILayout.Label("Spawn Settings");
             objectToSpawn = (GameObject) EditorGUILayout.ObjectField("Object To Spawn", objectToSpawn, typeof(GameObject));
+            spawnParent = (Transform) EditorGUILayout.ObjectField("Spawn Parent", spawnParent, typeof(Transform));
             numberToSpawn = EditorGUILayout.IntField("Number To Spawn", numberToSpawn);
 
             xMinMax = EditorGUILayout.Vector2Field("X Min and Max", xMinMax);
@@ -50,6 +52,12 @@ namespace Tom
                             Random.Range(yMinMax.x, yMinMax.y), 0);
 
                         GameObject newObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+
+                        if (spawnParent != null)
+                        {
+                            newObject.transform.parent = spawnParent;
+                        }
+                        
                         spawnedObjects.Add(newObject);
                         Debug.Log(spawnedObjects.Last().name);
 

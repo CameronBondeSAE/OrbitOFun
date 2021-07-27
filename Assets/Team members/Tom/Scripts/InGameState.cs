@@ -14,5 +14,12 @@ namespace Tom
             // Spawn player objects in
             // Allow player controls
         }
+
+        public override void Exit()
+        {
+            base.Exit();
+            
+            // Disable player controls
+        }
     }
 }
