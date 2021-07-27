@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManagerBase : MonoBehaviour
+
+namespace Zach
 {
-    public virtual void Activate()
+    public class GameManagerBase : MonoBehaviour
     {
-        Debug.Log("Activating Gamemode");
+        public virtual void Activate()
+        {
+            Debug.Log("Activating Gamemode");
+        }
     }
 }
