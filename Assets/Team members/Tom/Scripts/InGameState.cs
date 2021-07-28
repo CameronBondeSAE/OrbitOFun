@@ -15,6 +15,11 @@ namespace Tom
             // Allow player controls
         }
 
+        public override void Execute()
+        {
+            base.Execute();
+        }
+
         public override void Exit()
         {
             base.Exit();
