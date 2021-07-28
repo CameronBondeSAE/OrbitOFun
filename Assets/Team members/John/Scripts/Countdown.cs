@@ -1,6 +1,7 @@
 using Luke;
 using Mirror;
 using Tim;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ namespace John
         [SerializeField] private GameManager gameManager;
         [SyncVar] public float roundTimer;
         private string roundText;
-        public Text UIText;
+        public TextMeshProUGUI UIText;
         private bool startCount;
     
         public override void OnStartServer()
