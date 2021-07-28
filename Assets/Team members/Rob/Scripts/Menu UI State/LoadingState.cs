@@ -9,20 +9,20 @@ namespace Rob
         public override void Enter()
         {
             base.Enter();
-            Debug.Log("Entered");
+            Debug.Log("Entered Loading");
         }
 
         public override void Execute()
         {
             base.Execute();
-            Debug.Log("Doin'");
+            Debug.Log("Doin' Loading");
             //any loading animations
         }
 
         public override void Exit()
         {
             base.Exit();
-            Debug.Log("Bye");
+            Debug.Log("Bye Loading");
         }
     }
 }
