@@ -9,16 +9,20 @@ namespace Rob
         public override void Enter()
         {
             base.Enter();
+            Debug.Log("Entered");
         }
 
         public override void Execute()
         {
             base.Execute();
+            Debug.Log("Doin'");
+            //scoreboard? time? etc etc
         }
 
         public override void Exit()
         {
             base.Exit();
+            Debug.Log("Bye");
         }
     }
 }
