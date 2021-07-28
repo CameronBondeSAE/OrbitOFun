@@ -10,10 +10,9 @@ using Random = UnityEngine.Random;
 
 public class RobWindowEditor : EditorWindow
 {
-    string myString = "Hello World";
+    
     bool groupEnabled;
-    bool randomSize = true;
-    float myFloat = 1.23f;
+    private bool randomSize = true;
     public Button button;
     public GameObject spawnSquare;
     public GameObject spawnCircle;
@@ -48,7 +47,6 @@ public class RobWindowEditor : EditorWindow
     void OnGUI()
     {
         GUILayout.Label("Base Settings", EditorStyles.boldLabel);
-        myString = EditorGUILayout.TextField("Text Field", myString);
         spawnCircle = (GameObject)EditorGUILayout.ObjectField("Spawn Circle", spawnCircle, typeof(GameObject), true);
         spawnSquare = (GameObject)EditorGUILayout.ObjectField("spawn Square",spawnSquare, typeof(GameObject), true);
         numberToSpawnSquare = EditorGUILayout.IntField("number to spawn Square", numberToSpawnSquare);
@@ -58,7 +56,7 @@ public class RobWindowEditor : EditorWindow
         minY = EditorGUILayout.FloatField("Position min Y", minY);
         maxY = EditorGUILayout.FloatField("Position max Y", maxY);
 
-        groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
+        //groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
         
         randomSize = EditorGUILayout.Toggle("RandomSize", randomSize);
         xScale = EditorGUILayout.Vector2Field("X Scale", xScale);
@@ -118,7 +116,7 @@ public class RobWindowEditor : EditorWindow
         
 
 
-        EditorGUILayout.EndToggleGroup();
+        //EditorGUILayout.EndToggleGroup();
     }
     
 
