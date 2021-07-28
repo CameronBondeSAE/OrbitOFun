@@ -10,6 +10,9 @@ namespace AaronMcDougall
         public override void Enter()
         {
             base.Enter();
+            
+            //enter RaceControlState
+            //not sure about initialising gravity etc, whether that's controlled here or outside
         }
 
         public override void Execute()

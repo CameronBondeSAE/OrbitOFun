@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace  AaronMcDougall
+namespace AaronMcDougall
 {
-    [CustomEditor(typeof(RaceModeStateManager), true)]
+    [CustomEditor(typeof(RaceModeStateBase), true)]
     public class StateManagerEditor : Editor
     {
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
-
             if (GUILayout.Button("Change State"))
             {
-                ((RaceModeStateBase) target).Enter();
+                ((RaceModeStateBase)target).GetComponent<RaceModeStateManager>().ChangeState((RaceModeStateBase)target);
             }
         }
     }

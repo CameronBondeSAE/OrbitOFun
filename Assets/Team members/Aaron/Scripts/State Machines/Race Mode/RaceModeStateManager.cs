@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace AaronMcDougall
 {     
@@ -9,7 +8,7 @@ namespace AaronMcDougall
     {
         public RaceModeStateBase currentState;
 
-        public void ChangeSTate(RaceModeStateBase newState)
+        public void ChangeState(RaceModeStateBase newState)
         {
             if (currentState != null)
             {

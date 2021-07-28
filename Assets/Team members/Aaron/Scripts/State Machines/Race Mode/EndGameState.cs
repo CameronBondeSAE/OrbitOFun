@@ -10,6 +10,9 @@ namespace AaronMcDougall
         public override void Enter()
         {
             base.Enter();
+
+            //Show winner message, player username
+            //enter RaceEndState?
         }
 
         public override void Execute()
@@ -20,6 +23,8 @@ namespace AaronMcDougall
         public override void Exit()
         {
             base.Exit();
+            
+            //return to main menu/mode select/enter PreTimerState
         }
     }
 

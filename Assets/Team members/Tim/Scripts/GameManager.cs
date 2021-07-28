@@ -41,6 +41,11 @@ namespace Tim
             SceneManager.LoadScene("Main", LoadSceneMode.Additive);
         }
 
+		public void UnLoadLevel()
+		{
+			SceneManager.UnloadSceneAsync("Main");
+		}
+
         /*public void SetGameState(GameState state)
         {
             this.gamestate = state;

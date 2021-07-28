@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace AaronMcDougall
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LaunchState : RacePlayerStateBase
     {
-        
-    }
+        public override void Enter()
+        {
+            base.Enter();
+            
+            //show launch power visual
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void Execute()
+        {
+            base.Execute();
+            
+            //give player launch power control
+                //maybe key press/hold to charge power?
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            
+            //hide launch power visual
+        }
     }
 }

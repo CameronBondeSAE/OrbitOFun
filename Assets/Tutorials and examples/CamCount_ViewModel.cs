@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class CamCount_ViewModel : MonoBehaviour
 {
 	// Model
-	public CamsMode CamsMode;
+	public CamsTests camsTests;
 
 	// View
 	public TextMeshProUGUI textMesh;
@@ -27,7 +27,7 @@ public class CamCount_ViewModel : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (CamsMode.fakeTimer < 10f)
+		if (camsTests.fakeTimer < 10f)
 		{
 			textMesh.color = Color.red;
 		}
@@ -36,6 +36,6 @@ public class CamCount_ViewModel : MonoBehaviour
 			textMesh.color = Color.white;
 		}
 
-		textMesh.text = CamsMode.fakeTimer.ToString("#");
+		textMesh.text = camsTests.fakeTimer.ToString("#");
 	}
 }

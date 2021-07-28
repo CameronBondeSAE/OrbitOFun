@@ -17,7 +17,7 @@ namespace Luke
         private Rigidbody attractedRb;
 
         //The gravitational constance
-        private float g = 50f;
+        private float g = 100f;
 
         // Start is called before the first frame update
         void Start()
@@ -57,6 +57,5 @@ namespace Luke
                 }
             }
         }
-
     }
 }
