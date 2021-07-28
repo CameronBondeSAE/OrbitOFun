@@ -13,6 +13,9 @@ namespace Zach
         public GameObject currentMoon;
         public int amountOfMoons;
         
+        //List for gravity 
+        public List<GameObject> orbitals;
+        
         //Floats used to create a random position within space
         public float xOffset;
         public float yOffset;
@@ -49,6 +52,7 @@ namespace Zach
                 currentMoon = Instantiate(moonPrefab,position,new Quaternion(0,0,0,0));
                 //Setting a random velocity based on the offsets 
                 currentMoon.GetComponent<Rigidbody>().velocity = new Vector3(xVelocity, yVelocity, zVelocity);
+                orbitals.Add(currentMoon);
             }
         }
     }
