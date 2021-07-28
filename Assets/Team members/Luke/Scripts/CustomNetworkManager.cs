@@ -8,8 +8,9 @@ namespace Luke
     public class CustomNetworkManager : NetworkManager
     {
         //Variables
+        // TODO needs ref to GameManager for player list???
         public List<GameObject> players;
-        // TODO needs to reference gamemodes starting positions
+        // TODO needs to reference each game modes starting positions??
         public List<Transform> startingPositions;
 
         //References
@@ -39,5 +40,7 @@ namespace Luke
             player.name = $"{playerPrefab.name} [connId={conn.connectionId}]";
             NetworkServer.AddPlayerForConnection(conn, player);
         }
+        
+        
     }
 }
