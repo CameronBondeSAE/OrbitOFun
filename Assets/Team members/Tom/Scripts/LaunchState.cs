@@ -14,6 +14,11 @@ namespace Tom
             // Play rocket trail particle system
         }
 
+        public override void Execute()
+        {
+            base.Execute();
+        }
+
         public override void Exit()
         {
             base.Exit();

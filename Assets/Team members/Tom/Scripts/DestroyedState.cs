@@ -4,27 +4,29 @@ using UnityEngine;
 
 namespace Tom
 {
-    public class InGameState : StateBase
+    public class DestroyedState : StateBase
     {
         public override void Enter()
         {
             base.Enter();
             
-            // Set up level
-            // Spawn player objects in
-            // Allow player controls
+            // Play explosion effect
+            // Remove player model
         }
 
         public override void Execute()
         {
             base.Execute();
+            
+            // Add to timer until respawn
+            // When timer hits threshold, respawn player at start
         }
 
         public override void Exit()
         {
             base.Exit();
             
-            // Disable player controls
+            // Stop explosion effect
         }
     }
 }

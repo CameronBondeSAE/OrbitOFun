@@ -12,5 +12,15 @@ namespace Tom
         
             // Show connected players in lobby
         }
+
+        public override void Execute()
+        {
+            base.Execute();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+        }
     }
 }
