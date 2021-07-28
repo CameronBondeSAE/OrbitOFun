@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Remoting;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zach;
 
 namespace Tim
@@ -16,7 +17,7 @@ namespace Tim
     {
         protected GameManager() {}
         private static GameManager instance = null;
-        private GameModeBase gameModeBase;
+        public GameModeBase gameModeBase;
         //public GameModeBase gameMode;
         //public event OnStateChangeHandler OnStateChange;
         //public GameState gamestate { get; private set; }
@@ -39,7 +40,11 @@ namespace Tim
             //calls the activate function of the game mode
             gameModeBase.Activate();
         }
-        
+
+        public void LoadLevel()
+        {
+            SceneManager.LoadScene("Main", LoadSceneMode.Additive);
+        }
 
         /*public void SetGameState(GameState state)
         {
