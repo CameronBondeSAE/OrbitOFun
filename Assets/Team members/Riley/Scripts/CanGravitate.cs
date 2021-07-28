@@ -10,13 +10,12 @@ namespace RileyMcGowan
         //Private Vars
 
         //Public Vars
+        public Rigidbody rb; //Store the rigidbody to prevent constantly using get component
         public static event Action<CanGravitate> OnCanGravitate = delegate {  };
         public static event Action<CanGravitate> OnStopGravitate = delegate {  };
-        public Rigidbody objectsRigidbody; //Store the rigidbody to prevent constantly using get component
-
         private void Start()
         {
-            objectsRigidbody = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody>();
             OnCanGravitate(this);
         }
 
