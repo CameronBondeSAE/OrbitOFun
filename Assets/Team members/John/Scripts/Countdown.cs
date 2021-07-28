@@ -1,21 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
+using Luke;
+using Mirror;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace John
 {
-    public class Countdown : MonoBehaviour
+    public class Countdown : NetworkBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] private CustomNetworkManager networkManager = null;
+        [SerializeField] private GameManager gameManager;
+        [SyncVar] public float roundTimer;
+        private string roundText;
+        public Text UIText;
+        private bool startCount;
+    
+        public override void OnStartServer()
         {
-        
+            base.OnStartServer();
+            if (isServer)
+            {
+                // un-subscribe game manager to start round function
+            }
+        }
+        public override void OnStopServer()
+        {
+            base.OnStopServer();
+            // un-subscribe game manager to start round function
         }
 
-        // Update is called once per frame
-        void Update()
-        {
+        public void Update()
+        {   
+            //formatting timer in minutes and seconds
+            int minutes = Mathf.FloorToInt(roundTimer / 60F);
+            int seconds = Mathf.FloorToInt(roundTimer - minutes * 60);
+            roundText = string.Format("{0:0}:{1:00}", minutes, seconds);
         
+            //updating timer text with the remaining time
+            UIText.text = ("Time Remaining: " + roundText);
+        
+            //able to delay the timer for the game
+            if (startCount)
+            {
+                roundTimer = (roundTimer - Time.deltaTime);
+            }
+            //when the timer hits zero, stop counting
+            if (roundTimer <= -0.1f)
+            {
+                //call the end of the round function in game manager
+                startCount = false;
+                roundTimer = default;
+            }
+        }
+    
+        //start the countdown
+        [ClientRpc]
+        public void RPCStartRound()
+        {
+            startCount = true;
         }
     } 
 }

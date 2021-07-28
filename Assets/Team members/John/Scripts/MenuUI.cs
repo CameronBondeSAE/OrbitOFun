@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Luke;
 using UnityEngine;
 
 namespace John
 {
     public class MenuUI : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField] private CustomNetworkManager networkManager = null;
         
-        }
-
-        // Update is called once per frame
-        void Update()
+        public void HostLobby()
         {
+            networkManager.StartHost();
         
+            //toggle UI from menu to lobby UI
         }
     }
+    
 }
 
