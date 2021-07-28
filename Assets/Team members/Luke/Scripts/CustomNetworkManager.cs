@@ -8,10 +8,22 @@ namespace Luke
     public class CustomNetworkManager : NetworkManager
     {
         //Variables
+        public List<GameObject> players;
+        // TODO needs to reference gamemodes starting positions
+        public List<Transform> startingPositions;
 
         //References
 
+        
         //Events
+        
+
+        public override void OnStartServer()
+        {
+            base.OnStartServer();
+            
+            
+        }
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
