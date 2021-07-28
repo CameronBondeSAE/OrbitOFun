@@ -12,19 +12,19 @@ namespace Rob
         public override void Enter()
         {
             base.Enter();
-            Debug.Log("Entered");
+            Debug.Log("Entered Settings");
         }
 
         public override void Execute()
         {
             base.Execute();
-            Debug.Log("Doin'");
+            Debug.Log("Doin' Settings");
         }
 
         public override void Exit()
         {
             base.Exit();
-            Debug.Log("Bye");
+            Debug.Log("Bye Settings");
         }
     }
 }

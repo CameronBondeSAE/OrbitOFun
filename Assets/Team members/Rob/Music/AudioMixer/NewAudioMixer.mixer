@@ -15,10 +15,39 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 4159294668281790375}
+  - {fileID: -3393167966863402698}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-3393167966863402698
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 24e3dcf3181a0454b97a7b5c54e156ee
+  m_EffectName: Duck Volume
+  m_MixLevel: dab1be9993c01ec4489f4b7fad07c16f
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: cfecefe467531cb49b42f0778b40e299
+  - m_ParameterName: Ratio
+    m_GUID: fcbbddc964f31f247a23e14aae91e816
+  - m_ParameterName: Attack Time
+    m_GUID: 831c5a4fe9fccc94981b640dc5c6d600
+  - m_ParameterName: Release Time
+    m_GUID: 5555ded8b8a5f6a4188adee9ed6c0d39
+  - m_ParameterName: Make-up Gain
+    m_GUID: f598e159910ff9a4b985b19d82e82d2c
+  - m_ParameterName: Knee
+    m_GUID: deb369492095e1c40ad01a10340dc38b
+  - m_ParameterName: Sidechain Mix
+    m_GUID: 3420878af8b3ebd498a5cc06b0505509
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-2119647472667374947
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
