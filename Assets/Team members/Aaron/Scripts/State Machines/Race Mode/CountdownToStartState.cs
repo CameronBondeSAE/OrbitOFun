@@ -10,6 +10,10 @@ namespace AaronMcDougall
         public override void Enter()
         {
             base.Enter();
+            
+            //is this where ArrowAimState is entered?
+            //also need to enter LaunchState at some point through here perhaps
+            //run and show the race start countdown timer
         }
 
         public override void Execute()

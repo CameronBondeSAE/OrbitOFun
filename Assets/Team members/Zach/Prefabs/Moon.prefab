@@ -175,3 +175,6 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   gravityForce: {x: 0, y: 0, z: 0}
   distance: 0
+  maxDistance: 50
+  orbitals: []
+  moonSpawner: {fileID: 0}

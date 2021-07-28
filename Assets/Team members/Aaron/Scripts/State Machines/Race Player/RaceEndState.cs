@@ -10,6 +10,8 @@ namespace AaronMcDougall
         public override void Enter()
         {
             base.Enter();
+            
+            //lock off player controls/allow players to fly aimlessly in background
         }
 
         public override void Execute()

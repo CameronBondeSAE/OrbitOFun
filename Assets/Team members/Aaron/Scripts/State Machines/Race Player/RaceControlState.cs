@@ -11,6 +11,9 @@ namespace AaronMcDougall
         public override void Enter()
         {
             base.Enter();
+            
+            //give player flight control
+                //
         }
 
         public override void Execute()

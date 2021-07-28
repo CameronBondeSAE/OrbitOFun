@@ -10,6 +10,8 @@ namespace AaronMcDougall
         public override void Enter()
         {
             base.Enter();
+            
+            //run death event
         }
 
         public override void Execute()
@@ -20,6 +22,9 @@ namespace AaronMcDougall
         public override void Exit()
         {
             base.Exit();
+            
+            //reset player position to spawn point
+            //enter ArrowAimState
         }
     }
 }

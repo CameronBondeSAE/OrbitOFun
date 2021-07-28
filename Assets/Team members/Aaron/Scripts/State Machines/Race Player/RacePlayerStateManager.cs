@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace AaronMcDougall
-{     
-    public class RaceModeStateManager : MonoBehaviour
+{
+    public class RacePlayerStateManager : MonoBehaviour
     {
-        public RaceModeStateBase currentState;
+        public RacePlayerStateBase currentState;
 
-        public void ChangeState(RaceModeStateBase newState)
+        public void ChangeState(RacePlayerStateBase newState)
         {
             if (currentState != null)
             {
