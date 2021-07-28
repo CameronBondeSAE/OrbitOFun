@@ -6,6 +6,11 @@ namespace Tom
 {
     public class ControlState : StateBase
     {
+        public override void Enter()
+        {
+            base.Enter();
+        }
+
         public override void Execute()
         {
             base.Execute();

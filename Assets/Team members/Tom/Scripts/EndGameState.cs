@@ -12,5 +12,15 @@ namespace Tom
             
             // Start end game sequence in game mode
         }
+
+        public override void Execute()
+        {
+            base.Execute();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+        }
     }
 }
