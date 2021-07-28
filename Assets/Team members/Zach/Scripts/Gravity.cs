@@ -13,6 +13,7 @@ namespace Zach
         public Vector3 direction;
         public Vector3 gravityForce;
         public float distance;
+        public float maxDistance;
         //New version of my gravity script
         public List<GameObject> orbitals;
         public MoonSpawner moonSpawner;
@@ -23,7 +24,7 @@ namespace Zach
             orbitals = moonSpawner.orbitals;
         }
 
-        public void FixedUpdate()
+        public void Update()
         {
             foreach (GameObject orbital in orbitals)
             {
@@ -35,6 +36,10 @@ namespace Zach
                     distance = Vector3.Distance(otherPosition, transformPosition);
                     gravityForce = (-direction / distance) * rigidbody.mass;
                     orbital.GetComponent<Rigidbody>().AddForce(gravityForce);
+                    /*if (distance <= maxDistance)
+                    {
+                        
+                    }*/
                 }
             }
         }
