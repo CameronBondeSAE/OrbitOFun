@@ -6,4 +6,5 @@ using Zach;
 public class PlayerController : MonoBehaviour
 {
    public PlayerBase possessed;
+   //Can now invoke Fire() and Movement() from RileyMcGowan.PlayerBase
 }
