@@ -18,19 +18,18 @@ namespace Damien
 
         //Universal vars
         private Rigidbody rb;
-        //private GravityManager gravManager; // may not even end up using this
-
         public double gravConst = 6.67 * Math.Pow(10, -11);
-        //private LayerMask gravAffectedLayer;
 
 
-        //Planet vars
+        [Header("Planet Variables")]
         private float pullRadius;
         private List<Rigidbody> pullableObjRB = new List<Rigidbody>();
         private Vector3 planetPos;
 
         //Non Planet vars
+        [Header("Non Planet Variables")]
         public Vector3 initialForce;
+        public bool randomizeInitalForce;
 
         void Start()
         {
@@ -45,9 +44,10 @@ namespace Damien
             {
                 // checks whether the object can move and sets the rigidbody accordingly
                 case true:
+                    float scaleAvg = (transform.localScale.x + transform.localScale.y + transform.localScale.z) / 3;
                     rb.isKinematic = false;
                     rb.constraints = RigidbodyConstraints.None;
-                    gameObject.layer = 10;
+                    rb.mass = scaleAvg * 2;
                     break;
 
                 case false:
@@ -67,7 +67,10 @@ namespace Damien
                     break;
 
                 case false:
-                    RandomGen();
+                    if (randomizeInitalForce)
+                    {
+                        RandomGen();
+                    }
                     pullRadius = 0f;
                     forceMultiplier = 0f;
                     rb.AddRelativeForce(initialForce);
@@ -87,7 +90,7 @@ namespace Damien
             }
             if (initialForce.z == 0)
             {
-                initialForce.z = Random.Range(-50, 50);
+                initialForce.z = Random.Range(0, 50);
             }
         }
 
