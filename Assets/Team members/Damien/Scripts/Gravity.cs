@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Damien
 {
@@ -13,46 +13,33 @@ namespace Damien
         [Header("Object Variables")] public bool isPlanet; // is this object a planet or black hole or similar?
         public bool isAffectedByGravity; // is this object affected by gravity?
         public float localMass = 1f; // increases or decreases this entities mass, affecting its gravitational pull
-        public float forceMultiplier = 1f;
+        public float forceMultiplier = 1500000f;
 
 
         //Universal vars
         private Rigidbody rb;
-        private GravityManager gravManager; // may not even end up using this
-        private bool canBePulled;
+        //private GravityManager gravManager; // may not even end up using this
+
         public double gravConst = 6.67 * Math.Pow(10, -11);
-        private LayerMask gravAffectedLayer;
+        //private LayerMask gravAffectedLayer;
 
 
         //Planet vars
         private float pullRadius;
-        private float pullStrength = 0f; // may not even end up using this
-        public List<Rigidbody> pullableObjRB = new List<Rigidbody>();
+        private List<Rigidbody> pullableObjRB = new List<Rigidbody>();
         private Vector3 planetPos;
 
+        //Non Planet vars
+        public Vector3 initialForce;
 
         void Start()
         {
-            gravAffectedLayer = LayerMask.NameToLayer("GravAffected");
-            gravManager = FindObjectOfType<GravityManager>();
+            
+            //gravAffectedLayer = LayerMask.NameToLayer("GravAffected");
+            //gravManager = FindObjectOfType<GravityManager>();
             rb = GetComponent<Rigidbody>();
             rb.mass = localMass;
             rb.useGravity = false;
-
-            switch (isPlanet)
-            {
-                // checks whether the object is a planet and executes the appropriate code
-                case true:
-                    pullRadius = localMass * 2f;
-                    planetPos = transform.position;
-                    StartCoroutine(CheckObjectsInRadius());
-                    break;
-
-                case false:
-                    pullRadius = 0f;
-                    forceMultiplier = 0f;
-                    break;
-            }
 
             switch (isAffectedByGravity)
             {
@@ -61,14 +48,46 @@ namespace Damien
                     rb.isKinematic = false;
                     rb.constraints = RigidbodyConstraints.None;
                     gameObject.layer = 10;
-                    canBePulled = true;
                     break;
 
                 case false:
                     rb.isKinematic = true;
-                    canBePulled = false;
                     rb.constraints = RigidbodyConstraints.FreezeAll;
                     break;
+            }
+
+            switch (isPlanet)
+            {
+                // checks whether the object is a planet and executes the appropriate code
+                case true:
+                    pullRadius = (localMass / 10000f) * 2f;
+                    planetPos = transform.position;
+                    initialForce = Vector3.zero;
+                    StartCoroutine(CheckObjectsInRadius());
+                    break;
+
+                case false:
+                    RandomGen();
+                    pullRadius = 0f;
+                    forceMultiplier = 0f;
+                    rb.AddRelativeForce(initialForce);
+                    break;
+            }
+        }
+
+        void RandomGen()
+        {
+            if (initialForce.x == 0)
+            {
+                initialForce.x = Random.Range(-30, 30);
+            }
+            if (initialForce.y == 0)
+            {
+                initialForce.y = Random.Range(-30, 30);
+            }
+            if (initialForce.z == 0)
+            {
+                initialForce.z = Random.Range(-50, 50);
             }
         }
 
@@ -84,13 +103,20 @@ namespace Damien
 
         public void CheckObjectsInRange()
         {
-            //pullableObjRB.Clear();
-            Collider[] pullableObjColl =
-                Physics.OverlapSphere(planetPos, pullRadius, gravAffectedLayer); //doesnt work for some reason
+            Collider[] pullableObjColl = Physics.OverlapSphere(planetPos, pullRadius);
+            // doesnt work for some reason
+
             for (int i = 0; i < pullableObjColl.Length; i++)
             {
-                Collider obj = pullableObjColl[i];
-                pullableObjRB.Add(obj.attachedRigidbody);
+                GameObject obj = pullableObjColl[i].gameObject;
+                Gravity objGr = obj.GetComponent<Gravity>();
+                if (objGr != null)
+                {
+                    if (objGr.isAffectedByGravity)
+                    {
+                        pullableObjRB.Add(obj.GetComponent<Rigidbody>());
+                    }
+                }
             }
 
             PullObjectsInList();
@@ -98,12 +124,13 @@ namespace Damien
 
         public void PullObjectsInList()
         {
-            foreach (var objRB in pullableObjRB)
+            foreach (Rigidbody objRB in pullableObjRB.ToList())
             {
                 float objMass = objRB.mass;
                 float distance = Vector3.Distance(transform.position, objRB.transform.position);
                 double pullForce = gravConst * ((objMass * localMass) / Math.Pow(distance, 2));
                 objRB.AddForce((planetPos - objRB.position) * ((float) pullForce * forceMultiplier));
+                pullableObjRB.Remove(objRB);
             }
         }
 
