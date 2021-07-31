@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Sirenix.Utilities;
 using Damien;
 using UnityEngine;
@@ -8,33 +9,32 @@ namespace Damien
 {
     public class GravityManager : MonoBehaviour
     {
-        public Rigidbody[] staticEntities;
+        public List<Rigidbody> planetEntities;
 
-        public Rigidbody[] nonstaticEntities;
-        // Start is called before the first frame update
+        public List<Rigidbody> nonPlanetEntities;
+
         void Start()
         {
-            Rigidbody[] allEntities = FindObjectsOfType<Rigidbody>();
-            
-            foreach (var entity in allEntities)
-            {
-                if (gameObject.GetComponent<Gravity>())
-                {
-                    bool isStaticEntity = GetComponent<Gravity>().isStaticEntity;
-                    if (isStaticEntity)
-                    {
-                        
-                    }
+            //Grabs all objects in the scene that have the gravity script
+            Gravity[] allEntitiesWithGravity = FindObjectsOfType<Gravity>();
 
-                    if (!isStaticEntity)
-                    {
-                        
-                    }
-                    
+            foreach (var entity in allEntitiesWithGravity)
+            {
+                
+                if (entity.isPlanet)
+                {
+                    planetEntities.Add(entity.GetComponent<Rigidbody>());
                 }
 
+                if (!entity.isPlanet)
+                {
+                    nonPlanetEntities.Add(entity.GetComponent<Rigidbody>());
+                }
+                
             }
         }
+        
+        
 
         // Update is called once per frame
         void Update()

@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3e8e47053e6384daeb7db181ca1d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStaticEntity: 0
-  rb: {fileID: 0}
-  mass: 0
+  isPlanet: 1
+  canMove: 0
+  mass: 1
 --- !u!54 &1398253282
 Rigidbody:
   m_ObjectHideFlags: 0
