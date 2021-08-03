@@ -32,6 +32,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - Scale: 3.73
+    - maxHieght: 0.62
+    - minHieght: 0.56
+    m_Colors:
+    - Origin: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
