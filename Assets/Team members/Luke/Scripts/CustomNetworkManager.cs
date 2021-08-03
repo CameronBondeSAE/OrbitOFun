@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-namespace Luke
+namespace LukeBaker
 {
     public class CustomNetworkManager : NetworkManager
     {

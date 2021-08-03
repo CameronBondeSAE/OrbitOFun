@@ -1,29 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Luke
+namespace LukeBaker
 {
     public class GravitationalObject : MonoBehaviour
     {
+        //references
+        private PlanetManager planetMan;
+        
         //Variables
         private Rigidbody rb;
-        public List<GravitationalObject> gravitationalObjects;
         private float maxDistance;
         private float distance;
         private Vector3 direction;
         private float forceMagnitude;
         private Vector3 force;
         private Rigidbody attractedRb;
-
-        //The gravitational constance
-        private float g = 100f;
+        private GameObject instance;
 
         // Start is called before the first frame update
         void Start()
         {
+            planetMan = FindObjectOfType<PlanetManager>();
             rb = GetComponent<Rigidbody>();
-            gravitationalObjects.AddRange(FindObjectsOfType<GravitationalObject>());
         }
 
         // Update is called once per frame
@@ -36,19 +37,23 @@ namespace Luke
         {
             attractedRb = objectToAttract.rb;
 
-            direction = transform.position - attractedRb.position;
-            distance = direction.magnitude;
+            if (attractedRb != null)
+            {
+                direction = transform.position - attractedRb.position;
+                distance = direction.magnitude;
 
-            //newtons universal law of gravity
-            forceMagnitude = g * (rb.mass * attractedRb.mass) / Mathf.Pow(distance, 2);
+                //newtons universal law of gravity
+                forceMagnitude = planetMan.g * (rb.mass * attractedRb.mass) / Mathf.Pow(distance, 2);
 
-            force = direction.normalized * forceMagnitude;
-            attractedRb.AddForce(force);
+                force = direction.normalized * forceMagnitude;
+
+                attractedRb.AddForce(force);
+            }
         }
 
         public void GravityToAllObj()
         {
-            foreach (GravitationalObject obj in gravitationalObjects)
+            foreach (GravitationalObject obj in planetMan.gravitationalObjects)
             {
                 //so it doesn't attract itself
                 if (obj != this)
