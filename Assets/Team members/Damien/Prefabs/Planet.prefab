@@ -111,8 +111,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlanet: 1
-  canMove: 0
-  mass: 1
+  isAffectedByGravity: 0
+  localMass: 1000
+  forceMultiplier: 1000
+  gravConst: 0.0000000000667
+  radiusBoost: 10
+  initialForce: {x: 0, y: 0, z: 0}
+  randomizeInitalForce: 0
 --- !u!54 &1398253282
 Rigidbody:
   m_ObjectHideFlags: 0
