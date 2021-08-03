@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9524f1b71566232499ec15154050fce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToSpawn:
-  - {fileID: 1573447509429689636, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
   amount: 1
-  currentPrefabElement: 0
-  maxMass: 10
+  maxMass: 5
   minMass: 1
+  prefabToSpawn: {fileID: 1573447509429689636, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+  minSpawnRange: -100
+  maxSpawnRange: 100
