@@ -37,15 +37,18 @@ namespace LukeBaker
         {
             attractedRb = objectToAttract.rb;
 
-            direction = transform.position - attractedRb.position;
-            distance = direction.magnitude;
+            if (attractedRb != null)
+            {
+                direction = transform.position - attractedRb.position;
+                distance = direction.magnitude;
 
-            //newtons universal law of gravity
-            forceMagnitude = planetMan.g * (rb.mass * attractedRb.mass) / Mathf.Pow(distance, 2);
+                //newtons universal law of gravity
+                forceMagnitude = planetMan.g * (rb.mass * attractedRb.mass) / Mathf.Pow(distance, 2);
 
-            force = direction.normalized * forceMagnitude;
-            
-            attractedRb.AddForce(force);
+                force = direction.normalized * forceMagnitude;
+
+                attractedRb.AddForce(force);
+            }
         }
 
         public void GravityToAllObj()
