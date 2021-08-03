@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    },
+    "com.unity.ads": {
+      "version": "3.7.1",
     "com.unity.analytics": {
       "version": "3.5.3",
       "depth": 0,
