@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BezierCurve : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BezierCurve : MonoBehaviour
   public Transform point4;
 
   public bool forward;
+
+  public float speed;
   
 
 
@@ -25,14 +28,25 @@ public class BezierCurve : MonoBehaviour
 
    private void Update()
    {
-       time += Time.deltaTime;
-       
-       if (time > 1f)
+       if (forward)
        {
-           time = 0f;
+           Forward();
        }
-
    }
+
+   void Forward()
+   {
+       Debug.Log("forward  ");
+       while (time <= 1)
+       {
+           time += speed * Time.deltaTime;
+           if (time > 1)
+           {
+               print("finished");
+           }
+       }
+   }
+   
 
 
    public void OnDrawGizmosSelected()

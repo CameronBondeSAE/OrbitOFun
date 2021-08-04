@@ -1,11 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class RobWindowEditor : EditorWindow
@@ -13,7 +11,6 @@ public class RobWindowEditor : EditorWindow
     
     bool groupEnabled;
     private bool randomSize = true;
-    public Button button;
     public GameObject spawnSquare;
     public GameObject spawnCircle;
     public int numberToSpawnSquare;
