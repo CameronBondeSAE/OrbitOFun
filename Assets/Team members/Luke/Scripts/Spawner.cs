@@ -66,6 +66,8 @@ namespace LukeBaker
                  planetMass = Random.Range(minMass, maxMass);
                  rb = currentSpawn.GetComponent<Rigidbody>();
                  rb.mass = planetMass;
+                 //TODO not quite colliding correctly
+                 prefabToSpawn.GetComponent<SphereCollider>().radius = planetMass/2;
                  
                  //changing the size relative to the mass
                  currentSpawn.transform.localScale =
