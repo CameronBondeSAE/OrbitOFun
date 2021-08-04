@@ -7,6 +7,8 @@ namespace Tom
 {
     public class BezierCurve : MonoBehaviour
     {
+        public Transform curvingObject;
+
         private Vector2 curvePoint;
 
         [Range(0f, 1f)] public float curveTime;
@@ -14,6 +16,11 @@ namespace Tom
         public Transform controlPoint1, controlPoint2, controlPoint3, controlPoint4;
 
         private bool playingCurve = false;
+
+        public AnimationCurve curve;
+
+        public event Action FinishedCurveEvent;
+        public event Action ReverseFinishedCurveEvent;
 
         public enum PlayType
         {
@@ -28,6 +35,9 @@ namespace Tom
 
         private void Update()
         {
+            // HACK
+            // Pretty messy but gets the job done
+            // Checks for what play type is selected to determine whether it goes forward or reverse, what happens when finished etc
             if (playingCurve)
             {
                 if (reversing && playType == PlayType.PingPong)
@@ -43,22 +53,44 @@ namespace Tom
                 {
                     switch (playType)
                     {
+                        case PlayType.SinglePlay:
+                            curveTime = 1f;
+                            playingCurve = false;
+                            break;
                         case PlayType.Loop:
                             curveTime = 0f;
                             break;
                         case PlayType.PingPong:
+                            curveTime = 1f;
                             reversing = true;
                             break;
                         default:
                             break;
                     }
+                    
+                    CallFinishedCurve();
                 }
 
                 if (curveTime < 0f)
                 {
+                    CallReverseFinishedCurve();
                     reversing = false;
                 }
             }
+            
+            // Calculates the lerp for each control point, then lerps between those to get final curve point
+            Vector2 a = Vector2.Lerp(controlPoint1.position, controlPoint2.position, curve.Evaluate(curveTime));
+            Vector2 b = Vector2.Lerp(controlPoint2.position, controlPoint3.position, curve.Evaluate(curveTime));
+            Vector2 c = Vector2.Lerp(controlPoint3.position, controlPoint4.position, curve.Evaluate(curveTime));
+            Vector2 d = Vector2.Lerp(a, b, curve.Evaluate(curveTime));
+            Vector2 e = Vector2.Lerp(b, c, curve.Evaluate(curveTime));
+
+            curvePoint = Vector2.Lerp(d, e, curve.Evaluate(curveTime));
+            curvingObject.position = curvePoint;
+            
+            // Sets forward point in 2D to direction curve is going
+            Vector2 direction = curvePoint - Vector2.Lerp(d, e, curve.Evaluate(curveTime - Time.deltaTime));
+            curvingObject.right = direction;
         }
 
         public void PlayCurve()
@@ -67,15 +99,20 @@ namespace Tom
             playingCurve = true;
         }
 
+        public void CallFinishedCurve()
+        {
+            FinishedCurveEvent?.Invoke();
+            print("finished curve");
+        }
+
+        public void CallReverseFinishedCurve()
+        {
+            ReverseFinishedCurveEvent?.Invoke();
+            print("reverse finished curve");
+        }
+
         public void OnDrawGizmos()
         {
-            Vector2 a = Vector2.Lerp(controlPoint1.position, controlPoint2.position, curveTime);
-            Vector2 b = Vector2.Lerp(controlPoint2.position, controlPoint3.position, curveTime);
-            Vector2 c = Vector2.Lerp(controlPoint3.position, controlPoint4.position, curveTime);
-            Vector2 d = Vector2.Lerp(a, b, curveTime);
-            Vector2 e = Vector2.Lerp(b, c, curveTime);
-
-            curvePoint = Vector2.Lerp(d, e, curveTime);
             Gizmos.DrawSphere(curvePoint, 0.1f);
         }
     }
