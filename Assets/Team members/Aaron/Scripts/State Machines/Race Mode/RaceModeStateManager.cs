@@ -6,9 +6,9 @@ namespace AaronMcDougall
 {     
     public class RaceModeStateManager : MonoBehaviour
     {
-        public RaceModeStateBase currentState;
+        public StateBase currentState;
 
-        public void ChangeState(RaceModeStateBase newState)
+        public void ChangeState(StateBase newState)
         {
             if (currentState != null)
             {

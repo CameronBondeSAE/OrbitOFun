@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AaronMcDougall
 {
-    public class RaceModeStateBase : MonoBehaviour
+    public class StateBase : MonoBehaviour
     {
         public virtual void Enter()
         {

@@ -5,7 +5,7 @@ using System;
 
 namespace AaronMcDougall
 {
-    public class CountdownToStartState : RaceModeStateBase
+    public class CountdownToStartState : StateBase
     {
         public override void Enter()
         {
