@@ -525,10 +525,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1309624284594288286, guid: 20db854407a554643bef22056555bfb8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3462922844288420092, guid: 20db854407a554643bef22056555bfb8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -572,10 +568,6 @@ PrefabInstance:
     - target: {fileID: 3462922844288420092, guid: 20db854407a554643bef22056555bfb8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
-      propertyPath: autoCreatePlayer
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20db854407a554643bef22056555bfb8, type: 3}

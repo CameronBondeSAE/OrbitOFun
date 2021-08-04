@@ -210,7 +210,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.0780181
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1573447509429689634
 Rigidbody:
@@ -240,4 +240,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b03f021b39bafd478821fe271d65bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravitationalObjects: []
