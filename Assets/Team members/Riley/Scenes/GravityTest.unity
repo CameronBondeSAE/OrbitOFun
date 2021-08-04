@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7682236089370854543, guid: 58be4e2e2157b4045894443ce3f9df58, type: 3}
       propertyPath: prefabsToSpawn
-      value: 200
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7682236089370854543, guid: 58be4e2e2157b4045894443ce3f9df58, type: 3}
       propertyPath: spawnLocationDistance
@@ -492,7 +492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4589264315184438197, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
       propertyPath: areaToAffectGravity
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4589264315184438198, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
       propertyPath: m_Name
@@ -565,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7682236089370854543, guid: 58be4e2e2157b4045894443ce3f9df58, type: 3}
       propertyPath: prefabsToSpawn
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7682236089370854543, guid: 58be4e2e2157b4045894443ce3f9df58, type: 3}
       propertyPath: spawnLocationDistance
