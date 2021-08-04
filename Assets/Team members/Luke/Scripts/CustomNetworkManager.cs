@@ -10,20 +10,19 @@ namespace LukeBaker
     {
         //Variables
         public List<string> playerIP;
-        public List<User> lobbiedPlayers;
+        public List<NetworkConnection> lobbiedPlayers;
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
             playerIP.Add(conn.address);
-            
-            //lobbiedPlayers.Add();
+            lobbiedPlayers.Add(conn);
         }
 
         //TODO to be called
         public void OnServerSpawnPlayers()
         {
             //start game button or event???
-            foreach (User user in lobbiedPlayers)
+            foreach (NetworkConnection user in lobbiedPlayers)
             {
                 Transform startPos = GetStartPosition();
                 GameObject player = startPos != null
@@ -32,8 +31,8 @@ namespace LukeBaker
 
                 // instantiating a "Player" prefab gives it the name "Player(clone)"
                 // => appending the connectionId is WAY more useful for debugging!
-                player.name = $"{playerPrefab.name} [connId={user.networkConnection.connectionId}]";
-                NetworkServer.AddPlayerForConnection(user.networkConnection, player);
+                player.name = $"{playerPrefab.name} [connId={user.connectionId}]";
+                NetworkServer.AddPlayerForConnection(user, player);
             }
         }
     }
