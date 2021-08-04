@@ -8,37 +8,33 @@ namespace LukeBaker
     public class CustomNetworkManager : NetworkManager
     {
         //Variables
-        // TODO needs to reference each game modes starting positions??
-        public List<Transform> startingPositions;
-
-        //References
-        // TODO lobby ref
-
-        //Events
-        
-
-        public override void OnStartServer()
-        {
-            base.OnStartServer();
-            
-            
-        }
+        //replace with lobbyPlayer
+        public List<NetworkConnection> playersConnected;
+        public List<string> lobbyUser;
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
-            //base.OnServerAddPlayer(conn);
+            lobbyUser.Add(conn.address);
             
-            Transform startPos = GetStartPosition();
-            GameObject player = startPos != null
-                ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
-                : Instantiate(playerPrefab);
-
-            // instantiating a "Player" prefab gives it the name "Player(clone)"
-            // => appending the connectionId is WAY more useful for debugging!
-            player.name = $"{playerPrefab.name} [connId={conn.connectionId}]";
-            NetworkServer.AddPlayerForConnection(conn, player);
+            playersConnected.Add(conn);
         }
-        
-        
+
+        //TODO to be called
+        public void OnServerSpawnPlayers()
+        {
+            //start game button or event???
+            foreach (NetworkConnection connection in playersConnected)
+            {
+                Transform startPos = GetStartPosition();
+                GameObject player = startPos != null
+                    ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
+                    : Instantiate(playerPrefab);
+
+                // instantiating a "Player" prefab gives it the name "Player(clone)"
+                // => appending the connectionId is WAY more useful for debugging!
+                player.name = $"{playerPrefab.name} [connId={connection.connectionId}]";
+                NetworkServer.AddPlayerForConnection(connection, player);
+            }
+        }
     }
 }

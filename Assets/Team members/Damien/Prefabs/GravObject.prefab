@@ -100,10 +100,9 @@ MonoBehaviour:
   isPlanet: 0
   isAffectedByGravity: 1
   localMass: 6.5
-  forceMultiplier: 1000
-  gravConst: 0.0000000000667
+  forceMultiplier: 1
   radiusBoost: 10
-  initialForce: {x: 0, y: 0, z: 20}
+  initialForce: {x: 500, y: 0, z: 0}
   randomizeInitalForce: 1
 --- !u!54 &3380359115346576376
 Rigidbody:

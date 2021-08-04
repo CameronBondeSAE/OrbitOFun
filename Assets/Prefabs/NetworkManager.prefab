@@ -62,6 +62,7 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs: []
+  playerStartingPositions: []
 --- !u!114 &7981975054207019849
 MonoBehaviour:
   m_ObjectHideFlags: 0
