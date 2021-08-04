@@ -48,7 +48,7 @@ namespace RileyMcGowan
                     Rigidbody influencedRB = influencedRef.rb;
                     directionToObject = gravRB.position - influencedRB.position; //Take the position difference to find the direction
                     distanceToObject = directionToObject.magnitude;
-                    if (distanceToObject < areaToAffectGravity)
+                    if (distanceToObject < areaToAffectGravity && gravRef.gameObject != influencedRef.gameObject)
                     {
                         gravityMass = gravRB.mass * influencedRB.mass; //Total Mass
                         distanceToObjectCapped = directionToObject.normalized;
