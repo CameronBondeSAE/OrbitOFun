@@ -44,15 +44,17 @@ namespace RileyMcGowan
             {
                 foreach (CanGravitate influencedRef in influencedMasses)
                 {
-                    gravityMass = gravRef.rb.mass * influencedRef.rb.mass; //Total Mass
-                    directionToObject = gravRef.rb.position - influencedRef.rb.position; //Take the position difference to find the direction
+                    Rigidbody gravRB = gravRef.rb;
+                    Rigidbody influencedRB = influencedRef.rb;
+                    directionToObject = gravRB.position - influencedRB.position; //Take the position difference to find the direction
                     distanceToObject = directionToObject.magnitude;
-                    if (distanceToObject < areaToAffectGravity)
+                    if (distanceToObject < areaToAffectGravity && gravRef.gameObject != influencedRef.gameObject)
                     {
+                        gravityMass = gravRB.mass * influencedRB.mass; //Total Mass
                         distanceToObjectCapped = directionToObject.normalized;
                         lawOfGravity = gravityMass / Mathf.Pow(distanceToObject, 2); //Can use distanceToObject instead but ^ makes it smoother and work better
                         forceToAdd = distanceToObjectCapped * lawOfGravity; //Add that total force in the direction of the object, we use normalized to make the distance general
-                        influencedRef.rb.AddForce(forceToAdd); //Add that distance to the rigidbody, this includes direction ect
+                        influencedRB.AddForce(forceToAdd); //Add that distance to the rigidbody, this includes direction ect
                     }
                 }
             }
