@@ -209,8 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlanet: 1
   isAffectedByGravity: 0
-  localMass: 10000
-  forceMultiplier: 1000
+  localMass: 500000
+  forceMultiplier: 1000000
   radiusBoost: 10
   initialForce: {x: 0, y: 0, z: 0}
   randomizeInitalForce: 0

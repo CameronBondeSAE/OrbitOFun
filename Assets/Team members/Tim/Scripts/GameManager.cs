@@ -38,6 +38,7 @@ namespace Tim
 
         public void LoadLevel()
         {
+            //loads the specified scene
             SceneManager.LoadScene("Main", LoadSceneMode.Additive);
         }
 

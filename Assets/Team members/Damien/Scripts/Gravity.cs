@@ -146,6 +146,22 @@ namespace Damien
             Gizmos.DrawWireSphere(transform.position, pullRadius);
         }
 
+        private void OnCollisionEnter(Collision other)
+        {
+            
+            Gravity gravity = other.gameObject.GetComponent<Gravity>();
+            if (gravity != null)
+            {
+                if (isPlanet)
+                {
+                    if (gravity.isPlanet == false)
+                    {
+                        Destroy(other.gameObject);
+                    }
+                }
+            }
+        }
+
 
         void Update()
         {
