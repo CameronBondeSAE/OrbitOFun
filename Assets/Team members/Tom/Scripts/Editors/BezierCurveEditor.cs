@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tom
 {
-    [CustomEditor(typeof(global::BezierCurve))]
+    [CustomEditor(typeof(BezierCurve))]
     public class BezierCurveEditor : Editor
     {
         public override void OnInspectorGUI()
