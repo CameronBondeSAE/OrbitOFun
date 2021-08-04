@@ -9,13 +9,14 @@ namespace Tom
         public override void Enter()
         {
             base.Enter();
+            
+            // Show arrow visual
         }
 
         public override void Execute()
         {
             base.Execute();
         
-            // Show arrow visual
             // Detect input
             // Rotate arrow based on input
         }
