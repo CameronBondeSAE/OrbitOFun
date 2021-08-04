@@ -420,7 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moonPrefab: {fileID: 7436785836762653081, guid: 1bf953366817cee409f8858111a44cf3, type: 3}
   currentMoon: {fileID: 0}
-  amountOfMoons: 10
+  amountOfMoons: 50
   orbitals: []
   xOffset: 0
   yOffset: 0
@@ -506,7 +506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7436458533435711316, guid: ba3a68dc588678e4687bb57ea2eb9446, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436458533435711316, guid: ba3a68dc588678e4687bb57ea2eb9446, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3a68dc588678e4687bb57ea2eb9446, type: 3}
