@@ -17,12 +17,15 @@ namespace LukeBaker
             playersConnected.Add(conn);
         }
 
-        public void OnServerSpawnPlayers(NetworkConnection conn)
+        //TODO to be called
+        public void OnServerSpawnPlayers()
         {
             //start game button or event???
             foreach (NetworkConnection connection in playersConnected)
             {
                 Transform startPos = GetStartPosition();
+                
+                //TODO changing position list
                 GameObject player = startPos != null
                     ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                     : Instantiate(playerPrefab);
