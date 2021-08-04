@@ -8,12 +8,14 @@ namespace LukeBaker
     public class CustomNetworkManager : NetworkManager
     {
         //Variables
-        // TODO needs to reference each game modes starting positions??
-        public List<Transform> playerStartingPositions;
+        //replace with lobbyPlayer
         public List<NetworkConnection> playersConnected;
+        public List<string> lobbyUser;
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
+            lobbyUser.Add(conn.address);
+            
             playersConnected.Add(conn);
         }
 
@@ -24,8 +26,6 @@ namespace LukeBaker
             foreach (NetworkConnection connection in playersConnected)
             {
                 Transform startPos = GetStartPosition();
-                
-                //TODO changing position list
                 GameObject player = startPos != null
                     ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                     : Instantiate(playerPrefab);
