@@ -5,7 +5,7 @@ using System;
 
 namespace AaronMcDougall
 {
-    public class InGameState : RaceModeStateBase
+    public class InGameState : StateBase
     {
         public override void Enter()
         {

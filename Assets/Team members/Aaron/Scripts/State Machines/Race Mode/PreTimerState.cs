@@ -5,7 +5,7 @@ using System;
 
 namespace AaronMcDougall
 {
-    public class PreTimerState : RaceModeStateBase
+    public class PreTimerState : StateBase
     {
         public override void Enter()
         {
