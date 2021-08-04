@@ -90,6 +90,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Clouds: 10
+    - MaximumClouds: 10
+    - MinimumClouds: 8
+    - RotationMaximum: 0.2
+    - RotationMinimum: -0.2
+    - Speed: 0.1
+    - SpeedMax: 0.1
+    - SpeedMin: -0.1
+    - Speed_1: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
