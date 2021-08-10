@@ -13,6 +13,8 @@ namespace Tom
 
         [Range(0f, 1f)] public float curveTime;
 
+        public float duration = 1f;
+
         public Transform controlPoint1, controlPoint2, controlPoint3, controlPoint4;
 
         private bool playingCurve = false;
@@ -42,11 +44,11 @@ namespace Tom
             {
                 if (reversing && playType == PlayType.PingPong)
                 {
-                    curveTime -= Time.deltaTime;
+                    curveTime -= Time.deltaTime / duration;
                 }
                 else
                 {
-                    curveTime += Time.deltaTime;
+                    curveTime += Time.deltaTime / duration;
                 }
 
                 if (curveTime > 1f)
