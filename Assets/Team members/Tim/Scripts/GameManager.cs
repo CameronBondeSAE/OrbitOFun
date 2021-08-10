@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zach;
@@ -36,10 +37,11 @@ namespace Tim
             gameModeBase.Activate();
         }
 
-        public void LoadLevel()
+        public void LoadLevel(string level)
         {
+            //level = "Levels/" + "";
             //loads the specified scene
-            SceneManager.LoadScene("Main", LoadSceneMode.Additive);
+            SceneManager.LoadScene(level, LoadSceneMode.Additive);
         }
 
 		public void UnLoadLevel()
