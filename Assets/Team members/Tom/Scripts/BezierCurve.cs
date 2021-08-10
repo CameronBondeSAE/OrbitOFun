@@ -89,7 +89,15 @@ namespace Tom
             curvingObject.position = curvePoint;
             
             // Sets forward point in 2D to direction curve is going
-            Vector2 direction = curvePoint - Vector2.Lerp(d, e, curve.Evaluate(curveTime - Time.deltaTime));
+            Vector2 direction;
+            if (reversing)
+            {
+                direction = curvePoint - Vector2.Lerp(d, e, curve.Evaluate(curveTime + Time.deltaTime));
+            }
+            else
+            {
+                direction = curvePoint - Vector2.Lerp(d, e, curve.Evaluate(curveTime - Time.deltaTime));
+            }
             curvingObject.right = direction;
         }
 
