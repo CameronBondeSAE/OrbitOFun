@@ -12,14 +12,28 @@ namespace LukeBaker
         public List<string> playerIP;
         public List<NetworkConnection> lobbiedPlayers;
 
-        public override void OnServerAddPlayer(NetworkConnection conn)
+        // TODO old override (find out the difference between OnServerConnect) 
+        // public override void OnServerAddPlayer(NetworkConnection conn)
+        // {
+        //     
+        // }
+
+        public override void OnServerConnect(NetworkConnection conn)
         {
+            base.OnServerConnect(conn);
             playerIP.Add(conn.address);
             lobbiedPlayers.Add(conn);
         }
+        
+        public override void OnServerDisconnect(NetworkConnection conn)
+        {
+            base.OnServerDisconnect(conn);
+            playerIP.Remove(conn.address);
+            lobbiedPlayers.Remove(conn);
+        }
 
         //TODO to be called
-        public void OnServerSpawnPlayers()
+        public void SpawnPlayers()
         {
             //start game button or event???
             foreach (NetworkConnection user in lobbiedPlayers)
