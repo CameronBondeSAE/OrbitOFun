@@ -12,8 +12,11 @@ public class BezierCurve : MonoBehaviour
   public Transform point4;
 
   public bool forward;
+  public bool backwards;
 
   public float speed;
+
+  public Transform followPos;
   
 
 
@@ -28,24 +31,48 @@ public class BezierCurve : MonoBehaviour
 
    private void Update()
    {
+       if (InputSystem.GetDevice<Keyboard>().fKey.wasPressedThisFrame)
+       {
+           forward = true;
+       }
+
+       if (InputSystem.GetDevice<Keyboard>().bKey.wasPressedThisFrame)
+       {
+
+           backwards = true;
+
+       }
+
        if (forward)
        {
-           Forward();
-       }
-   }
-
-   void Forward()
-   {
-       Debug.Log("forward  ");
-       while (time <= 1)
-       {
+           this.transform.LookAt(point4);
            time += speed * Time.deltaTime;
-           if (time > 1)
+           if (time >= 1)
            {
-               print("finished");
+               forward = false;
+               time = 1;
+               backwards = true;
+               
            }
        }
+
+       if (backwards)
+       {
+           this.transform.LookAt(point1);
+           time -= speed * Time.deltaTime;
+           if (time <= 0)
+           {
+               backwards = false;
+               time = 0;
+               forward = true;
+               
+           }
+       }
+
+       this.transform.position = curvePoint;
    }
+
+   
    
 
 
