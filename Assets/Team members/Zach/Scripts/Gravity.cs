@@ -15,18 +15,17 @@ namespace Zach
         public float distance;
         public float maxDistance;
         //New version of my gravity script
-        public List<GameObject> orbitals;
-        public MoonSpawner moonSpawner;
+        //Static list of game objects, newed here so that Unity realises it exists 
+        public static List<GameObject> orbitalsStatic = new List<GameObject>();
 
-        public void Start()
+        public void Awake()
         {
-            moonSpawner = FindObjectOfType<MoonSpawner>();
-            orbitals = moonSpawner.orbitals;
+            orbitalsStatic.Add(gameObject);
         }
-
+        
         public void Update()
         {
-            foreach (GameObject orbital in orbitals)
+            foreach (GameObject orbital in orbitalsStatic)
             {
                 if (orbital != this.gameObject)
                 {
