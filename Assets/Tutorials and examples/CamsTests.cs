@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Zach;
 
-public class CamsTests : MonoBehaviour
+public class CamsTests : GameModeBase
 {
 	public float fakeTimer;
 
@@ -15,15 +13,26 @@ public class CamsTests : MonoBehaviour
 	public AudioMixer mixer;
 
 	public Slider slider;
+	bool          started;
 
-	// Start is called before the first frame update
-	void Start()
+
+	public override void Activate()
 	{
+		base.Activate();
+		
+		Debug.Log("Cams mode has been activated");
+
+		started = true;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		if (!started)
+		{
+			return;
+		}
+
 		// Debug.Log("Slider = "+slider.value
 		// mixer.SetFloat("MusicVolume", theVolumeTo);
 
