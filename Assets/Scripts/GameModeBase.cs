@@ -7,7 +7,7 @@ namespace Zach
 {
 	public class GameModeBase : MonoBehaviour
 	{
-		public List<Object> levels;
+		public List<string> levels;
 		public virtual void Activate()
 		{
 			Debug.Log("GameModeBase Activate");
