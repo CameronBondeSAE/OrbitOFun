@@ -33,7 +33,7 @@ namespace LukeBaker
             lobbiedPlayers.Remove(conn);
         }
 
-        //TODO to be called
+        //TODO to be called by gamemodes
         public void SpawnPlayers()
         {
             //start game button or event???
