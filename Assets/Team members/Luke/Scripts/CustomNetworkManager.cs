@@ -23,14 +23,14 @@ namespace LukeBaker
         {
             base.OnServerConnect(conn);
             playerIP.Add(conn.address);
-            lobbiedPlayers.Add(conn);
+            //lobbiedPlayers.Add(conn);
         }
         
         public override void OnServerDisconnect(NetworkConnection conn)
         {
             base.OnServerDisconnect(conn);
             playerIP.Remove(conn.address);
-            lobbiedPlayers.Remove(conn);
+            //lobbiedPlayers.Remove(conn);
         }
 
         //TODO to be called by gamemodes
