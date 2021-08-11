@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Tom
 {
-    public class BezierCurve : MonoBehaviour
+    public class BezierCurve : MonoBehaviour, IGameModeInteractable
     {
         public Transform curvingObject;
         private Vector2 curvePoint;
@@ -102,6 +102,11 @@ namespace Tom
         {
             curveTime = 0;
             playingCurve = true;
+        }
+
+        public void Activate()
+        {
+            PlayCurve();
         }
 
         public void CallFinishedCurve()
