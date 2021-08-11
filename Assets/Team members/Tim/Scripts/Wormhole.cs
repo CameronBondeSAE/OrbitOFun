@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class Wormhole : MonoBehaviour
+public class Wormhole : CommonObject,IGameModeInteractable
 {
     public GameObject pairedWormhole;
-
+    public bool isActivated;
 
     private void OnCollisionEnter(Collision other)
     {
-        other.transform.position = pairedWormhole.transform.position + new Vector3(2,0,0);
+        if (isActivated)
+        {
+            other.transform.position = pairedWormhole.transform.position + new Vector3(2,0,0);
+        }
     }
-    //physics.overlap
+    public void Activate()
+    {
+        isActivated = true;
+    }
 }
