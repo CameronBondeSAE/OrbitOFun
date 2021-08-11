@@ -16,8 +16,6 @@ public class BezierCurve : MonoBehaviour
 
   public float speed;
 
-  public Transform followPos;
-  
 
 
 
@@ -45,7 +43,7 @@ public class BezierCurve : MonoBehaviour
 
        if (forward)
        {
-           this.transform.LookAt(point4);
+           transform.rotation = Quaternion.Euler(point4.position.x, 0, point4.position.z);
            time += speed * Time.deltaTime;
            if (time >= 1)
            {
@@ -58,7 +56,7 @@ public class BezierCurve : MonoBehaviour
 
        if (backwards)
        {
-           this.transform.LookAt(point1);
+           transform.rotation = Quaternion.Euler(point4.position.x, 180, point4.position.z);
            time -= speed * Time.deltaTime;
            if (time <= 0)
            {
@@ -69,7 +67,7 @@ public class BezierCurve : MonoBehaviour
            }
        }
 
-       this.transform.position = curvePoint;
+       transform.position = curvePoint;
    }
 
    
