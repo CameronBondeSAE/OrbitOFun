@@ -850,6 +850,71 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1097490207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1874690010411394817, guid: 600ab3b5ba49334418291756e46bf4ef, type: 3}
+  m_PrefabInstance: {fileID: 1858736510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097490208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1874690010411394818, guid: 600ab3b5ba49334418291756e46bf4ef, type: 3}
+  m_PrefabInstance: {fileID: 1858736510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097490207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756c33f5af6d9c948ae977275221b61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1097490209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097490207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: a7d4d14ab6ddd1949b901caa098e8676, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1097490208}
+          m_TargetAssemblyTypeName: Tom.BezierCurve, Assembly-CSharp
+          m_MethodName: PlayCurve
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!320 &1097490210
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097490207}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: dd736111636735345a8ffeb6b651c8d6, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 2034093512633121375, guid: dd736111636735345a8ffeb6b651c8d6, type: 2}
+    value: {fileID: 1097490209}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1163433468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2109,10 @@ PrefabInstance:
     - target: {fileID: 1874690011348570553, guid: 600ab3b5ba49334418291756e46bf4ef, type: 3}
       propertyPath: m_LocalPosition.y
       value: -92.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244830755375893756, guid: 600ab3b5ba49334418291756e46bf4ef, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3244830755375893756, guid: 600ab3b5ba49334418291756e46bf4ef, type: 3}
       propertyPath: m_Materials.Array.data[0]

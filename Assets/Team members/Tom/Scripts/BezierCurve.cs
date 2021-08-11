@@ -8,17 +8,11 @@ namespace Tom
     public class BezierCurve : MonoBehaviour
     {
         public Transform curvingObject;
-
         private Vector2 curvePoint;
-
         [Range(0f, 1f)] public float curveTime;
-
         public float duration = 1f;
-
         public Transform controlPoint1, controlPoint2, controlPoint3, controlPoint4;
-
         private bool playingCurve = false;
-
         public AnimationCurve curve;
 
         public event Action FinishedCurveEvent;
@@ -69,7 +63,7 @@ namespace Tom
                         default:
                             break;
                     }
-                    
+
                     CallFinishedCurve();
                 }
 
@@ -79,7 +73,7 @@ namespace Tom
                     reversing = false;
                 }
             }
-            
+
             // Calculates the lerp for each control point, then lerps between those to get final curve point
             Vector2 a = Vector2.Lerp(controlPoint1.position, controlPoint2.position, curve.Evaluate(curveTime));
             Vector2 b = Vector2.Lerp(controlPoint2.position, controlPoint3.position, curve.Evaluate(curveTime));
@@ -89,7 +83,7 @@ namespace Tom
 
             curvePoint = Vector2.Lerp(d, e, curve.Evaluate(curveTime));
             curvingObject.position = curvePoint;
-            
+
             // Sets forward point in 2D to direction curve is going
             Vector2 direction;
             if (reversing)
@@ -100,6 +94,7 @@ namespace Tom
             {
                 direction = curvePoint - Vector2.Lerp(d, e, curve.Evaluate(curveTime - Time.deltaTime));
             }
+
             curvingObject.right = direction;
         }
 
