@@ -43,3 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb11ba0b020fee48bdb9d18091bee44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - Level 01
+  - Cams test
+  gameModeName: Cams mode
+  description: It's pretty cool

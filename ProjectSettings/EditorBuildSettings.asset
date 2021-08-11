@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Level 01.unity
     guid: 42288927e64ff8c479cad2e833910ab0
+  - enabled: 1
+    path: Assets/Levels/Cams test.unity
+    guid: 58c5e41c4e5bed04c89917da21561d54
   m_configObjects: {}

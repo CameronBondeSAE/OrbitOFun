@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2498757984222312513}
   - component: {fileID: 7815748015566797854}
   - component: {fileID: 5858792199962200558}
-  - component: {fileID: 2835964432384078873}
   - component: {fileID: 1075709674421912821}
+  - component: {fileID: -8335928879420694405}
   m_Layer: 0
   m_Name: RaceModeStateMachine
   m_TagString: Untagged
@@ -84,18 +84,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9759e8fdb0b3eaa4dbd6749644e0bf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2835964432384078873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9176590988661459740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec1bf6a96adc1046a48173500ac6c90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1075709674421912821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,3 +97,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 7815748015566797854}
+--- !u!114 &-8335928879420694405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176590988661459740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f553492e18a72be41b5a0cebab1ffba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels: []
+  gameModeName: Race to the finish
+  description: First to get to the finish line
+  cameraToSpawn: {fileID: 0}
+  countdownToSpawn: {fileID: 0}
+  sceneToSpawn: {fileID: 0}
