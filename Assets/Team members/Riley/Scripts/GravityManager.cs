@@ -5,10 +5,11 @@ using UnityEngine;
 
 namespace RileyMcGowan
 {
-    public class GravityManager : MonoBehaviour
+    public class GravityManager : CommonObject, IGameModeInteractable
     {
         //Private Vars
-
+        private bool isActivated = false;
+        
         //Public Vars
         public List<CanGravitate> influencedMasses;//Store the list on the manager to prevent copies
         public List<Gravity> gravityMasses;
@@ -32,9 +33,12 @@ namespace RileyMcGowan
 
         private void FixedUpdate()
         {
-            if (influencedMasses != null && gravityMasses != null)
+            if (isActivated == true)
             {
-                DoGravity();
+                if (influencedMasses != null && gravityMasses != null)
+                {
+                    DoGravity();
+                }
             }
         }
 
@@ -90,6 +94,11 @@ namespace RileyMcGowan
                     objectToGravity.rb.velocity = new Vector3(objectVelocity.x, objectVelocity.y + .5f, objectVelocity.z + .5f);
                 }
             }
+        }
+
+        public void Activate()
+        {
+            isActivated = true;
         }
     }
 }
