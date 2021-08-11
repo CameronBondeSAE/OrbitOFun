@@ -246,6 +246,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3843827503309287212, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843827503309287212, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4045544797236916792, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -256,11 +264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.43
+      value: 21.06
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.281048
+      value: 10.91
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.z
@@ -307,6 +315,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3843827503309287212, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843827503309287212, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4045544797236916792, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -317,15 +333,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.26
+      value: 21.15
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.281048
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.84
+      value: -6.55
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalRotation.w
@@ -465,6 +481,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3843827503309287212, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4045544797236916792, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -513,9 +533,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6328202763788303430, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7048684761774668925, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_Name
       value: TestSphere (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457943171688458598, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
@@ -680,6 +708,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3843827503309287212, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4045544797236916792, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -690,15 +722,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.26
+      value: 21.28
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.281048
+      value: 5.983
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.6237335
+      value: 18.411
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalRotation.w
@@ -731,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 7048684761774668925, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_Name
       value: TestSphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457943171688458598, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
@@ -809,29 +845,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1196708949153476410, guid: 510df09e791c00342b243f2010c1675b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204543740744879732, guid: 510df09e791c00342b243f2010c1675b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6959776743216952170, guid: 510df09e791c00342b243f2010c1675b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8936814821699704753, guid: 510df09e791c00342b243f2010c1675b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+    - target: {fileID: 275478966021569726, guid: 510df09e791c00342b243f2010c1675b, type: 3}
+      propertyPath: g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8936814821699704754, guid: 510df09e791c00342b243f2010c1675b, type: 3}
       propertyPath: m_Name
       value: Wormhole
-      objectReference: {fileID: 0}
-    - target: {fileID: 8936814821699704754, guid: 510df09e791c00342b243f2010c1675b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8936814821699704758, guid: 510df09e791c00342b243f2010c1675b, type: 3}
       propertyPath: m_RootOrder
