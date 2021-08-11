@@ -17,6 +17,7 @@ namespace RileyMcGowan
         private float waitTimerToUI = 10;
         private CustomNetworkManager mainNetworkManager;
         private List<GameObject> players;
+        private Countdown timer;
         
         //Public Vars
         public GameObject playerToSpawn;
@@ -31,13 +32,10 @@ namespace RileyMcGowan
             mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
             players = mainNetworkManager.playerPrefabs;
             mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
-            for (int i = 0; i < players.Count; i++)
-            {
-                GameObject playerPrefab = players[i];
-                GameObject spawnedCountdown = Instantiate(countdownToSpawn, playerPrefab.transform.position, quaternion.identity); //Spawn Countdown > Set Time
-                spawnedCountdown.transform.parent = playerPrefab.transform;
-                spawnedCountdown.GetComponent<Countdown>().roundTimer = 100;
-            }
+            GameObject spawnedCountdown = Instantiate(countdownToSpawn, Vector3.zero, quaternion.identity); //Spawn Countdown > Set Time
+            timer = spawnedCountdown.GetComponent<Countdown>();
+            timer.roundTimer = 100;
+            timer.RPCStartRound();
             //Subscriptions
             //TODO Subscribe to "Goal Reached" > Start "EndOfRoundTimer()"
         }
@@ -49,20 +47,11 @@ namespace RileyMcGowan
 
         private IEnumerator EndOfGame(float waitUIToMain, float waitTimerToUI)
         {
-            for (int i = 0; i < players.Count; i++)
-            {
-                players[i].GetComponentInChildren<Countdown>().roundTimer = waitTimerToUI; //Start end of game timer
-            }
+            timer.roundTimer = waitTimerToUI; //Start end of game timer
             yield return new WaitForSeconds(waitTimerToUI + 1f); //Wait for UI
-            for (int i = 0; i < players.Count; i++)
-            {
-                //TODO Show Win UI
-            }
+            //TODO Show Win UI
             yield return new WaitForSeconds(waitUIToMain); //Wait for exit to main
-            for (int i = 0; i < players.Count; i++)
-            {
-                //TODO Exit to main menu
-            }
+            //TODO Exit to main menu
         }
     }
 }

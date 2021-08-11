@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamsPulsatingFun_UsingInterfaces : MonoBehaviour, IGameModeActivatable
+public class CamsPulsatingFun_UsingInterfaces : MonoBehaviour, IGameModeInteractable
 {
 
 	public void Activate()

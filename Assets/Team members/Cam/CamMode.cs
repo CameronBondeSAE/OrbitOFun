@@ -12,7 +12,8 @@ public class CamMode : GameModeBase
 		base.Activate();
 		
 		Debug.Log("CamMode Activate");
-
 		CamsManagerWithSingleton.Instance.interestingInfo = 6;
+		
+		ActivateAllIGameModeInteractables();
 	}
 }
