@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zach;
+using Random = UnityEngine.Random;
 
 public class CamsTests : GameModeBase
 {
@@ -15,6 +18,11 @@ public class CamsTests : GameModeBase
 	public Slider slider;
 	bool          started;
 
+
+	void Start()
+	{
+		
+	}
 
 	public override void Activate()
 	{
