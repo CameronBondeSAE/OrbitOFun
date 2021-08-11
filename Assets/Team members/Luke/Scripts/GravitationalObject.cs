@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LukeBaker
 {
-    public class GravitationalObject : MonoBehaviour
+    public class GravitationalObject : CommonObject , IGameModeInteractable
     {
         //references
         private PlanetManager planetMan;
@@ -19,6 +19,7 @@ namespace LukeBaker
         private float forceMagnitude;
         private Vector3 force;
         private GameObject instance;
+        private bool isActivated;
 
         // Start is called before the first frame update
         void Start()
@@ -35,19 +36,22 @@ namespace LukeBaker
 
         public void Attract(GravitationalObject objectToAttract)
         {
-            attractedRb = objectToAttract.rb;
-
-            if (attractedRb != null)
+            if (isActivated)
             {
-                direction = transform.position - attractedRb.position;
-                distance = direction.magnitude;
+                attractedRb = objectToAttract.rb;
 
-                //newtons universal law of gravity
-                forceMagnitude = planetMan.g * (rb.mass * attractedRb.mass) / Mathf.Pow(distance, 2);
+                if (attractedRb != null)
+                {
+                    direction = transform.position - attractedRb.position;
+                    distance = direction.magnitude;
 
-                force = direction.normalized * forceMagnitude;
+                    //newtons universal law of gravity
+                    forceMagnitude = planetMan.g * (rb.mass * attractedRb.mass) / Mathf.Pow(distance, 2);
 
-                attractedRb.AddForce(force);
+                    force = direction.normalized * forceMagnitude;
+
+                    attractedRb.AddForce(force);
+                }
             }
         }
 
@@ -61,6 +65,11 @@ namespace LukeBaker
                     Attract(obj);
                 }
             }
+        }
+
+        public void Activate()
+        {
+            isActivated = true;
         }
     }
 }
