@@ -8,6 +8,8 @@ namespace Zach
 	public class GameModeBase : MonoBehaviour
 	{
 		public List<string> levels;
+		public string gameModeName;
+		public string description; 
 		public virtual void Activate()
 		{
 			Debug.Log("GameModeBase Activate");
