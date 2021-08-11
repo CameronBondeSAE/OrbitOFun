@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Rob
 {
-    public class SettingsState : MenuUIStateBase
+    public class SettingsState : StateBase
     {
         public override void Enter()
         {

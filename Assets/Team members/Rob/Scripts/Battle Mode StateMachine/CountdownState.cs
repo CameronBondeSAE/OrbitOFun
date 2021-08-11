@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rob
 {
-    public class CountdownState : BattleModeStateBase
+    public class CountdownState : StateBase
     {
         public override void Enter()
         {

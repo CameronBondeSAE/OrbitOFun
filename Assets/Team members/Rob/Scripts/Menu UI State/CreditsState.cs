@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rob
 {
-    public class CreditsState : MenuUIStateBase
+    public class CreditsState : StateBase
     {
         public override void Enter()
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rob
 {
-    public class EndGameState : BattleModeStateBase
+    public class EndGameState : StateBase
     {
         public override void Enter()
         {
