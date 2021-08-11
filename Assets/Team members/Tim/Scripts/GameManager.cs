@@ -41,12 +41,13 @@ namespace Tim
         {
             //level = "Levels/" + "";
             //loads the specified scene
-            SceneManager.LoadScene(level, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
         }
+ 
 
-		public void UnLoadLevel()
+		public void UnLoadLevel(string level)
 		{
-			SceneManager.UnloadSceneAsync("Main");
+			SceneManager.UnloadSceneAsync(level);
 		}
 
         /*public void SetGameState(GameState state)
