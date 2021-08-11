@@ -343,6 +343,30 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3964232827088507745, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964232827088507745, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964232827088507745, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964232827088507745, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964232827088507745, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Overridden
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964232827088507745, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Overridden
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3964232827172075974, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
       propertyPath: m_RootOrder
       value: 3
