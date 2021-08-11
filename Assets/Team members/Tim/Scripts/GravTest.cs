@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tim
 {
-    public class GravTest : MonoBehaviour
+    public class GravTest : CommonObject,IGameModeInteractable
     {
         public Rigidbody rigidbody;
         private Vector3 direction;
@@ -16,6 +16,7 @@ namespace Tim
         private Vector3 grav;
         private float rigidbodyMass;
         private Rigidbody otherRB;
+        public bool isActivated;
 
         private void Start()
         {
@@ -24,8 +25,10 @@ namespace Tim
 
         private void Update()
         {
-            //Gravity(null);
-            GravityRadius(transform.position, 4);
+            if (isActivated)
+            {
+                GravityRadius(transform.position, 4);
+            }
         }
 
         public void Gravity(Collider other)
@@ -67,7 +70,10 @@ namespace Tim
             
         }
         */
-        
+       public void Activate()
+       {
+           isActivated = true;
+       }
     }
 }
 
