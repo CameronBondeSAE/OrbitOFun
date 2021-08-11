@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using John;
+using Mirror;
+using Unity.Mathematics;
 using UnityEngine;
 using Zach;
+using LukeBaker;
 
 namespace RileyMcGowan
 {
@@ -10,7 +14,9 @@ namespace RileyMcGowan
         //Private Vars
         [Tooltip("This is the delay between the Win UI and Main Menu.")]
         private float timeToWait = 5;
-        private float waitTimerToUI = 5;
+        private float waitTimerToUI = 10;
+        private CustomNetworkManager mainNetworkManager;
+        private List<GameObject> players;
         
         //Public Vars
         public GameObject playerToSpawn;
@@ -22,11 +28,18 @@ namespace RileyMcGowan
         {
             base.Activate(); //Activate the mode
             //General Code
-            //Spawn Players > Network Manager
-            //Spawn Countdown > Set Time
-
+            mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
+            players = mainNetworkManager.playerPrefabs;
+            mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
+            for (int i = 0; i < players.Count; i++)
+            {
+                GameObject playerPrefab = players[i];
+                GameObject spawnedCountdown = Instantiate(countdownToSpawn, playerPrefab.transform.position, quaternion.identity); //Spawn Countdown > Set Time
+                spawnedCountdown.transform.parent = playerPrefab.transform;
+                spawnedCountdown.GetComponent<Countdown>().roundTimer = 100;
+            }
             //Subscriptions
-            //Goal Reached > Start "EndOfRoundTimer()"
+            //TODO Subscribe to "Goal Reached" > Start "EndOfRoundTimer()"
         }
 
         private void EndOfRoundTimer()
@@ -36,11 +49,20 @@ namespace RileyMcGowan
 
         private IEnumerator EndOfGame(float waitUIToMain, float waitTimerToUI)
         {
-            //Start end of game timer
+            for (int i = 0; i < players.Count; i++)
+            {
+                players[i].GetComponentInChildren<Countdown>().roundTimer = waitTimerToUI; //Start end of game timer
+            }
             yield return new WaitForSeconds(waitTimerToUI + 1f); //Wait for UI
-            //Show Win UI
+            for (int i = 0; i < players.Count; i++)
+            {
+                //TODO Show Win UI
+            }
             yield return new WaitForSeconds(waitUIToMain); //Wait for exit to main
-            //Exit to main menu
+            for (int i = 0; i < players.Count; i++)
+            {
+                //TODO Exit to main menu
+            }
         }
     }
 }
