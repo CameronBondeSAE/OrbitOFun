@@ -24,26 +24,36 @@ namespace Tim
 
         private void Update()
         {
-            //Gravity();
+            //Gravity(null);
+            GravityRadius(transform.position, 4);
         }
 
-        private void Gravity()
+        public void Gravity(Collider other)
         {
-            //var otherObj = GetComponent<>();
-            otherRB = GetComponent<Rigidbody>();
+            otherRB = other.GetComponent<Rigidbody>();
             rigidbodyMass = rigidbody.mass;
-            Vector3 otherpos = otherRB.transform.position;
+            Vector3 otherpos = other.transform.position;
             Vector3 transformpos = transform.position;
             direction = (otherpos - transformpos).normalized;
             distance = Vector3.Distance(otherpos, transformpos);
             planetGrav = g * (rigidbody.mass * otherRB.mass)/Mathf.Pow(distance,2);
-            //otherObj.GetComponent<Rigidbody>().AddForce((-direction/distance)*rigidbodyMass);
-            otherRB.AddForce((-direction/distance)*rigidbodyMass);
-            
+            //other.GetComponent<Rigidbody>().AddForce((-direction/distance)*rigidbodyMass);
+            otherRB.AddForce((-direction/distance)*planetGrav);
         }
 
+        public void GravityRadius(Vector3 center, float radius)
+        {
+            Collider[] colliders = Physics.OverlapSphere(center, radius);
+            foreach (var collider in colliders)
+            {
+                if (collider != this.gameObject.GetComponent<Collider>())
+                {
+                    Gravity(collider);
+                }
+            }
+        }
 
-        private void OnTriggerStay(Collider other)
+       /* private void OnTriggerStay(Collider other)
         {
             otherRB = other.GetComponent<Rigidbody>();
             rigidbodyMass = rigidbody.mass;
@@ -56,7 +66,7 @@ namespace Tim
             otherRB.AddForce((-direction/distance)*planetGrav);
             
         }
-        
+        */
         
     }
 }

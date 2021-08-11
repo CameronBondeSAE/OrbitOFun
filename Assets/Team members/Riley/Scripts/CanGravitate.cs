@@ -5,10 +5,11 @@ using UnityEngine;
 
 namespace RileyMcGowan
 {
-    public class CanGravitate : MonoBehaviour
+    public class CanGravitate : CommonObject, IGameModeInteractable
     {
         //Private Vars
-
+        private bool isActivated = false;
+        
         //Public Vars
         public Rigidbody rb; //Store the rigidbody to prevent constantly using get component
         public static event Action<CanGravitate> OnCanGravitate = delegate {  };
@@ -22,6 +23,11 @@ namespace RileyMcGowan
         public void OnDestroy()
         {
             OnStopGravitate(this);
+        }
+
+        public void Activate()
+        {
+            isActivated = true;
         }
     }
 }

@@ -5,9 +5,8 @@ using UnityEngine;
 
 namespace Tom
 {
-    public class BezierCurve : MonoBehaviour, IGameModeInteractable
+    public class BezierCurve : CommonObject, IGameModeInteractable
     {
-        public Transform curvingObject;
         private Vector2 curvePoint;
         [Range(0f, 1f)] public float curveTime;
         public float duration = 1f;
@@ -27,7 +26,7 @@ namespace Tom
 
         public PlayType playType;
 
-        private bool reversing = false;
+        public bool reversing = false;
 
         private void Update()
         {
@@ -73,29 +72,18 @@ namespace Tom
                     reversing = false;
                 }
             }
+        }
 
+        public Vector2 CalculateCurvePoint(float time)
+        {
             // Calculates the lerp for each control point, then lerps between those to get final curve point
-            Vector2 a = Vector2.Lerp(controlPoint1.position, controlPoint2.position, curve.Evaluate(curveTime));
-            Vector2 b = Vector2.Lerp(controlPoint2.position, controlPoint3.position, curve.Evaluate(curveTime));
-            Vector2 c = Vector2.Lerp(controlPoint3.position, controlPoint4.position, curve.Evaluate(curveTime));
-            Vector2 d = Vector2.Lerp(a, b, curve.Evaluate(curveTime));
-            Vector2 e = Vector2.Lerp(b, c, curve.Evaluate(curveTime));
+            Vector2 a = Vector2.Lerp(controlPoint1.position, controlPoint2.position, curve.Evaluate(time));
+            Vector2 b = Vector2.Lerp(controlPoint2.position, controlPoint3.position, curve.Evaluate(time));
+            Vector2 c = Vector2.Lerp(controlPoint3.position, controlPoint4.position, curve.Evaluate(time));
+            Vector2 d = Vector2.Lerp(a, b, curve.Evaluate(time));
+            Vector2 e = Vector2.Lerp(b, c, curve.Evaluate(time));
 
-            curvePoint = Vector2.Lerp(d, e, curve.Evaluate(curveTime));
-            curvingObject.position = curvePoint;
-
-            // Sets forward point in 2D to direction curve is going
-            Vector2 direction;
-            if (reversing)
-            {
-                direction = curvePoint - Vector2.Lerp(d, e, curve.Evaluate(curveTime + Time.deltaTime));
-            }
-            else
-            {
-                direction = curvePoint - Vector2.Lerp(d, e, curve.Evaluate(curveTime - Time.deltaTime));
-            }
-
-            curvingObject.right = direction;
+            return Vector2.Lerp(d, e, curve.Evaluate(time));
         }
 
         public void PlayCurve()

@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.91
+      value: 10.01
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.z
@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.15
+      value: 31.73
       objectReference: {fileID: 0}
     - target: {fileID: 5121577874147308218, guid: 28caf0303773c6d42a4cf7e4d720cd82, type: 3}
       propertyPath: m_LocalPosition.y
@@ -845,10 +845,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 275478966021569726, guid: 510df09e791c00342b243f2010c1675b, type: 3}
-      propertyPath: g
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8936814821699704754, guid: 510df09e791c00342b243f2010c1675b, type: 3}
       propertyPath: m_Name
       value: Wormhole

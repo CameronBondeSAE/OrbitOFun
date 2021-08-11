@@ -20,7 +20,6 @@ namespace RileyMcGowan
         private Countdown timer;
         
         //Public Vars
-        public GameObject playerToSpawn;
         public GameObject cameraToSpawn;
         public GameObject countdownToSpawn;
         public GameObject sceneToSpawn;
