@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874690010411394819}
   - component: {fileID: 1874690010411394818}
+  - component: {fileID: 1281231436}
   m_Layer: 0
   m_Name: BezierShip
   m_TagString: Untagged
@@ -238,8 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756c33f5af6d9c948ae977275221b61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curvingObject: {fileID: 1874690009533196877}
   curveTime: 0
+  duration: 1
   controlPoint1: {fileID: 1874690010302878071}
   controlPoint2: {fileID: 1874690011131098467}
   controlPoint3: {fileID: 1874690009845340866}
@@ -250,34 +251,39 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.47794485
-      value: 0.07621454
-      inSlope: 0.584996
-      outSlope: 0.584996
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.11665863
-    - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.03017229
-      outSlope: 0.03017229
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.13922231
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   playType: 0
+  reversing: 0
+--- !u!114 &1281231436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874690010411394817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339cf68eef5b1a48b5ffd67093c6560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curvingObject: {fileID: 1874690009533196877}
 --- !u!1 &1874690010770611291
 GameObject:
   m_ObjectHideFlags: 0
