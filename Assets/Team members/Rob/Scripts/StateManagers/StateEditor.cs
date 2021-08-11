@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Rob;
 using UnityEditor;
 using UnityEngine;
 
 namespace Rob
 {
-    [CustomEditor(typeof(MenuUIStateBase), true)]
-
-
-    public class MenuUIStateEditor : Editor
+    [CustomEditor(typeof(StateBase), true)]
+    
+    public class StateEditor : Editor
     {
         public override void OnInspectorGUI()
         {
@@ -17,17 +17,17 @@ namespace Rob
 
             if (GUILayout.Button("Force Enter"))
             {
-                ((MenuUIStateBase) target).Enter();
+                ((StateBase) target).Enter();
             }
 
             if (GUILayout.Button("Force Execute"))
             {
-                ((MenuUIStateBase) target).Execute();
+                ((StateBase) target).Execute();
             }
             
             if (GUILayout.Button("Force Exit"))
             {
-                ((MenuUIStateBase) target).Exit();
+                ((StateBase) target).Exit();
             }
             
             GUILayout.EndHorizontal();

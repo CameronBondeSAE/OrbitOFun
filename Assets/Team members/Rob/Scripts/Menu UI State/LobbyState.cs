@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Rob
 {
-    public class LobbyState : MenuUIStateBase
+    public class LobbyState : StateBase
     {
         public override void Enter()
         {

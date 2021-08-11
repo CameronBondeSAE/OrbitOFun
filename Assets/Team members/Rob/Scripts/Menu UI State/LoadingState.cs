@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rob
 {
-    public class LoadingState : MenuUIStateBase
+    public class LoadingState : StateBase
     {
         public override void Enter()
         {

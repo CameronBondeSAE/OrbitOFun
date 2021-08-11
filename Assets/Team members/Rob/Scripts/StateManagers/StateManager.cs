@@ -1,14 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Rob
-{ 
-    public class MenuUIStateManager : MonoBehaviour
+{
+    public class StateManager : MonoBehaviour
     {
-        public MenuUIStateBase currentState;
+        public StateBase currentState;
 
-        public void ChangeState(MenuUIStateBase newState)
+        public void ChangeState(StateBase newState)
         {
             if (currentState != null)
             {

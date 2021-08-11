@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BezierCurve : MonoBehaviour
+public class BezierCurve : MonoBehaviour, IGameModeInteractable 
 {
   public Transform point1;
   public Transform point2;
@@ -84,5 +84,10 @@ public class BezierCurve : MonoBehaviour
      
        curvePoint = Vector2.Lerp(pointD, pointE, time);
        Gizmos.DrawSphere(curvePoint, .3f);
+   }
+
+   public void Activate()
+   {
+       throw new NotImplementedException();
    }
 }

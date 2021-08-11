@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rob
 {
-    public class BattleModeStateBase : MonoBehaviour
+    public class StateBase : MonoBehaviour
     {
         public bool active;
 
