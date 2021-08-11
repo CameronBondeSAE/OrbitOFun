@@ -12,12 +12,12 @@ namespace LukeBaker
         
         //Variables
         private Rigidbody rb;
+        private Rigidbody attractedRb;
         private float maxDistance;
         private float distance;
         private Vector3 direction;
         private float forceMagnitude;
         private Vector3 force;
-        private Rigidbody attractedRb;
         private GameObject instance;
 
         // Start is called before the first frame update

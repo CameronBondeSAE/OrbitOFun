@@ -10,6 +10,7 @@ namespace LukeBaker
     {
         //Variables
         public List<string> playerIP;
+        public List<GameObject> playerPrefabs;
         public List<NetworkConnection> lobbiedPlayers;
 
         // TODO old override (find out the difference between OnServerConnect) 
@@ -42,6 +43,8 @@ namespace LukeBaker
                 GameObject player = startPos != null
                     ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                     : Instantiate(playerPrefab);
+                
+                playerPrefabs.Add(playerPrefab);
 
                 // instantiating a "Player" prefab gives it the name "Player(clone)"
                 // => appending the connectionId is WAY more useful for debugging!

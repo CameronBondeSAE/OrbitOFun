@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_LukesFirstPlanetShader
-  m_Shader: {fileID: -6465566751694194690, guid: 2aef82a214265484d858110edf88ca4a, type: 3}
+  m_Name: Shader Graphs_PlanetWater
+  m_Shader: {fileID: -6465566751694194690, guid: e925bd27c6eaed34d8a4069d6fd2989e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2DNormal:
+        m_Texture: {fileID: 2800000, guid: 4cdf47b984aede946baa3c3b7dfccbe1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -33,10 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Scale: 3.73
-    - maxHieght: 0.62
-    - minHieght: 0.56
-    - rotationSpeed: 0
+    - FresnalPower: 1
+    - ScrollSpeed: 0.1
+    - Smoothness: 0.71
     m_Colors:
-    - Origin: {r: 0, g: 0, b: 0, a: 0}
+    - MainColour: {r: 0, g: 0.25, b: 100, a: 0}
+    - TopColour: {r: 0, g: 0.1, b: 255, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
