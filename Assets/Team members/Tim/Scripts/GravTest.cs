@@ -14,7 +14,6 @@ namespace Tim
         public float g = 5f;
         private float planetGrav;
         private Vector3 grav;
-        private Rigidbody otherRb;
         private float rigidbodyMass;
         private Rigidbody otherRB;
 
@@ -37,9 +36,10 @@ namespace Tim
             Vector3 transformpos = transform.position;
             direction = (otherpos - transformpos).normalized;
             distance = Vector3.Distance(otherpos, transformpos);
+            planetGrav = g * (rigidbody.mass * otherRB.mass)/Mathf.Pow(distance,2);
             //otherObj.GetComponent<Rigidbody>().AddForce((-direction/distance)*rigidbodyMass);
             otherRB.AddForce((-direction/distance)*rigidbodyMass);
-            planetGrav = g * (rigidbody.mass * otherRB.mass)/Mathf.Pow(distance,2);
+            
         }
 
 
@@ -53,7 +53,7 @@ namespace Tim
             distance = Vector3.Distance(otherpos, transformpos);
             planetGrav = g * (rigidbody.mass * otherRB.mass)/Mathf.Pow(distance,2);
             //other.GetComponent<Rigidbody>().AddForce((-direction/distance)*rigidbodyMass);
-            other.GetComponent<Rigidbody>().AddForce((-direction/distance)*planetGrav);
+            otherRB.AddForce((-direction/distance)*planetGrav);
             
         }
         

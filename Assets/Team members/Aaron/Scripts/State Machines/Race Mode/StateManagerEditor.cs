@@ -10,6 +10,8 @@ namespace AaronMcDougall
     {
         public override void OnInspectorGUI()
         {
+            DrawDefaultInspector ();
+            
             if (GUILayout.Button("Change State"))
             {
                 ((StateBase)target).GetComponent<RaceModeStateManager>().ChangeState((StateBase)target);

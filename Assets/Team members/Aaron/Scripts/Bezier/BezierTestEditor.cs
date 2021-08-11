@@ -6,32 +6,16 @@ using UnityEditor;
 
 namespace AaronMcDougall
 {
-
-    [CustomEditor(typeof(BezierTest),true)]
+    [CustomEditor(typeof(BezierTest))]
     public class BezierTestEditor : Editor
     {
         public override void OnInspectorGUI()
         {
+            base.OnInspectorGUI();
             
             if (GUILayout.Button("Play movement"))
             {
-                ((BezierTest) target).t = 0f;
-                ((BezierTest) target).speed = 0.5f;
-            }
-
-            //set to loop
-            if (GUILayout.Button("Loop movement"))
-            {
-                if (((BezierTest) target).GetComponent<BezierTest>().loopMovement != true)
-                    {
-                        ((BezierTest) target).GetComponent<BezierTest>().loopMovement = true;
-                    }
-                    else
-                    {
-                        ((BezierTest) target).GetComponent<BezierTest>().loopMovement = false;
-                    }
-                
-                    Debug.Log(((BezierTest) target).GetComponent<BezierTest>().loopMovement);
+                ((BezierTest) target).PlayMovement();
             }
         }
     }

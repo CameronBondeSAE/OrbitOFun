@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using Mirror.Experimental;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -15,11 +16,25 @@ namespace AaronMcDougall
         public Transform p3;
         public Transform p4;
 
+        public Transform ship;
+        public Vector2 point;
+
         [Range(0, 1f)] public float t;
         [Range(0, 1f)] public float speed;
 
-        public bool loopMovement = false;
+        public bool movement = false;
+        public bool reverseMovement = false;
 
+        //different movement modes to select from
+        public enum PlayType
+        {
+            SinglePlay,
+            Loop,
+            PingPong
+        }
+
+        public PlayType playType;
+        
         private void Start()
         {
             speed = 0;
@@ -28,34 +43,67 @@ namespace AaronMcDougall
         // Update is called once per frame
         void Update()
         {
-            t += (Time.deltaTime * speed);
-
-            if (t == 1f)
+            if (reverseMovement && playType == PlayType.PingPong)
             {
-                if (loopMovement == true)
+                t -= Time.deltaTime * speed;
+            }
+            else if(movement)
+            {
+                speed = 0.5f;
+                t += (Time.deltaTime * speed);
+            }
+            
+            if (reverseMovement && t <= 0)
+            {
+                t = 0;
+                reverseMovement = false;
+                PlayMovement();
+            }
+            
+            if (t >= 1)
+            {
+                switch (playType)
                 {
-                    t = 0;
+                    case PlayType.SinglePlay:
+                    {
+                        t = 0;
+                        speed = 0;
+                        movement = false;
+                        break;
+                    }
+                    case PlayType.Loop:
+                    {
+                        t = 0;
+                        break;
+                    }
+                    case PlayType.PingPong:
+                    {
+                        t = 1;
+                        reverseMovement = true;
+                        break;
+                    }
                 }
             }
-
-        }
-
-        public void OnDrawGizmos()
-        {
+            
             Vector2 lerpA = Vector2.Lerp(p1.position, p2.position, t);
             Vector2 lerpB = Vector2.Lerp(p2.position, p3.position, t);
             Vector2 lerpC = Vector2.Lerp(p3.position, p4.position, t);
             Vector2 lerpD = Vector2.Lerp(lerpA, lerpB, t);
             Vector2 lerpE = Vector2.Lerp(lerpB, lerpC, t);
-            Vector2 point = Vector2.Lerp(lerpD, lerpE, t);
             
-            Gizmos.DrawSphere(Vector2.Lerp(p1.position, p2.position, t), 1f);
-            Gizmos.DrawSphere(Vector2.Lerp(p2.position, p3.position, t), 1f);
-            Gizmos.DrawSphere(Vector2.Lerp(p3.position, p4.position, t), 1f);
+            point = Vector2.Lerp(lerpD, lerpE, t);
+            ship.position = point;
 
-            Gizmos.DrawSphere(lerpD, 0.5f);
-            Gizmos.DrawSphere(lerpE, 0.5f);
+        }
+
+        public void OnDrawGizmos()
+        {
             Gizmos.DrawSphere(point, 0.1f);
+        }
+
+        public void PlayMovement()
+        {
+            movement = true;
         }
     }
 }
