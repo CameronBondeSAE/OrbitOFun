@@ -266,6 +266,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6714927060842914353, guid: a889d07dc7f17b84096db61e849e975a, type: 3}
   m_PrefabInstance: {fileID: 1185396624}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &311599066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8467212297646218474, guid: 70108bd6abb1f594aa796ebe3f85ff56, type: 3}
+  m_PrefabInstance: {fileID: 574847321}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7d029a05e84de4081b2c885b4c65ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &345042956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -668,7 +679,43 @@ PrefabInstance:
     - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
       propertyPath: roomPlayer
       value: 
-      objectReference: {fileID: 1588750985201798, guid: deae2134a1d77704b9c595efe69767dd, type: 3}
+      objectReference: {fileID: 7219284149316561051, guid: 24038d6b82e574041a0c151078a84729, type: 3}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: onlineScene
+      value: Assets/Team members/Luke/Scenes/lukesRaceLevelTest.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 3043267690285430553, guid: 24038d6b82e574041a0c151078a84729, type: 3}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: maxConnections
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: autoCreatePlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: roomPlayerPrefab
+      value: 
+      objectReference: {fileID: 7219284149316561051, guid: 24038d6b82e574041a0c151078a84729, type: 3}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: playerSpawnMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: spawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7651849004813025381, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: spawnPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1480027675339556, guid: 1f4d376d8ca693049abd1744e4c79fad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20db854407a554643bef22056555bfb8, type: 3}
 --- !u!4 &710276432 stripped
@@ -1300,6 +1347,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9066284894613560498, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 311599066}
     - target: {fileID: 9066284894613560498, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
       propertyPath: networkManager
       value: 

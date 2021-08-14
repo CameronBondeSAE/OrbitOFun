@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
@@ -8,8 +9,7 @@ namespace LukeBaker
     {
         //Variables
         public List<string> playerIP;
-        public List<GameObject> playerPrefabs;
-        public NetworkLobbyPlayer roomPlayer;
+        public List<GameObject> playablePrefabs;
         public List<NetworkConnection> lobbiedPlayers = new List<NetworkConnection>();
         
         [Tooltip("List of Room Player objects")]
@@ -18,6 +18,11 @@ namespace LukeBaker
         public int readyPlayers;
         public bool allPlayersReady;
         
+        [Header("Room")]
+        [SerializeField] private NetworkLobbyPlayer roomPlayerPrefab = null;
+
+        //event
+        public event Action PlayersReadiedEvent;
 
         // TODO old override (find out the difference between OnServerConnect) 
         // public override void OnServerAddPlayer(NetworkConnection conn)
@@ -25,29 +30,34 @@ namespace LukeBaker
         //     
         // }
 
+        private void OnServerInitialized()
+        {
+            currentPlayers = 0;
+            readyPlayers = 0;
+        }
+
         public override void OnServerConnect(NetworkConnection conn)
         {
+            //connecting the ip of client and connection to a list of lobbied players
             base.OnServerConnect(conn);
             playerIP.Add(conn.address);
             lobbiedPlayers.Add(conn);
 
-            //spawn room player
-            if (roomPlayer != null)
-            {
-                Instantiate(roomPlayer);
-                NetworkServer.AddPlayerForConnection(conn, roomPlayer.gameObject);
-                currentPlayers++;
-                roomSlots.Add(roomPlayer);
-            }
+            //instantiating a roomPlayer (non-playable state), then slotting them into a list of roomSlot that holds the base
+            NetworkLobbyPlayer roomPlayerInstance = Instantiate(roomPlayerPrefab);
+            NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
+            currentPlayers++;
+            roomSlots.Add(roomPlayerInstance);
         }
 
+        //Removal when disconnecting
         public override void OnServerDisconnect(NetworkConnection conn)
         {
             base.OnServerDisconnect(conn);
             playerIP.Remove(conn.address);
             lobbiedPlayers.Remove(conn);
             currentPlayers--;
-            roomSlots.Remove(roomPlayer);
+            roomSlots.Remove(roomPlayerPrefab);
         }
 
         //TODO to be called by gamemodes
@@ -61,7 +71,7 @@ namespace LukeBaker
                     ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                     : Instantiate(playerPrefab);
 
-                playerPrefabs.Add(playerPrefab);
+                playablePrefabs.Add(playerPrefab);
 
                 // instantiating a "Player" prefab gives it the name "Player(clone)"
                 // => appending the connectionId is WAY more useful for debugging!
@@ -72,30 +82,35 @@ namespace LukeBaker
             }
         }
 
-        public void PlayersReadied()
+        //when players have clicked the ready button
+        public void PlayersReadyStateChange()
         {
-            int CurrentPlayers = 0;
-            int ReadyPlayers = 0;
-
             foreach (NetworkLobbyPlayer player in roomSlots)
             {
                 if (player != null)
                 {
-                    CurrentPlayers++;
                     if (player.readyToBegin)
-                        ReadyPlayers++;
+                    {
+                        readyPlayers++;
+                    }
                 }
             }
+        }
 
-            //TODO to be used to enable the button to start the game
-            if (CurrentPlayers == ReadyPlayers)
+        //TODO the start button needs to be able to call this or have this check constantly???
+        public void AllPlayersReadied()
+        {
+            //TODO used to enable the button start game
+            if (currentPlayers == readyPlayers)
             {
                 allPlayersReady = true;
+                PlayersReadiedEvent?.Invoke();
             }
 
             else
             {
                 allPlayersReady = false;
+                Debug.Log("Players not ready");
             }
         }
     }

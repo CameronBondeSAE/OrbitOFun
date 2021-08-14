@@ -7,9 +7,11 @@ namespace LukeBaker
 {
     public class NetworkLobbyPlayer : NetworkBehaviour
     {
+        [SyncVar]
         public bool readyToBegin;
         public string name;
         
+        //TODO we need a button to call this
         [Command]
         public void CmdChangeReadyState(bool readyState)
         {
@@ -17,7 +19,7 @@ namespace LukeBaker
             CustomNetworkManager room = FindObjectOfType<CustomNetworkManager>();
             if (room != null)
             {
-                room.PlayersReadied();
+                room.PlayersReadyStateChange();
             }
         }
     }
