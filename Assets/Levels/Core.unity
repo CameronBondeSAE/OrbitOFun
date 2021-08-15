@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23310459, g: 0.20694813, b: 0.11621233, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CamMode
       objectReference: {fileID: 0}
+    - target: {fileID: 8964628783214909886, guid: 3731c18352ee48c4aaed2bdd7b2c38e3, type: 3}
+      propertyPath: playablePrefab
+      value: 
+      objectReference: {fileID: 7651849004813025381, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3731c18352ee48c4aaed2bdd7b2c38e3, type: 3}
 --- !u!4 &100884689 stripped
@@ -475,6 +479,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: camMode
+      value: 
+      objectReference: {fileID: 100884690}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 3043267690285430553, guid: 24038d6b82e574041a0c151078a84729, type: 3}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: autoCreatePlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: roomPlayerPrefab
+      value: 
+      objectReference: {fileID: 7219284149316561051, guid: 24038d6b82e574041a0c151078a84729, type: 3}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853971434235923950, guid: 20db854407a554643bef22056555bfb8, type: 3}
+      propertyPath: spawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7651849004813025381, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20db854407a554643bef22056555bfb8, type: 3}
 --- !u!114 &936267489 stripped

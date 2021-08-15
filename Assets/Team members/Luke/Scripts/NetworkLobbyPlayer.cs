@@ -9,6 +9,8 @@ namespace LukeBaker
     {
         [SyncVar]
         public bool readyToBegin;
+        public bool isLobbyplayer;
+        [SyncVar]
         public string name;
         
         //TODO we need a button to call this
