@@ -10,18 +10,18 @@ namespace LukeBaker
     {
         //Variables
         public List<string> playerIP;
+        //Needed for Riley's script?
         public List<GameObject> playablePrefabs;
         public List<NetworkConnection> lobbiedPlayers = new List<NetworkConnection>();
         public CamMode camMode;
-        
-        [Tooltip("List of Room Player objects")]
-        public List<NetworkLobbyPlayer> roomSlots = new List<NetworkLobbyPlayer>();
         public int currentPlayers;
         public int readyPlayers;
         public bool allPlayersReady;
 
         [Header("Room")]
         [SerializeField] private NetworkLobbyPlayer roomPlayerPrefab = null;
+        [Tooltip("List of Room Player objects")]
+        public List<NetworkLobbyPlayer> roomSlots = new List<NetworkLobbyPlayer>();
 
         //event
         public event Action PlayersReadiedEvent;
