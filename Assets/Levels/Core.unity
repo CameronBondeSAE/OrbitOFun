@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.23310459, g: 0.20694813, b: 0.11621233, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: gameModeBase
       value: 
       objectReference: {fileID: 100884690}
+    - target: {fileID: 8467212297646218474, guid: 70108bd6abb1f594aa796ebe3f85ff56, type: 3}
+      propertyPath: customNetworkManager
+      value: 
+      objectReference: {fileID: 936267489}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70108bd6abb1f594aa796ebe3f85ff56, type: 3}
 --- !u!1001 &1363545656

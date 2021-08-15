@@ -1,3 +1,4 @@
+using LukeBaker;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,9 @@ namespace Tim
         protected GameManager() {}
         private static GameManager instance = null;
         public GameModeBase gameModeBase;
+
+		public CustomNetworkManager customNetworkManager;
+		
         //public GameModeBase gameMode;
         //public event OnStateChangeHandler OnStateChange;
         //public GameState gamestate { get; private set; }
@@ -41,8 +45,9 @@ namespace Tim
         {
             //level = "Levels/" + "";
             //loads the specified scene
-            SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
-        }
+            // SceneManager.LoadSceneAsync(level);
+			customNetworkManager.ServerChangeScene(level);
+		}
  
 
 		public void UnLoadLevel(string level)
