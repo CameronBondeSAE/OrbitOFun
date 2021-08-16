@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Cams test.unity
     guid: 58c5e41c4e5bed04c89917da21561d54
+  - enabled: 1
+    path: Assets/Levels/John's Level.unity
+    guid: d4001969e4a575f4e84eb61af31e6dbf
+  - enabled: 1
+    path: Assets/Levels/Zach's Level.unity
+    guid: 293e34b38d266c5479b2fc94c365af5d
   m_configObjects: {}

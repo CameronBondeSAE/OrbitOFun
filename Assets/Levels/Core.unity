@@ -220,11 +220,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8335928879420694405, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
       propertyPath: levels.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8335928879420694405, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
       propertyPath: levels.Array.data[0]
       value: Zach's Level
+      objectReference: {fileID: 0}
+    - target: {fileID: -8335928879420694405, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
+      propertyPath: levels.Array.data[1]
+      value: John's Level
       objectReference: {fileID: 0}
     - target: {fileID: 7288519384352203901, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
       propertyPath: m_RootOrder
@@ -371,9 +375,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 454620138}
     - target: {fileID: 5778103631491060053, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778103631491060053, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 454620138}
+    - target: {fileID: 5778103631491060053, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7749526049827787642, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
       propertyPath: m_RootOrder
       value: 2

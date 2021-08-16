@@ -17,6 +17,8 @@ namespace Tim
         public GameModeBase gameModeBase;
 
 		public CustomNetworkManager customNetworkManager;
+
+        public string currentLevel;
 		
         //public GameModeBase gameMode;
         //public event OnStateChangeHandler OnStateChange;
@@ -41,12 +43,17 @@ namespace Tim
             gameModeBase.Activate();
         }
 
-        public void LoadLevel(string level)
+        public void SetLevel(string level)
+        {
+            currentLevel = level;
+        }
+
+        public void LoadLevel()
         {
             //level = "Levels/" + "";
             //loads the specified scene
             // SceneManager.LoadSceneAsync(level);
-			customNetworkManager.ServerChangeScene(level);
+			customNetworkManager.ServerChangeScene(currentLevel);
 		}
  
 

@@ -67,8 +67,7 @@ namespace John
 			{
 				GameObject go = Instantiate(levelUIPrefab, levelUIPanel);
 				go.GetComponentInChildren<TextMeshProUGUI>().text = level;
-				
-				go.GetComponentInChildren<Button>().onClick.AddListener( ()=>GameManager.LoadLevel(level) );
+				go.GetComponentInChildren<Button>().onClick.AddListener( ()=>GameManager.SetLevel(level));
 			}
 		}
 
