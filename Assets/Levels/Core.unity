@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23310459, g: 0.20694813, b: 0.11621233, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,6 +218,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1648368803}
     m_Modifications:
+    - target: {fileID: -8335928879420694405, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
+      propertyPath: levels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8335928879420694405, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
+      propertyPath: levels.Array.data[0]
+      value: Zach's Level
+      objectReference: {fileID: 0}
     - target: {fileID: 7288519384352203901, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
       propertyPath: m_RootOrder
       value: 1
