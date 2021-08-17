@@ -11,15 +11,13 @@ public class RobWindowEditor : EditorWindow
     
     bool groupEnabled;
     private bool randomSize = true;
-    public GameObject spawnSquare;
-    public GameObject spawnCircle;
-    public int numberToSpawnSquare;
-    public int numberToSpawnCircle;
+    public GameObject objectToSpawn;
+    public int numberOfObjectsToSpawn;
     public float minX;
     public float minY;
     public float maxX;
     public float maxY;
-    public Vector2 xScale;
+    public Vector2 scale;
     public bool delete = false;
     public List<GameObject> ObjDelete;
 
@@ -44,10 +42,8 @@ public class RobWindowEditor : EditorWindow
     void OnGUI()
     {
         GUILayout.Label("Base Settings", EditorStyles.boldLabel);
-        spawnCircle = (GameObject)EditorGUILayout.ObjectField("Spawn Circle", spawnCircle, typeof(GameObject), true);
-        spawnSquare = (GameObject)EditorGUILayout.ObjectField("spawn Square",spawnSquare, typeof(GameObject), true);
-        numberToSpawnSquare = EditorGUILayout.IntField("number to spawn Square", numberToSpawnSquare);
-        numberToSpawnCircle = EditorGUILayout.IntField("number to spawn Circle", numberToSpawnCircle);
+        objectToSpawn = (GameObject)EditorGUILayout.ObjectField("Object to spawn",objectToSpawn, typeof(GameObject), true);
+        numberOfObjectsToSpawn = EditorGUILayout.IntField("Number to spawn", numberOfObjectsToSpawn);
         minX = EditorGUILayout.FloatField("Position min X", minX);
         maxX = EditorGUILayout.FloatField("Position max X", maxX);
         minY = EditorGUILayout.FloatField("Position min Y", minY);
@@ -56,20 +52,20 @@ public class RobWindowEditor : EditorWindow
         //groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
         
         randomSize = EditorGUILayout.Toggle("RandomSize", randomSize);
-        xScale = EditorGUILayout.Vector2Field("X Scale", xScale);
+        scale = EditorGUILayout.Vector2Field("Scale", scale);
         
         
 
-        if (groupEnabled)
-        {
+       
+        
             if (GUILayout.Button("SPAWN"))
             {
-                for (int i = 0; i < numberToSpawnSquare; i++)
+                for (int i = 0; i < numberOfObjectsToSpawn; i++)
                 {
-                    GameObject newSquare = Instantiate(spawnSquare, new Vector3(Random.Range(minX, maxX) * 1f, Random.Range(minY, maxY), 0), Quaternion.identity);
+                    GameObject newSquare = Instantiate(objectToSpawn, new Vector3(Random.Range(minX, maxX) * 1f, Random.Range(minY, maxY), 0), Quaternion.identity);
                     if (randomSize)
                     {
-                        float randomScale = Random.Range(xScale.x,xScale.y);
+                        float randomScale = Random.Range(scale.x,scale.y);
                         
                         if (randomSize)
                         {
@@ -80,14 +76,8 @@ public class RobWindowEditor : EditorWindow
                     
 
                 }
-                for (int x = 0; x < numberToSpawnCircle; x++)
-                {
-                    GameObject newCircle = Instantiate(spawnCircle, new Vector3(Random.Range(minX, maxX) * 2f, Random.Range(minY, maxY),0), Quaternion.identity);
-                }
-                
-                
+
             }
-        }
         
         if (GUILayout.Button("DELYEET"))
         {

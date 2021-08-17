@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BezierCurve : MonoBehaviour, IGameModeInteractable 
+public class BezierCurve : CommonObject, IGameModeInteractable 
 {
   public Transform point1;
   public Transform point2;
