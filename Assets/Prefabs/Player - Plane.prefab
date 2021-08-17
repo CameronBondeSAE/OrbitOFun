@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 7262893005716157391}
   - component: {fileID: -610590361161169306}
   - component: {fileID: -4588949944891153670}
+  - component: {fileID: -7545912348094081944}
   m_Layer: 0
   m_Name: Player - Plane
   m_TagString: Untagged
@@ -387,3 +388,16 @@ MonoBehaviour:
   syncAngularVelocity: 1
   clearAngularVelocity: 0
   angularVelocitySensitivity: 0.1
+--- !u!114 &-7545912348094081944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651849004813025381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aba9fcdc0ebd8446a2f05b0ea96c8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
