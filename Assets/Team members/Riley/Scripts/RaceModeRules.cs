@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using John;
@@ -16,8 +17,9 @@ namespace RileyMcGowan
         private float timeToWait = 5;
         private float waitTimerToUI = 10;
         private CustomNetworkManager mainNetworkManager;
-        private List<GameObject> players;
         private Countdown timer;
+        private GameObject endGoal;
+        private bool isActive = false;
         
         //Public Vars
         public GameObject cameraToSpawn;
@@ -29,18 +31,30 @@ namespace RileyMcGowan
             base.Activate(); //Activate the mode
             //General Code
             mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
-            players = mainNetworkManager.playablePrefabs;
             mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
             GameObject spawnedCountdown = Instantiate(countdownToSpawn, Vector3.zero, quaternion.identity); //Spawn Countdown > Set Time
             timer = spawnedCountdown.GetComponent<Countdown>();
             timer.roundTimer = 100;
             timer.RPCStartRound();
+            isActive = true;
             //Subscriptions
-            //TODO Subscribe to "Goal Reached" > Start "EndOfRoundTimer()"
+            //endGoal = GameObject.FindGameObjectWithTag("End Goal");
         }
 
-        private void EndOfRoundTimer()
+        private void FixedUpdate()
         {
+            if (isActive == true)
+            {
+                //if(endGoal is triggered)
+                {
+                    //EndGame();
+                }
+            }
+        }
+
+        public override void EndGame()
+        {
+            base.EndGame();
             StartCoroutine(EndOfGame(timeToWait, waitTimerToUI));
         }
 

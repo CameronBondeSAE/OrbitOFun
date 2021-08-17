@@ -336,6 +336,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4589264315184438197, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
+      propertyPath: areaToAffectGravity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4589264315184438198, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
       propertyPath: m_Name
       value: GravityManager
@@ -431,6 +435,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 454620138}
+    - target: {fileID: 4200925747614281216, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5778103631491060053, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -487,6 +495,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9066284894613560498, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
+      propertyPath: menuView
+      value: 
+      objectReference: {fileID: 2138383726}
     - target: {fileID: 9066284894613560498, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
       propertyPath: GameManager
       value: 
@@ -925,4 +937,9 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 814192070812903248, guid: 3cc35f5c416079746a97047d9e96bd68, type: 3}
   m_PrefabInstance: {fileID: 1284368504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2138383726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5933873652442587496, guid: e822a0f88a09da14bb77789708fc7faa, type: 3}
+  m_PrefabInstance: {fileID: 768917135}
   m_PrefabAsset: {fileID: 0}
