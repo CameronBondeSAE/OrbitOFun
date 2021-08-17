@@ -40,7 +40,7 @@ namespace RileyMcGowan
             timer.RPCStartRound();
             isActive = true;
             //Subscriptions
-            endGoal = GameObject.FindGameObjectWithTag("End Goal"); //Find the goal of this mode
+            //endGoal = GameObject.FindGameObjectWithTag("End Goal");
         }
 
         private void FixedUpdate()
@@ -49,13 +49,14 @@ namespace RileyMcGowan
             {
                 //if(endGoal is triggered)
                 {
-                    //EndOfRoundTimer();
+                    //EndGame();
                 }
             }
         }
 
-        private void EndOfRoundTimer()
+        public override void EndGame()
         {
+            base.EndGame();
             StartCoroutine(EndOfGame(timeToWait, waitTimerToUI));
         }
 

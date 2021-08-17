@@ -24,5 +24,10 @@ namespace Zach
 				commonObject.GetComponent<IGameModeInteractable>()?.Activate();
 			}
 		}
+
+		public virtual void EndGame()
+		{
+			
+		}
 	}
 }
