@@ -84,21 +84,6 @@ namespace LukeBaker
             }
         }
 
-        //TODO when players have clicked the ready button
-        public void PlayersReadyStateChange()
-        {
-            foreach (NetworkLobbyPlayer player in roomSlots)
-            {
-                if (player != null)
-                {
-                    if (player.readyToBegin)
-                    {
-                        readyPlayers++;
-                    }
-                }
-            }
-        }
-
         public override void ServerChangeScene(string newSceneName)
         {
             if (string.IsNullOrEmpty(newSceneName))
@@ -130,6 +115,21 @@ namespace LukeBaker
 
             startPositionIndex = 0;
             startPositions.Clear();
+        }
+
+        //TODO when players have clicked the ready button
+        public void PlayersReadyStateChange()
+        {
+            foreach (NetworkLobbyPlayer player in roomSlots)
+            {
+                if (player != null)
+                {
+                    if (player.readyToBegin)
+                    {
+                        readyPlayers++;
+                    }
+                }
+            }
         }
 
         //TODO the start button needs to be able to call this or have this check constantly???

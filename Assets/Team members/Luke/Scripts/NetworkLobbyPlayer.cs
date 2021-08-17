@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
@@ -12,8 +13,8 @@ namespace LukeBaker
         public bool isLobbyplayer;
         [SyncVar]
         public string name;
-        
-        //TODO we need a button to call this
+
+        //TODO if we want a click for ready
         [Command]
         public void CmdChangeReadyState(bool readyState)
         {
