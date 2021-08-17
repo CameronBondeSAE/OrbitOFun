@@ -340,6 +340,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3964232827088507744, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3964232827088507744, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -415,6 +419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smoke VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 3964232827172075977, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 366a17d13ef400e46bd7c676415408f0, type: 3}
 --- !u!1001 &6136553155797005136
@@ -425,12 +433,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6136553156339587444, guid: c9e66d4864b056a42bd9ef529125f359, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136553156339587444, guid: c9e66d4864b056a42bd9ef529125f359, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6136553156724429928, guid: c9e66d4864b056a42bd9ef529125f359, type: 3}
       propertyPath: m_Name
       value: Snow FX
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136553156724429928, guid: c9e66d4864b056a42bd9ef529125f359, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6136553156724429929, guid: c9e66d4864b056a42bd9ef529125f359, type: 3}
       propertyPath: m_RootOrder
