@@ -21,7 +21,6 @@ public class CamsTests : GameModeBase
 
 	void Start()
 	{
-		
 	}
 
 	public override void Activate()
@@ -36,6 +35,8 @@ public class CamsTests : GameModeBase
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		GetComponent<Renderer>().material.SetFloat("Fresnel_power", Random.value);
+
 		if (!started)
 		{
 			return;
