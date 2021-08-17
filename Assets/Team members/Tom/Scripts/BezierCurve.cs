@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Tom
@@ -111,7 +112,8 @@ namespace Tom
 
         public void OnDrawGizmos()
         {
-            Gizmos.DrawSphere(curvePoint, 0.1f);
+            Handles.DrawBezier(controlPoint1.position, controlPoint4.position, controlPoint2.position,
+                controlPoint3.position, Color.white, null, 2f);
         }
     }
 }
