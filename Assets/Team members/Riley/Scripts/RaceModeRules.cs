@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using John;
@@ -18,6 +19,8 @@ namespace RileyMcGowan
         private CustomNetworkManager mainNetworkManager;
         private List<GameObject> players;
         private Countdown timer;
+        private GameObject endGoal;
+        private bool isActive = false;
         
         //Public Vars
         public GameObject cameraToSpawn;
@@ -35,8 +38,20 @@ namespace RileyMcGowan
             timer = spawnedCountdown.GetComponent<Countdown>();
             timer.roundTimer = 100;
             timer.RPCStartRound();
+            isActive = true;
             //Subscriptions
-            //TODO Subscribe to "Goal Reached" > Start "EndOfRoundTimer()"
+            endGoal = GameObject.FindGameObjectWithTag("End Goal"); //Find the goal of this mode
+        }
+
+        private void FixedUpdate()
+        {
+            if (isActive == true)
+            {
+                //if(endGoal is triggered)
+                {
+                    //EndOfRoundTimer();
+                }
+            }
         }
 
         private void EndOfRoundTimer()
