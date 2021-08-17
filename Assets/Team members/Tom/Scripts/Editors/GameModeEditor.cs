@@ -18,7 +18,7 @@ namespace Tom
 
             if (GUILayout.Button("End Game Mode"))
             {
-                //((GameModeBase) target).EndMode();
+                ((GameModeBase) target).EndGame();
             }
         }
     }
