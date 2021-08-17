@@ -48,7 +48,7 @@ namespace Tom
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, currentRotation);
         }
 
-        public Vector3 GetRotation()
+        public Vector3 GetEulerAngles()
         {
             return transform.eulerAngles;
         }

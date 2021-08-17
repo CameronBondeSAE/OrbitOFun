@@ -12,12 +12,12 @@ namespace Tom
     public class SpawnEditor : EditorWindow
     {
         public int numberToSpawn = 1;
-        public Vector2 xMinMax, yMinMax;
+        public Vector2 xMinMax = new Vector2(0f,100f), yMinMax = new Vector2(-25f,25f);
         public GameObject objectToSpawn;
         public Transform spawnParent;
 
         public bool randomScaleEnabled = false;
-        public Vector2 scaleRange;
+        public Vector2 scaleRange = new Vector2(1f,2f);
         
         public List<GameObject> spawnedObjects = new List<GameObject>();
 
