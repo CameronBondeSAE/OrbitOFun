@@ -17,7 +17,6 @@ namespace RileyMcGowan
         private float timeToWait = 5;
         private float waitTimerToUI = 10;
         private CustomNetworkManager mainNetworkManager;
-        private List<GameObject> players;
         private Countdown timer;
         private GameObject endGoal;
         private bool isActive = false;
@@ -32,7 +31,6 @@ namespace RileyMcGowan
             base.Activate(); //Activate the mode
             //General Code
             mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
-            players = mainNetworkManager.playablePrefabs;
             mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
             GameObject spawnedCountdown = Instantiate(countdownToSpawn, Vector3.zero, quaternion.identity); //Spawn Countdown > Set Time
             timer = spawnedCountdown.GetComponent<Countdown>();
