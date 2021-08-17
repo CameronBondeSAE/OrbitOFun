@@ -19,6 +19,7 @@ namespace Tim
 		public CustomNetworkManager customNetworkManager;
 
         public string currentLevel;
+        private event Action gameStartFunction;
 		
         //public GameModeBase gameMode;
         //public event OnStateChangeHandler OnStateChange;
@@ -41,6 +42,7 @@ namespace Tim
         {
             //calls the activate function of the game mode
             gameModeBase.Activate();
+            gameStartFunction.Invoke();
         }
 
         public void SetLevel(string level)
