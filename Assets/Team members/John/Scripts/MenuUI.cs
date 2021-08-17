@@ -38,11 +38,6 @@ namespace John
 				go.GetComponentInChildren<Button>().onClick.AddListener(() => SetGameManager(gameModeBase));
 			}
 			
-			foreach (string ip in networkManager.playerIP)
-			{
-				GameObject go = Instantiate(userLobbyUIPrefab, userUIPanel);
-				go.GetComponentInChildren<TextMeshProUGUI>().text = ip; // TODO replace with player names from a real lobby player
-			}
 		}
 
 		void SetGameManager(GameModeBase gameModeBase)
@@ -68,6 +63,19 @@ namespace John
 				GameObject go = Instantiate(levelUIPrefab, levelUIPanel);
 				go.GetComponentInChildren<TextMeshProUGUI>().text = level;
 				go.GetComponentInChildren<Button>().onClick.AddListener( ()=>GameManager.SetLevel(level));
+			}
+			
+			//this code works however is not being called on play due to network being disconnected at play
+			//will need to be called each time a player joins/leaves the lobby
+			//refreshes the list of player names each time the function is called
+			for (int i = networkManager.roomSlots.Count - 1; i >= 0; i--)
+			{
+				foreach (Transform child in userUIPanel.transform)
+				{
+					GameObject.Destroy(child.gameObject);
+				}
+				GameObject go = Instantiate(userLobbyUIPrefab, userUIPanel);
+				go.GetComponentInChildren<TextMeshProUGUI>().text = networkManager.roomSlots[i].name;
 			}
 		}
 
