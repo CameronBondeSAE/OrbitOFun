@@ -20,6 +20,7 @@ namespace Tim
 
         public string currentLevel;
         private event Action gameStartFunction;
+        private event Action gameEndFunction;
 		
         //public GameModeBase gameMode;
         //public event OnStateChangeHandler OnStateChange;
@@ -42,7 +43,12 @@ namespace Tim
         {
             //calls the activate function of the game mode
             gameModeBase.Activate();
-            gameStartFunction.Invoke();
+            gameStartFunction?.Invoke();
+        }
+
+        public void GameEnd()
+        {
+            gameEndFunction?.Invoke();
         }
 
         public void SetLevel(string level)
