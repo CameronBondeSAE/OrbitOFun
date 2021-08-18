@@ -6,7 +6,7 @@ using Zach;
 
 namespace Tom
 {
-    [CustomEditor(typeof(GameModeBase))]
+    [CustomEditor(typeof(GameModeBase), true)]
     public class GameModeEditor : Editor
     {
         public override void OnInspectorGUI()
