@@ -21,7 +21,10 @@ namespace Zach
             base.OnStartLocalPlayer();
 
             Debug.Log(isLocalPlayer);
+        }
 
+        public void EnableControls()
+        {
             //todo refactor to work with system wide new input system
             zachsPlayerActions = new ZachsPlayerActions();
             zachsPlayerActions.Enable();
@@ -30,6 +33,18 @@ namespace Zach
             zachsPlayerActions.GeneralMovement.Move.canceled += Movement;
             zachsPlayerActions.GeneralMovement.Rotate.started += RotateOnPerformed;
             zachsPlayerActions.GeneralMovement.Rotate.canceled += RotateOnPerformed;
+        }
+
+        public void DisableControls()
+        {
+            //todo refactor to work with system wide new input system
+            zachsPlayerActions = new ZachsPlayerActions();
+            zachsPlayerActions.Enable();
+
+            zachsPlayerActions.GeneralMovement.Move.started -= Movement;
+            zachsPlayerActions.GeneralMovement.Move.canceled -= Movement;
+            zachsPlayerActions.GeneralMovement.Rotate.started -= RotateOnPerformed;
+            zachsPlayerActions.GeneralMovement.Rotate.canceled -= RotateOnPerformed;
         }
 
         public void FixedUpdate()
