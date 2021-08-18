@@ -12,7 +12,6 @@ namespace Tom
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            DrawDefaultInspector();
             
             if (GUILayout.Button("Activate Game Mode"))
             {
