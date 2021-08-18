@@ -14,8 +14,8 @@ public class RaceModePlayer : NetworkBehaviour
 
         Debug.Log("Player islocalplayer = "+isLocalPlayer);
 
-        GetComponentInChildren<PlayerBase>().isLocalPlayerHack = isLocalPlayer;
-        GetComponentInChildren<PlayerArrow>().isLocalPlayerHack = isLocalPlayer;
+        // GetComponentInChildren<PlayerBase>().isLocalPlayerHack = isLocalPlayer;
+        // GetComponentInChildren<PlayerArrow>().isLocalPlayerHack = isLocalPlayer;
     }
 }
 

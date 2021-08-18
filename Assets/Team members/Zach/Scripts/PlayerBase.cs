@@ -14,7 +14,6 @@ namespace Zach
         public float forwardFloat;
         private ZachsPlayerActions zachsPlayerActions;
 
-        public bool isLocalPlayerHack;
 
         
         public void EnableControls()
@@ -43,7 +42,7 @@ namespace Zach
 
         public void FixedUpdate()
         {
-            if (isLocalPlayerHack)
+            if (isLocalPlayer)
             {
                 rigidBody.AddRelativeForce(Vector3.up * speed * forwardFloat);
                 rigidBody.angularVelocity = rotateVelocity;

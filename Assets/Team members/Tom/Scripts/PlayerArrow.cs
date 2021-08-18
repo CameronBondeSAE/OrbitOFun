@@ -16,7 +16,6 @@ namespace Tom
         public Vector3 rotateVelocity;
         
         private float direction; // Set this to the input axis
-        public  bool  isLocalPlayerHack;
 
         
         public override void OnStartLocalPlayer()
@@ -28,7 +27,7 @@ namespace Tom
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (isLocalPlayerHack)
+            if (isLocalPlayer)
             {
                 // if (InputSystem.GetDevice<Keyboard>().aKey.isPressed)
                 // {
