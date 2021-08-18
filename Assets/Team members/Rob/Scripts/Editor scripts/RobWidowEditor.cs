@@ -62,7 +62,9 @@ public class RobWindowEditor : EditorWindow
             {
                 for (int i = 0; i < numberOfObjectsToSpawn; i++)
                 {
-                    GameObject newSquare = Instantiate(objectToSpawn, new Vector3(Random.Range(minX, maxX) * 1f, Random.Range(minY, maxY), 0), Quaternion.identity);
+                    //GameObject newSquare = Instantiate(objectToSpawn, new Vector3(Random.Range(minX, maxX) * 1f, Random.Range(minY, maxY), 0), Quaternion.identity);
+                    GameObject newSquare = PrefabUtility.InstantiatePrefab(objectToSpawn) as GameObject;
+                    newSquare.transform.position = new Vector3(Random.Range(minX, maxX) * 1f, Random.Range(minY, maxY), 0);
                     if (randomSize)
                     {
                         float randomScale = Random.Range(scale.x,scale.y);
@@ -76,6 +78,8 @@ public class RobWindowEditor : EditorWindow
                     
 
                 }
+
+                
 
             }
         
