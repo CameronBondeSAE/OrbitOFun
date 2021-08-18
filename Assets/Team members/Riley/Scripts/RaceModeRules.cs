@@ -26,9 +26,12 @@ namespace RileyMcGowan
         public GameObject countdownToSpawn;
         public GameObject sceneToSpawn;
         
+        //Might need to add ActivateAllIGameModeInteractables so we can use common game objects
+        
         public override void Activate()
         {
             base.Activate(); //Activate the mode
+            ActivateAllIGameModeInteractables();
             //General Code
             mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
             mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager

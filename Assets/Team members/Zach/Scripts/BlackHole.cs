@@ -17,7 +17,7 @@ namespace Zach
 
         public void Update()
         {
-            xRange = Random.Range(-xLength/2f, xLength);
+            xRange = Random.Range(xLength/2f, xLength);
             yRange = Random.Range(-yHeight, yHeight);
         }
 
