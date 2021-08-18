@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8372231432771597064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134177145821869716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aba9fcdc0ebd8446a2f05b0ea96c8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 134177145821869714}
+--- !u!1001 &1444163766738987952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 69914988, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 69914988, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 69914988, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689632, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573447509429689636, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_Name
+      value: Planet Can Gravitate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6921726535312002275, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+      propertyPath: m_AssetId
+      value: 5b74940ba0224a44fb524d8d358d88d9
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1573447509429689635, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+--- !u!1 &134177145821869716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1573447509429689636, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+  m_PrefabInstance: {fileID: 1444163766738987952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &134177145821869714 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1573447509429689634, guid: 5f5365238a1c71d43be78a0524f66000, type: 3}
+  m_PrefabInstance: {fileID: 1444163766738987952}
+  m_PrefabAsset: {fileID: 0}

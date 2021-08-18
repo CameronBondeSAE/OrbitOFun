@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Luke's level.unity
     guid: 50f53083a490e424db0ee2d30e6dd616
+  - enabled: 1
+    path: Assets/Levels/Riley's Level.unity
+    guid: 446f46d86b4d10741b6e87977a438bd3
   m_configObjects: {}

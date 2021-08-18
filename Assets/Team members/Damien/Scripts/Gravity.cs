@@ -63,7 +63,16 @@ namespace Damien
                     planetPos = transform.position;
                     initialForce = Vector3.zero;
                     StartCoroutine(CheckObjectsInRadius());
+                    if (isAffectedByGravity)
+                    {
+                        if (randomizeInitalForce)
+                        {
+                            RandomGen();
+                        }
+                        rb.AddRelativeForce(initialForce);
+                    }
                     break;
+                
 
                 case false:
                     if (randomizeInitalForce)

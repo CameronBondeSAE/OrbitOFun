@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Tom
 {
@@ -16,7 +17,9 @@ namespace Tom
         public AnimationCurve curve;
 
         public event Action FinishedCurveEvent;
+        public UnityEvent FinishedCurveUnityEvent;
         public event Action ReverseFinishedCurveEvent;
+        public UnityEvent ReverseFinishedUnityEvent;
 
         public enum PlayType
         {
@@ -101,12 +104,14 @@ namespace Tom
         public void CallFinishedCurve()
         {
             FinishedCurveEvent?.Invoke();
+            FinishedCurveUnityEvent.Invoke();
             print("finished curve");
         }
 
         public void CallReverseFinishedCurve()
         {
             ReverseFinishedCurveEvent?.Invoke();
+            ReverseFinishedUnityEvent.Invoke();
             print("reverse finished curve");
         }
 
