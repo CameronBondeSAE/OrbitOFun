@@ -23,8 +23,12 @@ public class CamMode : GameModeBase
 		CustomNetworkManager customNetworkManager = FindObjectOfType<CustomNetworkManager>();
 		customNetworkManager.SpawnPlayers();
 
-		NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>().EnableControls();
-		NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>().EnableControls();
+		PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
+		// playerBase.rigidBody.isKinematic = true;
+		playerBase.EnableControls();
+		
+		PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
+		playerArrow.EnableControls();
 		
 		
 		ActivateAllIGameModeInteractables();
