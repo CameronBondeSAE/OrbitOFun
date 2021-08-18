@@ -1,3 +1,4 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace Zach
 {
-	public class GameModeBase : MonoBehaviour
+	public class GameModeBase : NetworkBehaviour
 	{
 		public List<string> levels;
 		public string gameModeName;

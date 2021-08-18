@@ -14,6 +14,7 @@ public class CamMode : GameModeBase
 
 	public CameraBase cameraPrefab;
 	
+	[Server]
 	public override void Activate()
 	{
 		base.Activate();
@@ -23,18 +24,23 @@ public class CamMode : GameModeBase
 		CustomNetworkManager customNetworkManager = FindObjectOfType<CustomNetworkManager>();
 		customNetworkManager.SpawnPlayers();
 
-		PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
-		playerBase.rigidBody.isKinematic = true;
-		// playerBase.EnableControls();
-		
-		PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
-		playerArrow.EnableControls();
-		
-		
 		ActivateAllIGameModeInteractables();
 
-		// CustomNetworkManager networkManager = (CustomNetworkManager)NetworkManager.singleton;
+		// PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
+		// playerBase.rigidBody.isKinematic = true;
+		
+		RpcEnableLocalPlayerControls();
+	}
 
+	[ClientRpc]
+	public void RpcEnableLocalPlayerControls()
+	{
+		PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
+		playerBase.EnableControls();
+		
+		// PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
+		// playerArrow.EnableControls();
+		
 		if (cameraPrefab != null)
 		{
 			CameraBase cam = Instantiate(cameraPrefab);
