@@ -32,7 +32,7 @@ public class CamMode : GameModeBase
 		RpcEnableLocalPlayerControls();
 	}
 
-	// [ClientRpc]
+	[ClientRpc]
 	public void RpcEnableLocalPlayerControls()
 	{
 		PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();

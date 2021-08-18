@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Zach
 {
-	public class GameModeBase : MonoBehaviour//NetworkBehaviour
+	public class GameModeBase : NetworkBehaviour
 	{
 		public List<string> levels;
 		public string gameModeName;
