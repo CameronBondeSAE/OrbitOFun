@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using Mirror;
+using Mirror.Examples.MultipleAdditiveScenes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace LukeBaker
 {
-    public class CustomNetworkManager : NetworkManager
+    public class CustomNetworkManager : MultiSceneNetManager
     {
         //Variables
         public List<string> playerIP;
@@ -116,6 +117,8 @@ namespace LukeBaker
             startPositionIndex = 0;
             startPositions.Clear();
         }
+        
+        
 
         //TODO when players have clicked the ready button
         public void PlayersReadyStateChange()
