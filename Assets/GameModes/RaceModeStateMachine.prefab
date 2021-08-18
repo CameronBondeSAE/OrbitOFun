@@ -110,7 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - Tom's Level
+  - Cams test
+  - Riley's Level
   gameModeName: Race to the finish
   description: First to get to the finish line
   cameraToSpawn: {fileID: 0}
