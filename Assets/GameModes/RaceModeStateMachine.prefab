@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f553492e18a72be41b5a0cebab1ffba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
+  levels:
+  - Tom's Level
   gameModeName: Race to the finish
   description: First to get to the finish line
   cameraToSpawn: {fileID: 0}
