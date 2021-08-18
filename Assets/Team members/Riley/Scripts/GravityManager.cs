@@ -23,6 +23,7 @@ namespace RileyMcGowan
         private Vector3 forceToAdd;
         private float distanceToObject;
         private Vector3 distanceToObjectCapped;
+        private float objectSize;
         
         private void Awake()
         {
@@ -47,13 +48,14 @@ namespace RileyMcGowan
         {
             foreach (Gravity gravRef in gravityMasses)
             {
+                objectSize = gravRef.renderer.bounds.size.magnitude;
                 if (gravRef.useObjectSize == false)
                 {
                     gravityArea = areaToAffectGravity;
                 }
                 else if (gravRef.useObjectSize == true)
                 {
-                    gravityArea = areaToAffectGravity + gravRef.objectSize / 5;
+                    gravityArea = areaToAffectGravity * objectSize + 5;
                 }
                 foreach (CanGravitate influencedRef in influencedMasses)
                 {

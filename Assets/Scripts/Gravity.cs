@@ -14,9 +14,8 @@ namespace RileyMcGowan
         [Tooltip("Use size to change radius?")]
         public bool useObjectSize = true;
         [Tooltip("This will be set automatically")]
-        public float objectSize;
-        [Tooltip("This will be set automatically")]
         public Rigidbody rb;
+        public Renderer renderer;
         public static event Action<Gravity> OnGravityMass = delegate {  };
         public static event Action<Gravity> OnStopGravityMass = delegate {  };
         
@@ -24,9 +23,8 @@ namespace RileyMcGowan
         {
             if (GetComponent<Renderer>() != null)
             {
-                objectSize = GetComponent<Renderer>().bounds.size.magnitude;
+                renderer = GetComponent<Renderer>();
             }
-
             if (GetComponent<Rigidbody>() != null)
             {
                 rb = GetComponent<Rigidbody>();
