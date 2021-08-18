@@ -90,7 +90,6 @@ MonoBehaviour:
   speed: 3
   maxSpeed: 5
   forwardFloat: 0
-  isLocalPlayerHack: 0
 --- !u!114 &5136390513191577560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +107,6 @@ MonoBehaviour:
   rotationSpeed: 180
   rotationLimit: 45
   rotateVelocity: {x: 0, y: 0, z: 0}
-  isLocalPlayerHack: 0
 --- !u!114 &9115517353939953363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +179,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 8
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!1001 &5861720390569983522
 PrefabInstance:
