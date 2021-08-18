@@ -14,7 +14,7 @@ public class CamMode : GameModeBase
 
 	public CameraBase cameraPrefab;
 	
-	[Server]
+	// [Server]
 	public override void Activate()
 	{
 		base.Activate();
@@ -38,8 +38,9 @@ public class CamMode : GameModeBase
 		PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
 		playerBase.EnableControls();
 		
-		// PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
+		PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
 		// playerArrow.EnableControls();
+		playerArrow.enabled = false;
 		
 		if (cameraPrefab != null)
 		{
