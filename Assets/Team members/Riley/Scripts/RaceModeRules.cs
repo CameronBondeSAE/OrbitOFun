@@ -20,7 +20,7 @@ namespace RileyMcGowan
         private Countdown timer;
         private GameObject endGoal;
         private bool isActive = false;
-        
+
         //Public Vars
         public GameObject cameraToSpawn;
         public GameObject countdownToSpawn;
@@ -32,24 +32,20 @@ namespace RileyMcGowan
             //General Code
             mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
             mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
+            foreach (GameObject playerGO in mainNetworkManager.playablePrefabs) //HACK - NEEDS TO BE DIFFERENT BUT I DON'T KNOW HOW
+            {
+                Vector3 cameraVector = new Vector3(playerGO.transform.position.x, playerGO.transform.position.y, playerGO.transform.position.z + 5);
+                GameObject cameraSpawned = Instantiate(cameraToSpawn, cameraVector, quaternion.identity);
+                cameraSpawned.transform.parent = playerGO.transform;
+            }
             GameObject spawnedCountdown = Instantiate(countdownToSpawn, Vector3.zero, quaternion.identity); //Spawn Countdown > Set Time
             timer = spawnedCountdown.GetComponent<Countdown>();
             timer.roundTimer = 100;
             timer.RPCStartRound();
             isActive = true;
             //Subscriptions
-            //endGoal = GameObject.FindGameObjectWithTag("End Goal");
-        }
-
-        private void FixedUpdate()
-        {
-            if (isActive == true)
-            {
-                //if(endGoal is triggered)
-                {
-                    //EndGame();
-                }
-            }
+            EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
+            endTrigger.GoalReached += EndGame;
         }
 
         public override void EndGame()
