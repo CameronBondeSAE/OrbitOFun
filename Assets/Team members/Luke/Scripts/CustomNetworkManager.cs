@@ -25,15 +25,6 @@ namespace LukeBaker
         [Tooltip("List of Room Player objects")]
         public List<NetworkLobbyPlayer> roomSlots = new List<NetworkLobbyPlayer>();
 
-        //event
-        public event Action PlayersReadiedEvent;
-
-        // TODO old override (find out the difference between OnServerConnect) 
-        // public override void OnServerAddPlayer(NetworkConnection conn)
-        // {
-        //     
-        // }
-
         private void OnServerInitialized()
         {
             currentPlayers = 0;
@@ -118,52 +109,5 @@ namespace LukeBaker
             startPositionIndex = 0;
             startPositions.Clear();
         }
-        
-        
-
-        //TODO when players have clicked the ready button
-        public void PlayersReadyStateChange()
-        {
-            foreach (NetworkLobbyPlayer player in roomSlots)
-            {
-                if (player != null)
-                {
-                    if (player.readyToBegin)
-                    {
-                        readyPlayers++;
-                    }
-                }
-            }
-        }
-
-        //TODO the start button needs to be able to call this or have this check constantly???
-        public void AllPlayersReadied()
-        {
-            //TODO used to enable the button start game
-            if (currentPlayers == readyPlayers)
-            {
-                allPlayersReady = true;
-                PlayersReadiedEvent?.Invoke();
-            }
-
-            else
-            {
-                allPlayersReady = false;
-                Debug.Log("Players not ready");
-            }
-        }
-
-        // public void ReturnToLobby(NetworkConnection conn)
-        // {
-        //     if ()
-        //     {
-        //         NetworkServer.ReplacePlayerForConnection()
-        //     }
-        //     else
-        //     {
-        //             
-        //     }
-        // }
-        // }
     }
 }

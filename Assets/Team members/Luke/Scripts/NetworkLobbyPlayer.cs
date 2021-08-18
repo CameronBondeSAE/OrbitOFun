@@ -13,17 +13,5 @@ namespace LukeBaker
         public bool isLobbyplayer;
         [SyncVar]
         public string name;
-
-        //TODO if we want a click for ready
-        [Command]
-        public void CmdChangeReadyState(bool readyState)
-        {
-            readyToBegin = readyState;
-            CustomNetworkManager room = FindObjectOfType<CustomNetworkManager>();
-            if (room != null)
-            {
-                room.PlayersReadyStateChange();
-            }
-        }
     }
 }
