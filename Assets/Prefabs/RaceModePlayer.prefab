@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6277204244378230703}
   - component: {fileID: 6110177382736990975}
+  - component: {fileID: 8098839452297747471}
   m_Layer: 0
   m_Name: RaceModePlayer
   m_TagString: Untagged
@@ -50,6 +51,20 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 4a5e73d95724a7648af41eb44bf3f51f
   hasSpawned: 0
+--- !u!114 &8098839452297747471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937240167682955872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78457f7702365dc499c7b5e8c0dd0a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!114 &3286568452162977342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6277204244378230703}
     m_Modifications:
+    - target: {fileID: 3028750290482120022, guid: 5ba4e500b2564834e874cd64b4fbddb2, type: 3}
+      propertyPath: m_AssetId
+      value: 4a5e73d95724a7648af41eb44bf3f51f
+      objectReference: {fileID: 0}
     - target: {fileID: 7217746322073023615, guid: 5ba4e500b2564834e874cd64b4fbddb2, type: 3}
       propertyPath: m_Name
       value: Player Arrow
@@ -207,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 7024213045110823647, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262893005716157389, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
+      propertyPath: m_Constraints
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7262893005716157391, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
       propertyPath: sceneId

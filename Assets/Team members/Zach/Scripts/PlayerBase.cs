@@ -14,15 +14,9 @@ namespace Zach
         public float forwardFloat;
         private ZachsPlayerActions zachsPlayerActions;
 
+        public bool isLocalPlayerHack;
+
         
-        // Start is called before the first frame update
-        public override void OnStartLocalPlayer()
-        {
-            base.OnStartLocalPlayer();
-
-            Debug.Log(isLocalPlayer);
-        }
-
         public void EnableControls()
         {
             //todo refactor to work with system wide new input system
@@ -49,7 +43,7 @@ namespace Zach
 
         public void FixedUpdate()
         {
-            if (isLocalPlayer)
+            if (isLocalPlayerHack)
             {
                 rigidBody.AddRelativeForce(Vector3.up * speed * forwardFloat);
                 rigidBody.angularVelocity = rotateVelocity;

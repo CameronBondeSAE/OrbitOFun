@@ -16,6 +16,7 @@ namespace Tom
         public Vector3 rotateVelocity;
         
         private float direction; // Set this to the input axis
+        public  bool  isLocalPlayerHack;
 
         
         public override void OnStartLocalPlayer()
@@ -25,24 +26,23 @@ namespace Tom
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            if (isClient)
+            if (isLocalPlayerHack)
             {
-                if (InputSystem.GetDevice<Keyboard>().aKey.isPressed)
-                {
-                    transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
-                }
-
-                if (InputSystem.GetDevice<Keyboard>().dKey.isPressed)
-                {
-                    transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
-                }
-
-
+                // if (InputSystem.GetDevice<Keyboard>().aKey.isPressed)
+                // {
+                //     transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+                // }
+                //
+                // if (InputSystem.GetDevice<Keyboard>().dKey.isPressed)
+                // {
+                //     transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
+                // }
+                
                 // Replace above with this function when using new Input System
                 // Set direction to axis input
-                //transform.Rotate(Vector3.forward * rotationSpeed * direction * Time.deltaTime);
+                transform.Rotate(Vector3.forward * rotationSpeed * direction * Time.deltaTime);
 
                 float currentRotation = transform.eulerAngles.z;
                 // HACK
@@ -80,7 +80,8 @@ namespace Tom
         }
         private void RotateOnPerformed(InputAction.CallbackContext obj)
         {
-            rotateVelocity = new Vector3(0, 0, -15 * obj.ReadValue<float>());
+            direction = obj.ReadValue<float>();
+            // rotateVelocity = new Vector3(0, 0, -15 * obj.ReadValue<float>());
         }
 
         public Vector3 GetEulerAngles()
