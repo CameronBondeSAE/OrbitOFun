@@ -51,7 +51,7 @@ namespace Tom
                         Vector3 spawnPosition = new Vector3(Random.Range(xMinMax.x, xMinMax.y),
                             Random.Range(yMinMax.x, yMinMax.y), 0);
 
-                        GameObject newObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+                        GameObject newObject = PrefabUtility.InstantiatePrefab(objectToSpawn) as GameObject;
 
                         if (spawnParent != null)
                         {

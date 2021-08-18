@@ -16,6 +16,7 @@ namespace RileyMcGowan
         public float areaToAffectGravity;
         
         // Gravity Stuff
+        private float gravityArea;
         private float gravityMass;
         private Vector3 directionToObject;
         private float lawOfGravity;
@@ -46,13 +47,21 @@ namespace RileyMcGowan
         {
             foreach (Gravity gravRef in gravityMasses)
             {
+                if (gravRef.useObjectSize == false)
+                {
+                    gravityArea = areaToAffectGravity;
+                }
+                else if (gravRef.useObjectSize == true)
+                {
+                    gravityArea = areaToAffectGravity + gravRef.objectSize / 5;
+                }
                 foreach (CanGravitate influencedRef in influencedMasses)
                 {
                     Rigidbody gravRB = gravRef.rb;
                     Rigidbody influencedRB = influencedRef.rb;
                     directionToObject = gravRB.position - influencedRB.position; //Take the position difference to find the direction
                     distanceToObject = directionToObject.magnitude;
-                    if (distanceToObject < areaToAffectGravity && gravRef.gameObject != influencedRef.gameObject)
+                    if (distanceToObject < gravityArea && gravRef.gameObject != influencedRef.gameObject)
                     {
                         gravityMass = gravRB.mass * influencedRB.mass; //Total Mass
                         distanceToObjectCapped = directionToObject.normalized;
@@ -63,7 +72,7 @@ namespace RileyMcGowan
                 }
             }
         }
-
+        
         private void AddToInfluencedMasses(CanGravitate objectToAdd)
         {
             influencedMasses.Add(objectToAdd);
