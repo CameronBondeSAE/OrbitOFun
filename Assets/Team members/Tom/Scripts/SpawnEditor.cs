@@ -52,6 +52,7 @@ namespace Tom
                             Random.Range(yMinMax.x, yMinMax.y), 0);
 
                         GameObject newObject = PrefabUtility.InstantiatePrefab(objectToSpawn) as GameObject;
+                        newObject.transform.position = spawnPosition;
 
                         if (spawnParent != null)
                         {
