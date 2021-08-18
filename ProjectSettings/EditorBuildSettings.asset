@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Riley's Level.unity
     guid: 446f46d86b4d10741b6e87977a438bd3
+  - enabled: 1
+    path: Assets/Levels/Tim's Level.unity
+    guid: 5b6d75641c07eed4d897ec226c008aaa
   m_configObjects: {}
