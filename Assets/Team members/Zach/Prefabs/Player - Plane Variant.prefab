@@ -1,23 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5277518465600518670
-MonoBehaviour:
+--- !u!65 &1280046260
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2556039148692538284}
+  m_GameObject: {fileID: 5574956412223209142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b7025a8278ceb499f9658d1b0735d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 3279410551727353860}
-  direction: {x: 0, y: 0, z: 0}
-  gravityForce: {x: 0, y: 0, z: 0}
-  distance: 0
-  maxDistance: 0
---- !u!1001 &5280527947596366793
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.963747, z: 1}
+  m_Center: {x: 0, y: 0.004025936, z: 0}
+--- !u!1001 &2841469485076397779
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -30,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7024213045110823647, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.81807
+      value: 34.9
       objectReference: {fileID: 0}
     - target: {fileID: 7024213045110823647, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9043097
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 7024213045110823647, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
       propertyPath: m_LocalPosition.z
@@ -74,21 +70,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7262893005716157391, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
       propertyPath: m_AssetId
-      value: 51a8320eab8758d4ca287c1500552736
+      value: 31551ac16de012049b57f7c8af00b1c7
       objectReference: {fileID: 0}
     - target: {fileID: 7651849004813025381, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
       propertyPath: m_Name
-      value: Player - Plane (2) Variant
+      value: Player - Plane Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
---- !u!1 &2556039148692538284 stripped
+--- !u!1 &5574956412223209142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7651849004813025381, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
-  m_PrefabInstance: {fileID: 5280527947596366793}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &3279410551727353860 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 7262893005716157389, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
-  m_PrefabInstance: {fileID: 5280527947596366793}
+  m_PrefabInstance: {fileID: 2841469485076397779}
   m_PrefabAsset: {fileID: 0}
