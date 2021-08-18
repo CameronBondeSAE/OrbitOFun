@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using Mirror;
+using Mirror.Examples.Additive;
 using Mirror.Examples.MultipleAdditiveScenes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace LukeBaker
 {
-    public class CustomNetworkManager : MultiSceneNetManager
+    public class CustomNetworkManager : NetworkManager
     {
         //Variables
         public List<string> playerIP;
@@ -111,7 +112,7 @@ namespace LukeBaker
             if (NetworkServer.active)
             {
                 // notify all clients about the new scene
-                NetworkServer.SendToAll(new SceneMessage { sceneName = newSceneName });
+                NetworkServer.SendToAll(new SceneMessage { sceneName = newSceneName, sceneOperation = SceneOperation.LoadAdditive});
             }
 
             startPositionIndex = 0;
