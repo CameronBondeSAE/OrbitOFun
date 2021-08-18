@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408542409350615452}
   - component: {fileID: 5846771508618423092}
+  - component: {fileID: 7462455548400018072}
   m_Layer: 0
   m_Name: Black Hole
   m_TagString: Untagged
@@ -44,9 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7d33dad7126fa40924915d3ad7a018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gizmosSize: {x: 0, y: 0, z: 0}
-  xLength: 0
-  yHeight: 0
+  gizmosSize: {x: 60.8, y: 27.4, z: 0}
+  xLength: 60.8
+  yHeight: 27.4
+--- !u!135 &7462455548400018072
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408542409350615457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8669438323648133195
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +72,6 @@ GameObject:
   - component: {fileID: 7395242233423182367}
   - component: {fileID: 6291086688497742464}
   - component: {fileID: 1746066139158344637}
-  - component: {fileID: 3370014796152473968}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -130,16 +143,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3370014796152473968
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8669438323648133195}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

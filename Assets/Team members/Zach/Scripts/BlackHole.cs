@@ -11,10 +11,19 @@ namespace Zach
         public Vector3 gizmosSize;
         public float xLength;
         public float yHeight;
-        
-        private void OnCollisionEnter(Collision other)
+        public float xRange;
+        public float yRange;
+
+
+        public void Update()
         {
-            other.transform.position = new Vector3(Random.Range(-xLength/2f, xLength/2f), Random.Range(-yHeight/2f, yHeight/2f), 0);
+            xRange = Random.Range(-xLength/2f, xLength);
+            yRange = Random.Range(-yHeight, yHeight);
+        }
+
+        public void OnCollisionEnter(Collision other)
+        {
+            other.transform.position = new Vector3(xRange, yRange, 0);
         }
 
         private void OnDrawGizmos()
