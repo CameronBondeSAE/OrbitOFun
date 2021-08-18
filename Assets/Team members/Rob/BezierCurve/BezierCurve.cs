@@ -10,7 +10,7 @@ namespace Rob
 
 
 
-    public class BezierCurve : MonoBehaviour //CommonObject, IGameModeInteractable
+    public class BezierCurve : CommonObject, IGameModeInteractable
     {
         public Transform point1;
         public Transform point2;
