@@ -1,4 +1,5 @@
 using LukeBaker;
+using Mirror;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,7 +11,7 @@ namespace Tim
 
     //public delegate void OnStateChangeHandler();
     
-    public class GameManager : MonoBehaviour
+    public class GameManager : NetworkBehaviour
     {
         protected GameManager() {}
         private static GameManager instance = null;
@@ -43,9 +44,19 @@ namespace Tim
         {
             //calls the activate function of the game mode
             gameModeBase.Activate();
+            
+            RpcGameStart();
+        }
+
+        [ClientRpc]
+        public void RpcGameStart()
+        {
             gameStartEvent?.Invoke();
         }
 
+        
+        
+        
         public void GameEnd()
         {
             gameEndEvent?.Invoke();
