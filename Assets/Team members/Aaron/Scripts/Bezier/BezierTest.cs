@@ -33,23 +33,19 @@ namespace AaronMcDougall
             PingPong
         }
 
+        //to be totally honest I took inspiration for this from Tom
         public PlayType playType;
-        
-        private void Start()
-        {
-            speed = 0;
-        }
 
-        // Update is called once per frame
+
         void Update()
         {
+            //determines movement mode, plays animation accordingly
             if (reverseMovement && playType == PlayType.PingPong)
             {
                 t -= Time.deltaTime * speed;
             }
             else if(movement)
             {
-                speed = 0.5f;
                 t += (Time.deltaTime * speed);
             }
             
@@ -85,6 +81,7 @@ namespace AaronMcDougall
                 }
             }
             
+            //setting lerps
             Vector2 lerpA = Vector2.Lerp(p1.position, p2.position, t);
             Vector2 lerpB = Vector2.Lerp(p2.position, p3.position, t);
             Vector2 lerpC = Vector2.Lerp(p3.position, p4.position, t);
