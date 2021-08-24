@@ -7,6 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Zach;
 using LukeBaker;
+using UnityEngine.SceneManagement;
 
 namespace RileyMcGowan
 {
@@ -37,8 +38,9 @@ namespace RileyMcGowan
             mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
             foreach (GameObject playerGO in mainNetworkManager.playablePrefabs) //HACK - NEEDS TO BE DIFFERENT BUT I DON'T KNOW HOW
             {
-                Vector3 cameraVector = new Vector3(playerGO.transform.position.x, playerGO.transform.position.y, playerGO.transform.position.z + 5);
+                Vector3 cameraVector = new Vector3(playerGO.transform.position.x, playerGO.transform.position.y, playerGO.transform.position.z + 10);
                 GameObject cameraSpawned = Instantiate(cameraToSpawn, cameraVector, quaternion.identity);
+                SceneManager.MoveGameObjectToScene(cameraSpawned, SceneManager.GetSceneAt(1));
                 cameraSpawned.transform.parent = playerGO.transform;
             }
             GameObject spawnedCountdown = Instantiate(countdownToSpawn, Vector3.zero, quaternion.identity); //Spawn Countdown > Set Time
