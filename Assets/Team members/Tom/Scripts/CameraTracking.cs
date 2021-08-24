@@ -29,6 +29,14 @@ namespace Tom
             }
         }
 
+        private void Start()
+        {
+            if (hasRigidbody)
+            {
+                rb = player.GetComponent<Rigidbody>();
+            }
+        }
+
         private void LateUpdate()
         {
             if (hasRigidbody)
