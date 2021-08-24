@@ -17,5 +17,9 @@ public class EndTrigger : MonoBehaviour
                 TriggerEnterEvent?.Invoke();
             }
         }
+        else
+        {
+            TriggerEnterEvent?.Invoke();
+        }
     }
 }
