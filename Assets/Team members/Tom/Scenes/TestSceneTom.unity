@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &87300271
 AudioListener:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &418046784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -704,6 +704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tom Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 2747312625153652200, guid: cd274d135ada5564aace6ffb92f24175, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2747312625153652201, guid: cd274d135ada5564aace6ffb92f24175, type: 3}
       propertyPath: player
       value: 
@@ -874,13 +878,17 @@ PrefabInstance:
       propertyPath: sceneId
       value: 2563762596
       objectReference: {fileID: 0}
+    - target: {fileID: 3028750290482120022, guid: 5ba4e500b2564834e874cd64b4fbddb2, type: 3}
+      propertyPath: sceneId
+      value: 3351927737
+      objectReference: {fileID: 0}
     - target: {fileID: 7217746322073023615, guid: 5ba4e500b2564834e874cd64b4fbddb2, type: 3}
       propertyPath: m_Name
       value: Player Arrow
       objectReference: {fileID: 0}
     - target: {fileID: 7217746322073023615, guid: 5ba4e500b2564834e874cd64b4fbddb2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7217746322073024385, guid: 5ba4e500b2564834e874cd64b4fbddb2, type: 3}
       propertyPath: m_RootOrder
