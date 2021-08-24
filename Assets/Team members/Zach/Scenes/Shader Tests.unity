@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 60524456}
   - component: {fileID: 60524455}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: Attempted Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 840067391}
   - component: {fileID: 840067390}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Atmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 1574629765}
   - component: {fileID: 1574629764}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: Animated Normals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 1590828792}
   - component: {fileID: 1590828791}
   m_Layer: 0
-  m_Name: Supernova
+  m_Name: Supernova - Was meant to explode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 1727310970}
   - component: {fileID: 1727310969}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Was meant to be a planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -973,3 +973,60 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1001 &1137662240322783948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477509, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137662240257477513, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
+      propertyPath: m_Name
+      value: Planet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23e2e91083151c84a95bc184e96ffddf, type: 3}
