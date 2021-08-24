@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using AaronMcDougall;
 using Mirror;
-using Tom;
 using UnityEngine;
 
 namespace Rob
@@ -12,7 +10,6 @@ namespace Rob
         public GameObject endGameUI;
         private GameObject spawnedUI;
         public float showUITime = 10f;
-        private float timer;
         
         public override void Enter()
         {
@@ -20,7 +17,7 @@ namespace Rob
             Debug.Log("Avengers Entered the EndGame");
             
             SpawnEndGameUI();
-            SetUITime();
+            StartCoroutine(ShowUICountdown());
         }
 
         public override void Execute()
@@ -28,8 +25,7 @@ namespace Rob
             base.Execute();
             Debug.Log("Doin' EndGame");
             //show end game view, scoreboard etc etc
-
-            CountUITimer();
+            
         }
 
         public override void Exit()
@@ -49,25 +45,13 @@ namespace Rob
 
         public void DestroyUI()
         {
-            Destroy(spawnedUI);
+            Destroy(spawnedUI.gameObject);
         }
 
-        public void SetUITime()
+        public IEnumerator ShowUICountdown()
         {
-            timer = showUITime;
-        }
-
-        public void CountUITimer()
-        {
-            if (timer > 0)
-            {
-                timer -= Time.deltaTime;
-            }
-
-            if (timer <= 0)
-            {
-                GetComponent<RaceModeStateManager>().ChangeState(GetComponent<PreTimerState>());
-            }
+            yield return new WaitForSeconds(showUITime);
+            GetComponent<StateManager>().ChangeState(GetComponent<GetReadyState>());
         }
     }
 }

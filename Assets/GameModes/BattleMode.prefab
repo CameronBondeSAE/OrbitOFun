@@ -103,6 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  endGameUI: {fileID: 1725008755748294725, guid: aaaa9c0e5506d1e448faef6597c18287, type: 3}
+  showUITime: 10
 --- !u!114 &804938959220737370
 MonoBehaviour:
   m_ObjectHideFlags: 0
