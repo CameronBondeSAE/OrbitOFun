@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5846771508618423092}
   - component: {fileID: 7462455548400018072}
   - component: {fileID: 4491424309113203754}
+  - component: {fileID: 836494867}
   m_Layer: 0
   m_Name: Black Hole
   m_TagString: Untagged
@@ -46,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7d33dad7126fa40924915d3ad7a018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gizmosSize: {x: 60.8, y: 27.4, z: 0}
-  xLength: 60.8
-  yHeight: 27.4
+  gizmosSize: {x: 34.3, y: 18.5, z: 0}
+  xLength: 34.3
+  yHeight: 18.5
   xRange: 0
   yRange: 0
 --- !u!135 &7462455548400018072
@@ -80,6 +81,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &836494867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408542409350615457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70fd14e7fc5dfe54abd3cb12fb22833a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useObjectSize: 0
+  rb: {fileID: 0}
+  renderer: {fileID: 1746066139158344637}
 --- !u!1 &8669438323648133195
 GameObject:
   m_ObjectHideFlags: 0
