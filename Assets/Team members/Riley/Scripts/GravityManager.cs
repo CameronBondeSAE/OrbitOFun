@@ -48,7 +48,10 @@ namespace RileyMcGowan
         {
             foreach (Gravity gravRef in gravityMasses)
             {
-                objectSize = gravRef.renderer.bounds.size.magnitude;
+                if (gravRef.renderer != null)
+                {
+                    objectSize = gravRef.renderer.bounds.size.magnitude;
+                }
                 if (gravRef.useObjectSize == false)
                 {
                     gravityArea = areaToAffectGravity;
