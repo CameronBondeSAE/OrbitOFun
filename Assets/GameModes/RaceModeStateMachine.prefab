@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5246294d949f3ca469087640a4a15c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endGameUIPrefab: {fileID: 1725008755748294725, guid: aaaa9c0e5506d1e448faef6597c18287, type: 3}
+  showUITime: 10
 --- !u!114 &7815748015566797854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,5 +120,4 @@ MonoBehaviour:
   gameModeName: Race to the finish
   description: First to get to the finish line
   cameraToSpawn: {fileID: 0}
-  countdownToSpawn: {fileID: 0}
   sceneToSpawn: {fileID: 0}

@@ -455,6 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725008755748294726}
   - component: {fileID: 1725008755748294727}
+  - component: {fileID: 6014387252686937536}
   m_Layer: 0
   m_Name: End Game UI
   m_TagString: Untagged
@@ -490,3 +491,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winnerName: {fileID: 1725008755561667749}
+--- !u!114 &6014387252686937536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725008755748294725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: aaaa9c0e5506d1e448faef6597c18287
+  hasSpawned: 0
