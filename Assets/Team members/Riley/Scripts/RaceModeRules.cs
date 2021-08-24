@@ -24,7 +24,6 @@ namespace RileyMcGowan
 
         //Public Vars
         public GameObject cameraToSpawn;
-        public GameObject countdownToSpawn;
         public GameObject sceneToSpawn;
         
         //Might need to add ActivateAllIGameModeInteractables so we can use common game objects
@@ -34,22 +33,20 @@ namespace RileyMcGowan
             base.Activate(); //Activate the mode
             ActivateAllIGameModeInteractables();
             //General Code
-            mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
-            mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
-            foreach (GameObject playerGO in mainNetworkManager.playablePrefabs) //HACK - NEEDS TO BE DIFFERENT BUT I DON'T KNOW HOW
+            if (mainNetworkManager == null)
+            {
+                mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
+                mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
+            }
+            foreach (GameObject playerGO in mainNetworkManager.playablePrefabs)
             {
                 Vector3 cameraVector = new Vector3(playerGO.transform.position.x, playerGO.transform.position.y, playerGO.transform.position.z - 10);
                 GameObject cameraSpawned = Instantiate(cameraToSpawn, cameraVector, quaternion.identity);
                 cameraSpawned.transform.parent = playerGO.transform;
             }
-            GameObject spawnedCountdown = Instantiate(countdownToSpawn, Vector3.zero, quaternion.identity); //Spawn Countdown > Set Time
-            timer = spawnedCountdown.GetComponent<Countdown>();
-            timer.roundTimer = 100;
-            timer.RPCStartRound();
             isActive = true;
             //Subscriptions
-            EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
-            endTrigger.GoalReached += EndGame;
+            FindObjectOfType<EndTrigger>().TriggerEnterEvent += EndGame;
         }
 
         public override void EndGame()
@@ -60,11 +57,20 @@ namespace RileyMcGowan
 
         private IEnumerator EndOfGame(float waitUIToMain, float waitTimerToUI)
         {
-            timer.roundTimer = waitTimerToUI; //Start end of game timer
             yield return new WaitForSeconds(waitTimerToUI + 1f); //Wait for UI
             //TODO Show Win UI
             yield return new WaitForSeconds(waitUIToMain); //Wait for exit to main
             //TODO Exit to main menu
         }
+        
+        ///Pulled Content
+        /*
+        timer.roundTimer = waitTimerToUI; //Start end of game timer
+        GameObject spawnedCountdown = Instantiate(countdownToSpawn, Vector3.zero, quaternion.identity); //Spawn Countdown > Set Time
+        timer = spawnedCountdown.GetComponent<Countdown>();
+        timer.roundTimer = 100;
+        timer.RPCStartRound();
+        public GameObject countdownToSpawn;
+        */
     }
 }
