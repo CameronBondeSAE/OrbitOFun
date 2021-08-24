@@ -46,7 +46,11 @@ namespace RileyMcGowan
             }
             isActive = true;
             //Subscriptions
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent += EndGame;
+            //if ()
+            {
+                EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
+                endTrigger.TriggerEnterEvent += EndGame;
+            }
         }
 
         public override void EndGame()
