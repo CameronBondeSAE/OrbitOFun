@@ -474,6 +474,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Hole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1266337761765312746, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846771508618423092, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
+      propertyPath: xLength
+      value: 34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846771508618423092, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
+      propertyPath: yHeight
+      value: 27.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846771508618423092, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
+      propertyPath: gizmosSize.x
+      value: 34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846771508618423092, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
+      propertyPath: gizmosSize.y
+      value: 27.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
 --- !u!1001 &212506463
@@ -2122,7 +2142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313348190000622744, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.83
+      value: 61.01
       objectReference: {fileID: 0}
     - target: {fileID: 1313348190000622744, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.y
