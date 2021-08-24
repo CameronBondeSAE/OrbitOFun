@@ -11,7 +11,7 @@ namespace AaronMcDougall
     public class CountdownToStartState : StateBase
     {
         public GameObject countdownPrefab;
-        private GameObject spawnedCountdown;
+        private Countdown spawnedCountdown;
         private PlayerArrow[] arrows;
         
         public override void Enter()
@@ -41,14 +41,16 @@ namespace AaronMcDougall
 
         public void SpawnCountdown()
         {
-            spawnedCountdown = Instantiate(countdownPrefab);
-            NetworkServer.Spawn(spawnedCountdown);
-            spawnedCountdown.GetComponentInChildren<Countdown>().RPCStartRound();
+            spawnedCountdown = Instantiate(countdownPrefab).GetComponentInChildren<Countdown>();
+            NetworkServer.Spawn(spawnedCountdown.gameObject);
+            spawnedCountdown.RPCStartRound();
+            spawnedCountdown.CountdownEndedEvent += StartGameState;
         }
 
         public void DestroyCountdown()
         {
             Destroy(spawnedCountdown.gameObject);
+            spawnedCountdown.CountdownEndedEvent -= StartGameState;
         }
 
         public void EnableArrowControls()
@@ -66,6 +68,11 @@ namespace AaronMcDougall
             {
                 a.DisableControls();
             }
+        }
+
+        public void StartGameState()
+        {
+            GetComponent<RaceModeStateManager>().ChangeState(GetComponent<InGameState>());
         }
     }
 }

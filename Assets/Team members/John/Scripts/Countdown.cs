@@ -1,3 +1,4 @@
+using System;
 using LukeBaker;
 using Mirror;
 using Tim;
@@ -15,6 +16,7 @@ namespace John
         private string roundText;
         public TextMeshProUGUI UIText;
         private bool startCount;
+        public event Action CountdownEndedEvent;
     
         public override void OnStartServer()
         {
@@ -45,6 +47,7 @@ namespace John
                     //call the end of the round function in game manager
                     startCount = false;
                     roundTimer = default;
+                    CountdownEndedEvent?.Invoke();
                 } 
             }
             
