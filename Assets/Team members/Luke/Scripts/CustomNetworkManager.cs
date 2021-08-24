@@ -63,7 +63,7 @@ namespace LukeBaker
                     ? Instantiate(camMode.playablePrefab, startPos.position, startPos.rotation)
                     : Instantiate(camMode.playablePrefab);
 
-                playablePrefabs.Add(camMode.playablePrefab);
+                playablePrefabs.Add(playerInstance);
 
                 // instantiating a "Player" prefab gives it the name "Player(clone)"
                 // => appending the connectionId is WAY more useful for debugging!
