@@ -11,6 +11,7 @@ namespace AaronMcDougall
         public GameObject endGameUIPrefab;
         private GameObject spawnedUI;
         public float showUITime = 10f;
+        public StateBase nextState;
         
         public override void Enter()
         {
@@ -53,7 +54,7 @@ namespace AaronMcDougall
         public IEnumerator ShowUICountdown()
         {
             yield return new WaitForSeconds(showUITime);
-            GetComponent<RaceModeStateManager>().ChangeState(GetComponent<PreTimerState>());
+            GetComponent<RaceModeStateManager>().ChangeState(nextState);
         }
     }
 

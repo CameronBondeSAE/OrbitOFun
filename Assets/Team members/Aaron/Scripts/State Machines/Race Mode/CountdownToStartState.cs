@@ -13,6 +13,7 @@ namespace AaronMcDougall
         public GameObject countdownPrefab;
         private Countdown spawnedCountdown;
         private PlayerArrow[] arrows;
+        public StateBase nextState;
         
         public override void Enter()
         {
@@ -72,7 +73,7 @@ namespace AaronMcDougall
 
         public void StartGameState()
         {
-            GetComponent<RaceModeStateManager>().ChangeState(GetComponent<InGameState>());
+            GetComponent<RaceModeStateManager>().ChangeState(nextState);
         }
     }
 }

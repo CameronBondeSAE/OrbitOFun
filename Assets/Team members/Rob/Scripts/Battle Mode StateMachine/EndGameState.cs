@@ -10,6 +10,7 @@ namespace Rob
         public GameObject endGameUI;
         private GameObject spawnedUI;
         public float showUITime = 10f;
+        public StateBase nextState;
         
         public override void Enter()
         {
@@ -51,7 +52,7 @@ namespace Rob
         public IEnumerator ShowUICountdown()
         {
             yield return new WaitForSeconds(showUITime);
-            GetComponent<StateManager>().ChangeState(GetComponent<GetReadyState>());
+            GetComponent<StateManager>().ChangeState(nextState);
         }
     }
 }
