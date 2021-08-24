@@ -13,6 +13,7 @@ namespace AaronMcDougall
     {
         public GameObject messagePrefab;
         private GameObject messageCopy;
+        public float readyTime;
 
         public StateBase nextState;
         
@@ -41,7 +42,7 @@ namespace AaronMcDougall
         {
             messageCopy = Instantiate(messagePrefab);
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < readyTime; i++)
             {
                 Debug.Log(i);
                 yield return new WaitForSeconds(1);
