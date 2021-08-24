@@ -116,7 +116,14 @@ namespace John
 			// HACK, use action map
 			if (InputSystem.GetDevice<Keyboard>().escapeKey.wasPressedThisFrame)
 			{
-				ShowMenu();
+				if(menuView.activeSelf)
+				{
+					HideMenu();
+				}
+				else
+				{
+					ShowMenu();
+				}
 			}
 		}
 	}
