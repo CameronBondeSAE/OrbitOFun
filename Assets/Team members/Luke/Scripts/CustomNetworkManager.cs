@@ -59,7 +59,7 @@ namespace LukeBaker
             foreach (NetworkConnection user in lobbiedPlayers)
             {
                 Transform startPos = GetStartPosition();
-                GameObject player = startPos != null
+                GameObject playerInstance = startPos != null
                     ? Instantiate(camMode.playablePrefab, startPos.position, startPos.rotation)
                     : Instantiate(camMode.playablePrefab);
 
@@ -67,9 +67,9 @@ namespace LukeBaker
 
                 // instantiating a "Player" prefab gives it the name "Player(clone)"
                 // => appending the connectionId is WAY more useful for debugging!
-                player.name = $"{camMode.playablePrefab.name} [connId={user.connectionId}]";
+                playerInstance.name = $"{camMode.playablePrefab.name} [connId={user.connectionId}]";
                 
-                NetworkServer.ReplacePlayerForConnection(user, player, true);
+                NetworkServer.ReplacePlayerForConnection(user, playerInstance, true);
                 //clear roomslots?
             }
         }
