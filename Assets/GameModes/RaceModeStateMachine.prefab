@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbe17126fa6b524eaf99b94b9a48102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownPrefab: {fileID: 4815167035102077256, guid: 5c73502dea1f8db4f8dd6ce84d87cb67, type: 3}
 --- !u!114 &2498757984222312513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f553492e18a72be41b5a0cebab1ffba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   levels:
   - Cams test
   - Riley's Level
