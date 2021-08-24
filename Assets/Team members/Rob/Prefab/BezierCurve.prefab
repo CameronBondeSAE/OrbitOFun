@@ -260,7 +260,7 @@ MonoBehaviour:
   point4: {fileID: 1156845698847734813}
   forward: 1
   backwards: 0
-  speed: 0.3
+  speed: 0.1
   curve:
     serializedVersion: 2
     m_Curve:
