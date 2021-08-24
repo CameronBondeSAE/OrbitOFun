@@ -17,18 +17,15 @@ namespace LukeBaker
         public List<NetworkConnection> lobbiedPlayers = new List<NetworkConnection>();
         public CamMode camMode;
         public int currentPlayers;
-        public int readyPlayers;
-        public bool allPlayersReady;
 
         [Header("Room")]
         [SerializeField] private NetworkLobbyPlayer roomPlayerPrefab = null;
-        [Tooltip("List of Room Player objects")]
+        [Tooltip("List of Room Player objects connected")]
         public List<NetworkLobbyPlayer> roomSlots = new List<NetworkLobbyPlayer>();
 
         private void OnServerInitialized()
         {
             currentPlayers = 0;
-            readyPlayers = 0;
         }
 
         public override void OnServerConnect(NetworkConnection conn)
