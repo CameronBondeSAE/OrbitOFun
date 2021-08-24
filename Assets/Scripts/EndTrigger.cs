@@ -6,13 +6,16 @@ using Zach;
 
 public class EndTrigger : MonoBehaviour
 {
-    public event Action GoalReached;
-
+    public event Action TriggerEnterEvent;
+    public bool isPlayer;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerBase>())
+        if (isPlayer)
         {
-            GoalReached?.Invoke();
+            if (other.GetComponent<PlayerBase>())
+            {
+                TriggerEnterEvent?.Invoke();
+            }
         }
     }
 }
