@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AaronMcDougall;
 using John;
 using Mirror;
 using Unity.Mathematics;
@@ -26,12 +27,14 @@ namespace RileyMcGowan
         //Public Vars
         public GameObject cameraToSpawn;
         public GameObject sceneToSpawn;
+        public AaronMcDougall.StateBase startingState;
         
         //Might need to add ActivateAllIGameModeInteractables so we can use common game objects
         
         public override void Activate()
         {
             base.Activate(); //Activate the mode
+            GetComponent<RaceModeStateManager>().ChangeState(startingState);
             ActivateAllIGameModeInteractables();
             //General Code
             if (mainNetworkManager == null)
@@ -54,15 +57,12 @@ namespace RileyMcGowan
             }
         }
 
-        public override void EndGame()
-        {
-            base.EndGame();
-            StartCoroutine(EndOfGame(timeToWait, waitTimerToUI));
-        }
-
         [ClientRpc]
         public void RpcEnableArrowControls()
         {
+            //Enable player controls
+            PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
+            playerBase.DisableControls();
             //Enable arrow controls
             PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
             playerArrow.EnableControls();
@@ -77,7 +77,12 @@ namespace RileyMcGowan
             //Enable player controls
             PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
             playerBase.EnableControls();
-            
+        }
+
+        public override void EndGame()
+        {
+            base.EndGame();
+            StartCoroutine(EndOfGame(timeToWait, waitTimerToUI));
         }
         
         private IEnumerator EndOfGame(float waitUIToMain, float waitTimerToUI)
