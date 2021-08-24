@@ -9,12 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 814192070812903248}
+  - component: {fileID: 7631233679066580564}
   - component: {fileID: 5184914815648710532}
-  - component: {fileID: 7518696811926617048}
-  - component: {fileID: 5407770570600369876}
   - component: {fileID: 8738299693885712397}
+  - component: {fileID: 5407770570600369876}
+  - component: {fileID: 7518696811926617048}
   - component: {fileID: 804938959220737370}
   - component: {fileID: -3959997719091135423}
+  - component: {fileID: 3605811171884208536}
   m_Layer: 0
   m_Name: BattleMode
   m_TagString: Untagged
@@ -36,6 +38,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7631233679066580564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827413759917705666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c246c71ed6304c05b9943465c85f3e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
 --- !u!114 &5184914815648710532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
---- !u!114 &7518696811926617048
+--- !u!114 &8738299693885712397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +73,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 827413759917705666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d78a888640ae40c282caf8fd9d361325, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b19d404a00b4b05b77f61d1373c9d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
@@ -75,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
---- !u!114 &8738299693885712397
+--- !u!114 &7518696811926617048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 827413759917705666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b19d404a00b4b05b77f61d1373c9d32, type: 3}
+  m_Script: {fileID: 11500000, guid: d78a888640ae40c282caf8fd9d361325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
@@ -113,9 +128,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5126058c049b741b8db3fbede5ca30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   levels: []
   gameModeName: 
   description: 
   cameraToSpawn: {fileID: 0}
   countdownToSpawn: {fileID: 0}
   sceneToSpawn: {fileID: 0}
+--- !u!114 &3605811171884208536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827413759917705666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 3cc35f5c416079746a97047d9e96bd68
+  hasSpawned: 0
