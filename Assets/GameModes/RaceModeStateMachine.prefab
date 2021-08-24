@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messagePrefab: {fileID: 0}
-  nextState: {fileID: 0}
+  nextState: {fileID: 4310885030918374421}
 --- !u!114 &4310885030918374421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownPrefab: {fileID: 4815167035102077256, guid: 5c73502dea1f8db4f8dd6ce84d87cb67, type: 3}
-  nextState: {fileID: 0}
+  nextState: {fileID: 7815748015566797854}
 --- !u!114 &7815748015566797854
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,11 @@ namespace AaronMcDougall
         {
             base.Enter();
 
-            StartCoroutine(GetReadyMessage());
+
+            if (messagePrefab != null)
+            {
+                StartCoroutine(GetReadyMessage());
+            }
         }
 
         public override void Execute()
