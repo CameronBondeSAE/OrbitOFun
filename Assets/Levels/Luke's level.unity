@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 89576431}
+  renderer: {fileID: 0}
 --- !u!135 &89576433
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1262,8 +1262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 240622608}
+  renderer: {fileID: 0}
 --- !u!135 &240622610
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1457,8 +1457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 274635541}
+  renderer: {fileID: 0}
 --- !u!135 &274635543
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1652,8 +1652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 287186422}
+  renderer: {fileID: 0}
 --- !u!135 &287186424
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1847,8 +1847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 326843448}
+  renderer: {fileID: 0}
 --- !u!135 &326843450
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2042,8 +2042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 337312386}
+  renderer: {fileID: 0}
 --- !u!135 &337312388
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2237,8 +2237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 347574728}
+  renderer: {fileID: 0}
 --- !u!135 &347574730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2327,11 +2327,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 408542409350615452, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.5
+      value: 78.9
       objectReference: {fileID: 0}
     - target: {fileID: 408542409350615452, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.1
+      value: -50.1
       objectReference: {fileID: 0}
     - target: {fileID: 408542409350615452, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3070,8 +3070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 598582320}
+  renderer: {fileID: 0}
 --- !u!135 &598582322
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3374,8 +3374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 696635374}
+  renderer: {fileID: 0}
 --- !u!135 &696635376
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3651,8 +3651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 743538895}
+  renderer: {fileID: 0}
 --- !u!135 &743538897
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3928,8 +3928,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 788609554}
+  renderer: {fileID: 0}
 --- !u!135 &788609556
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4463,6 +4463,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916774508}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &983217791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1203386468863419105, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: sceneId
+      value: 3970829704
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313348190000622744, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021259284152750437, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -42.592693
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 54.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8819702025219497087, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_Name
+      value: WormholePairRGrav (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
 --- !u!1 &987640780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,8 +4885,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1042025906}
+  renderer: {fileID: 0}
 --- !u!135 &1042025908
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5452,8 +5521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1119403096}
+  renderer: {fileID: 0}
 --- !u!135 &1119403098
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6272,8 +6341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1576634276}
+  renderer: {fileID: 0}
 --- !u!54 &1363211469
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6833,8 +6902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1519334011}
+  renderer: {fileID: 0}
 --- !u!135 &1519334013
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7028,8 +7097,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1539319833}
+  renderer: {fileID: 0}
 --- !u!135 &1539319835
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7505,8 +7574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1576634276}
+  renderer: {fileID: 0}
 --- !u!135 &1576634278
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7700,8 +7769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1576908844}
+  renderer: {fileID: 0}
 --- !u!135 &1576908846
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7905,8 +7974,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1576634276}
+  renderer: {fileID: 0}
 --- !u!54 &1698627220
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8053,8 +8122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1703885688}
+  renderer: {fileID: 0}
 --- !u!135 &1703885690
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8332,8 +8401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1770203866}
+  renderer: {fileID: 0}
 --- !u!135 &1770203868
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9000,8 +9069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useObjectSize: 1
-  objectSize: 0
   rb: {fileID: 1907161111}
+  renderer: {fileID: 0}
 --- !u!135 &1907161113
 SphereCollider:
   m_ObjectHideFlags: 0
