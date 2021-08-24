@@ -7,6 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Zach;
 using LukeBaker;
+using Tom;
 using UnityEngine.SceneManagement;
 
 namespace RileyMcGowan
@@ -59,6 +60,26 @@ namespace RileyMcGowan
             StartCoroutine(EndOfGame(timeToWait, waitTimerToUI));
         }
 
+        [ClientRpc]
+        public void RpcEnableArrowControls()
+        {
+            //Enable arrow controls
+            PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
+            playerArrow.EnableControls();
+        }
+        
+        [ClientRpc]
+        public void RpcEnablePlayerControls()
+        {
+            //Disable arrow controls
+            PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
+            playerArrow.DisableControls();
+            //Enable player controls
+            PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
+            playerBase.EnableControls();
+            
+        }
+        
         private IEnumerator EndOfGame(float waitUIToMain, float waitTimerToUI)
         {
             yield return new WaitForSeconds(waitTimerToUI + 1f); //Wait for UI
