@@ -26,6 +26,12 @@ namespace AaronMcDougall
             playerArrow = FindObjectOfType<PlayerArrow>();
             player = FindObjectOfType<RaceModePlayer>();
             rb = player.GetComponent<Rigidbody>();
+            
+            player.transform.eulerAngles = playerArrow.GetEulerAngles();
+            rb.AddForce(transform.position * speed);
+            
+            FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
+        
 
             //enter RaceControlState
             //not sure about initialising gravity etc, whether that's controlled here or outside
@@ -34,14 +40,12 @@ namespace AaronMcDougall
         public override void Execute()
         {
             base.Execute();
-            player.transform.eulerAngles = playerArrow.GetEulerAngles();
-            rb.AddForce(transform.position * speed);
+
         }
 
         public override void Exit()
         {
             base.Exit();
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
             FindObjectOfType<GameManager>().GameEnd();
         }
 
