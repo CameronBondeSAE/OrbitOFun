@@ -47,6 +47,7 @@ namespace AaronMcDougall
         {
             base.Exit();
             FindObjectOfType<GameManager>().GameEnd();
+            
         }
 
         public void EnablePlayerControls()
@@ -57,6 +58,11 @@ namespace AaronMcDougall
         private void GoalReached()
         {
             Debug.Log("Reached Goal");
+        }
+
+        private void StartEndGame()
+        {
+            GetComponent<RaceModeStateManager>().ChangeState(nextState);
         }
     }
 }
