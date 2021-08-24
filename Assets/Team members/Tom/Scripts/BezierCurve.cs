@@ -118,11 +118,13 @@ namespace Tom
             ReverseFinishedUnityEvent.Invoke();
             print("reverse finished curve");
         }
-
+        
+        #if UNITY_EDITOR
         public void OnDrawGizmos()
         {
             Handles.DrawBezier(controlPoint1.position, controlPoint4.position, controlPoint2.position,
                 controlPoint3.position, Color.white, null, 2f);
         }
+        #endif
     }
 }
