@@ -12,6 +12,7 @@ namespace Tom
         private Vector2 curvePoint;
         [Range(0f, 1f)] public float curveTime;
         public float duration = 1f;
+        public bool autoplay = true;
         public Transform controlPoint1, controlPoint2, controlPoint3, controlPoint4;
         private bool playingCurve = false;
         public AnimationCurve curve;
@@ -98,7 +99,10 @@ namespace Tom
 
         public void Activate()
         {
-            PlayCurve();
+            if (autoplay)
+            {
+                PlayCurve();
+            }
         }
 
         public void CallFinishedCurve()
