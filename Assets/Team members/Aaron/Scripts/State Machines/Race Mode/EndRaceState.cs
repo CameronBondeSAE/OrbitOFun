@@ -13,6 +13,8 @@ namespace Rob
         public float countDownAmount;
         public float countDownTo;
         public StateBase nextState;
+        public GameObject scoreBoard;
+        public float showScoreBoardTime;
 
 
         public override void Enter()
@@ -26,7 +28,7 @@ namespace Rob
             base.Execute();
             if (countDownAmount <= countDownTo)
             {
-                SwitchState();
+                ShowScoreBoard();
             }
         }
 
@@ -48,6 +50,18 @@ namespace Rob
                 Debug.Log(i);
                 yield return new WaitForSeconds(1);
             }
+        }
+
+        public void ShowScoreBoard()
+        {
+            Instantiate(scoreBoard);
+            StartCoroutine(CountdownToSwitchState());
+        }
+
+        public IEnumerator CountdownToSwitchState()
+        {
+            yield return new WaitForSeconds(showScoreBoardTime);
+            SwitchState();
         }
 
         public void SwitchState()
