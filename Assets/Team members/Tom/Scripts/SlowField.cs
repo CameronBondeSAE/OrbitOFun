@@ -13,7 +13,7 @@ namespace Tom
         
         private void OnTriggerEnter(Collider other)
         {
-            PlayerBase player = other.GetComponent<PlayerBase>();
+            PlayerBase player = other.GetComponentInParent<PlayerBase>();
 
             if (player != null)
             {
@@ -24,7 +24,7 @@ namespace Tom
 
         private void OnTriggerExit(Collider other)
         {
-            PlayerBase player = other.GetComponent<PlayerBase>();
+            PlayerBase player = other.GetComponentInParent<PlayerBase>();
 
             if (player != null)
             {
