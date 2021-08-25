@@ -14,14 +14,17 @@ namespace Zach
         public float forwardFloat;
         private ZachsPlayerActions zachsPlayerActions;
 
-
-        
-        public void EnableControls()
-        {
-            //todo refactor to work with system wide new input system
+        public void Awake()
+        {            
             zachsPlayerActions = new ZachsPlayerActions();
             zachsPlayerActions.Enable();
 
+        }
+
+        public void EnableControls()
+        {
+            //todo refactor to work with system wide new input system
+            
             zachsPlayerActions.GeneralMovement.Move.started += Movement;
             zachsPlayerActions.GeneralMovement.Move.canceled += Movement;
             zachsPlayerActions.GeneralMovement.Rotate.started += RotateOnPerformed;
@@ -31,9 +34,7 @@ namespace Zach
         public void DisableControls()
         {
             //todo refactor to work with system wide new input system
-            zachsPlayerActions = new ZachsPlayerActions();
-            zachsPlayerActions.Enable();
-
+         
             zachsPlayerActions.GeneralMovement.Move.started -= Movement;
             zachsPlayerActions.GeneralMovement.Move.canceled -= Movement;
             zachsPlayerActions.GeneralMovement.Rotate.started -= RotateOnPerformed;

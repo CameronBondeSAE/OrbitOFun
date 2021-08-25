@@ -17,11 +17,16 @@ namespace Tom
         
         private float direction; // Set this to the input axis
 
-        
+        void Awake()
+        {
+            zachsPlayerActions = new ZachsPlayerActions();
+            zachsPlayerActions.Enable();
+        }
+
         public override void OnStartLocalPlayer()
         {
             base.OnStartLocalPlayer();
-            startingAngle = transform.eulerAngles.z;
+            startingAngle      = transform.eulerAngles.z;
         }
 
         // Update is called once per frame
@@ -61,8 +66,6 @@ namespace Tom
         public void EnableControls()
         {
             //todo refactor to work with system wide new input system
-            zachsPlayerActions = new ZachsPlayerActions();
-            zachsPlayerActions.Enable();
 
             zachsPlayerActions.GeneralMovement.Rotate.started += RotateOnPerformed;
             zachsPlayerActions.GeneralMovement.Rotate.canceled += RotateOnPerformed;
@@ -71,9 +74,6 @@ namespace Tom
         public void DisableControls()
         {
             //todo refactor to work with system wide new input system
-            zachsPlayerActions = new ZachsPlayerActions();
-            zachsPlayerActions.Enable();
-
             zachsPlayerActions.GeneralMovement.Rotate.started -= RotateOnPerformed;
             zachsPlayerActions.GeneralMovement.Rotate.canceled -= RotateOnPerformed;
         }
