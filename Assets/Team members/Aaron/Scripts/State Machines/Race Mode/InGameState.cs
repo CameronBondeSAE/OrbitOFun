@@ -21,6 +21,12 @@ namespace AaronMcDougall
         {
             base.Enter();
             EnablePlayerControls();
+            
+            
+            foreach (GameObject playerToUnFreeze in FindObjectOfType<CustomNetworkManager>().playerInstances)
+            {
+                GetComponent<RaceModeRules>().UnFreezePlayer(playerToUnFreeze.GetComponent<PlayerBase>());
+            }
 
             foreach (var playerInstance in FindObjectOfType<CustomNetworkManager>().playerInstances)
             {
