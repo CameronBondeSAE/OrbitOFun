@@ -8,30 +8,37 @@ namespace RileyMcGowan
     public class BarrierTeleport : MonoBehaviour
     {
         public GameObject oppositeBarrier;
-        public Vector3 direction;
+        public Vector3 otherBarrierDirection;
 
         private void Start()
         {
-            direction = gameObject.transform.position - oppositeBarrier.transform.position;
+            otherBarrierDirection = (oppositeBarrier.transform.position - gameObject.transform.position).normalized;
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            // Only support moving physics objects
+            if (!other.GetComponent<Rigidbody>())
+                return;
+
             //if (other.GetComponent<Zach.PlayerBase>() != null)
             {
-                if (direction.y > 0)
+                if (otherBarrierDirection.y > 0 && other.transform.root.GetComponent<Rigidbody>().velocity.y > 0)
                 {
                     //If the other barrier is down add up
-                    other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x,
-                        oppositeBarrier.transform.position.y + 5f, oppositeBarrier.transform.position.z);
+                    Teleport(other);
                 }
-                else if (direction.y < 0)
+                else if (otherBarrierDirection.y < 0 && other.transform.root.GetComponent<Rigidbody>().velocity.y < 0)
                 {
                     //If the other barrier is up add down
-                    other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x,
-                        oppositeBarrier.transform.position.y - 5f, oppositeBarrier.transform.position.z);
+                    Teleport(other);
                 }
             }
+        }
+
+        void Teleport(Collider other)
+        {
+            other.transform.root.transform.position = new Vector3(other.transform.root.transform.position.x, oppositeBarrier.transform.position.y, 0);
         }
     }
 }

@@ -12,7 +12,7 @@ public class EndTrigger : MonoBehaviour
     {
         if (isPlayer)
         {
-            if (other.GetComponent<PlayerBase>())
+            if (other.GetComponentInParent<PlayerBase>())
             {
                 TriggerEnterEvent?.Invoke();
             }

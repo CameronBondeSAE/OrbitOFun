@@ -201,6 +201,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7815748015566797854, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9176590988661459740, guid: becdf2a0c20d5d6448b4a4a5243a2b9a, type: 3}
       propertyPath: m_Name
       value: RaceModeStateMachine
@@ -262,6 +266,10 @@ PrefabInstance:
     - target: {fileID: 4589264315184438196, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589264315184438197, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
+      propertyPath: camFactor
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4589264315184438197, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
       propertyPath: areaToAffectGravity

@@ -24,6 +24,8 @@ namespace RileyMcGowan
         private float distanceToObject;
         private Vector3 distanceToObjectCapped;
         private float objectSize;
+
+        public float camFactor = 1f;
         
         private void Awake()
         {
@@ -73,7 +75,7 @@ namespace RileyMcGowan
                         distanceToObjectCapped = directionToObject.normalized;
                         lawOfGravity = gravityMass / Mathf.Pow(distanceToObject, 2); //Can use distanceToObject instead but ^ makes it smoother and work better
                         forceToAdd = distanceToObjectCapped * lawOfGravity; //Add that total force in the direction of the object, we use normalized to make the distance general
-                        influencedRB.AddForce(forceToAdd); //Add that distance to the rigidbody, this includes direction ect
+                        influencedRB.AddForce(forceToAdd * camFactor); //Add that distance to the rigidbody, this includes direction ect
                     }
                 }
             }

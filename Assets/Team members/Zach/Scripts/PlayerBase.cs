@@ -58,8 +58,8 @@ namespace Zach
             {
                 rigidBody.AddRelativeForce(Vector3.up * speed * forwardFloat);
                 rigidBody.angularVelocity = rotateVelocity;
-                if (rigidBody.velocity.magnitude >= maxSpeed)
-                    rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
+                // if (rigidBody.velocity.magnitude >= maxSpeed)
+                    // rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
             }
         }
         
