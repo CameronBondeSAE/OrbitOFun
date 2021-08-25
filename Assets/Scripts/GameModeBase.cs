@@ -11,6 +11,9 @@ namespace Zach
 		public List<string> levels;
 		public string gameModeName;
 		public string description; 
+		
+		public GameObject playablePrefab;
+
 		public virtual void Activate()
 		{
 			Debug.Log("GameModeBase Activate");

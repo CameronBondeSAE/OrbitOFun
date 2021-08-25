@@ -26,8 +26,10 @@ namespace Zach
 
         void OnDeathEvent(Health obj)
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            // TODO: Turn off on client probably
             // gameObject.SetActive(false);
+            DisableControls();
         }
 
         public void EnableControls()

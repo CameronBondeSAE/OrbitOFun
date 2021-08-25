@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Mirror;
 using Mirror.Examples.Additive;
 using Mirror.Examples.MultipleAdditiveScenes;
+using System.Linq;
+using Tim;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,8 +17,9 @@ namespace LukeBaker
         //Needed for Riley's script?
         public List<GameObject> playerInstances;
         public List<NetworkConnection> lobbiedPlayers = new List<NetworkConnection>();
-        public CamMode camMode;
         public int currentPlayers;
+
+        public GameManager gameManager;
 
         [Header("Room")]
         [SerializeField] private NetworkLobbyPlayer roomPlayerPrefab = null;
@@ -60,18 +63,33 @@ namespace LukeBaker
             {
                 Transform startPos = GetStartPosition();
                 GameObject playerInstance = startPos != null
-                    ? Instantiate(camMode.playablePrefab, startPos.position, startPos.rotation)
-                    : Instantiate(camMode.playablePrefab);
+                    ? Instantiate(gameManager.gameModeBase.playablePrefab, startPos.position, startPos.rotation)
+                    : Instantiate(gameManager.gameModeBase.playablePrefab);
 
                 playerInstances.Add(playerInstance);
 
                 // instantiating a "Player" prefab gives it the name "Player(clone)"
                 // => appending the connectionId is WAY more useful for debugging!
-                playerInstance.name = $"{camMode.playablePrefab.name} [connId={user.connectionId}]";
+                playerInstance.name = $"{gameManager.gameModeBase.playablePrefab.name} [connId={user.connectionId}]";
                 
                 NetworkServer.ReplacePlayerForConnection(user, playerInstance, true);
                 //clear roomslots?
             }
+        }
+
+        public void DespawnPlayers()
+        {
+            // For restarting the round. Destroy old Ships
+            if (playerInstances.Count > 0)
+            {
+                List<GameObject> gameObjects = playerInstances.ToList(); // Copy the list so I can remove them in loop
+                foreach (GameObject playerInstance in gameObjects)
+                {
+                    NetworkServer.Destroy(playerInstance);
+                    playerInstances.Remove(playerInstance);
+                }
+            }
+
         }
 
         public override void ServerChangeScene(string newSceneName)

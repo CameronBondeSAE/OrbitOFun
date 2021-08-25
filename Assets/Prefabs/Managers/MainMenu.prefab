@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d43d0a82e1a1e6419d9ac7242ddcdb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuView: {fileID: 5933873652442587496}
   networkManager: {fileID: 0}
   GameManager: {fileID: 0}
   GameModeBases: []
@@ -257,7 +258,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -124.53084, y: 43.704224}
-  m_SizeDelta: {x: 269.9375, y: 329.9888}
+  m_SizeDelta: {x: 300, y: 329.9888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8132283208490270579
 CanvasRenderer:
@@ -493,7 +494,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 113.4, y: -137}
-  m_SizeDelta: {x: 243.21921, y: 196.39731}
+  m_SizeDelta: {x: 300, y: 196.39731}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4607145004745253266
 CanvasRenderer:
@@ -683,13 +684,13 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Tim.GameManager, Assembly-CSharp
         m_MethodName: LoadLevel
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level 01
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4003944873373354514
@@ -1494,7 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1558,7 +1559,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 113.399994, y: 69.19998}
-  m_SizeDelta: {x: 243.21921, y: 196.39731}
+  m_SizeDelta: {x: 300, y: 196.39731}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8651059618278671042
 CanvasRenderer:

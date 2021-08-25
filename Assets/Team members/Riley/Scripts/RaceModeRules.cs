@@ -40,14 +40,16 @@ namespace RileyMcGowan
 		public override void Activate()
 		{
 			base.Activate(); //Activate the mode
-			ActivateAllIGameModeInteractables();
-			//General Code
-
 			if (mainNetworkManager == null)
 			{
 				mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
-				mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
 			}
+
+			// For restarting the round. Destroy old Ships
+			mainNetworkManager.DespawnPlayers();
+
+			ActivateAllIGameModeInteractables();
+			mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
 
 			isActive = true;
 
@@ -98,12 +100,13 @@ namespace RileyMcGowan
 		public void RpcSetupClient()
 		{
 			//Client Setup Camera
-			NetworkIdentity player        = NetworkClient.localPlayer;
+			NetworkIdentity player = NetworkClient.localPlayer;
 
 			if (cameraSpawned == null)
 			{
 				cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
 			}
+
 			cameraSpawned.AssignTarget(player.gameObject.transform);
 			//
 		}
