@@ -50,7 +50,7 @@ namespace Rob
 
             DestroyCountdownTimer();
             NextState();
-            //ArrowControlDisable();
+            GetComponent<RaceModeRules>().RpcDisableAllControls();
         }
 
         void DestroyCountdownTimer()
@@ -62,13 +62,5 @@ namespace Rob
         {
             GetComponent<StateManager>().ChangeState(nextState);
         }
-
-        /*void ArrowControlDisable()
-        {
-            foreach (PlayerArrow a in playerArrows)
-            {
-                a.DisableControls();
-            }
-        }*/
     }
 }

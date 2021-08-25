@@ -49,7 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9759e8fdb0b3eaa4dbd6749644e0bf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messagePrefab: {fileID: 0}
+  messagePrefab: {fileID: 285106887376059661, guid: 72fd853888d0306448553d05efdfa8ff, type: 3}
+  readyTime: 5
   nextState: {fileID: 4310885030918374421}
 --- !u!114 &4310885030918374421
 MonoBehaviour:
@@ -77,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d3cd5fb150e4c47aba85002ada66bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  nextState: {fileID: 0}
 --- !u!114 &2498757984222312513
 MonoBehaviour:
   m_ObjectHideFlags: 0
