@@ -16,6 +16,7 @@ namespace Tom
         public Vector3 rotateVelocity;
         
         private float direction; // Set this to the input axis
+        private bool controlsEnabled = false;
 
         void Awake()
         {
@@ -43,22 +44,26 @@ namespace Tom
                 // {
                 //     transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
                 // }
-                
-                // Replace above with this function when using new Input System
-                // Set direction to axis input
-                transform.Rotate(Vector3.forward * rotationSpeed * -direction * Time.deltaTime);
 
-                float currentRotation = transform.eulerAngles.z;
-                // HACK
-                // Counters eulerAngles clamping between 0 and 360
-                if (currentRotation > 180f && startingAngle - rotationLimit < 0)
+
+                if (controlsEnabled)
                 {
-                    currentRotation -= 360f;
-                }
+                    // Replace above with this function when using new Input System
+                    // Set direction to axis input
+                    transform.Rotate(Vector3.forward * rotationSpeed * -direction * Time.deltaTime);
 
-                currentRotation = Mathf.Clamp(currentRotation, startingAngle - rotationLimit,
-                    startingAngle + rotationLimit);
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, currentRotation);
+                    float currentRotation = transform.eulerAngles.z;
+                    // HACK
+                    // Counters eulerAngles clamping between 0 and 360
+                    if (currentRotation > 180f && startingAngle - rotationLimit < 0)
+                    {
+                        currentRotation -= 360f;
+                    }
+
+                    currentRotation = Mathf.Clamp(currentRotation, startingAngle - rotationLimit,
+                        startingAngle + rotationLimit);
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, currentRotation);
+                }
             }
         }
 
@@ -69,6 +74,8 @@ namespace Tom
 
             zachsPlayerActions.GeneralMovement.Rotate.started += RotateOnPerformed;
             zachsPlayerActions.GeneralMovement.Rotate.canceled += RotateOnPerformed;
+
+            controlsEnabled = true;
         }
 
         public void DisableControls()
@@ -76,6 +83,8 @@ namespace Tom
             //todo refactor to work with system wide new input system
             zachsPlayerActions.GeneralMovement.Rotate.started -= RotateOnPerformed;
             zachsPlayerActions.GeneralMovement.Rotate.canceled -= RotateOnPerformed;
+
+            controlsEnabled = false;
         }
         private void RotateOnPerformed(InputAction.CallbackContext obj)
         {
