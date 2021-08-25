@@ -41,7 +41,7 @@ namespace Tom
                 
                 // Replace above with this function when using new Input System
                 // Set direction to axis input
-                transform.Rotate(Vector3.forward * rotationSpeed * direction * Time.deltaTime);
+                transform.Rotate(Vector3.forward * rotationSpeed * -direction * Time.deltaTime);
 
                 float currentRotation = transform.eulerAngles.z;
                 // HACK
