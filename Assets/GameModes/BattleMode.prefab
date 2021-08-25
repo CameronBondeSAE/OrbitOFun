@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   readyTime: 5
-  nextState: {fileID: 0}
+  nextState: {fileID: 5184914815648710532}
 --- !u!114 &5184914815648710532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   active: 0
   endGameUI: {fileID: 1725008755748294725, guid: aaaa9c0e5506d1e448faef6597c18287, type: 3}
   showUITime: 10
-  nextState: {fileID: 0}
+  nextState: {fileID: 7631233679066580564}
 --- !u!114 &804938959220737370
 MonoBehaviour:
   m_ObjectHideFlags: 0
