@@ -82,9 +82,9 @@ namespace RileyMcGowan
         [ClientRpc]
         public void RpcDisableAllControls()
         {
-            //Enable player controls
+            //Disable player controls
             playerBase.DisableControls();
-            //Enable arrow controls
+            //Disable arrow controls
             playerArrow.DisableControls();
         }
 
