@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  readyTime: 5
+  nextState: {fileID: 5184914815648710532}
 --- !u!114 &5184914815648710532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +66,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  countdownPrefab: {fileID: 4815167035102077256, guid: 5c73502dea1f8db4f8dd6ce84d87cb67, type: 3}
+  countdownCopy: {fileID: 0}
+  countAmount: 5
+  nextState: {fileID: 8738299693885712397}
 --- !u!114 &8738299693885712397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  scoreboardUI: {fileID: 0}
+  showScore: 0
+  nextState: {fileID: 0}
 --- !u!114 &7518696811926617048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +114,7 @@ MonoBehaviour:
   active: 0
   endGameUI: {fileID: 1725008755748294725, guid: aaaa9c0e5506d1e448faef6597c18287, type: 3}
   showUITime: 10
+  nextState: {fileID: 7631233679066580564}
 --- !u!114 &804938959220737370
 MonoBehaviour:
   m_ObjectHideFlags: 0
