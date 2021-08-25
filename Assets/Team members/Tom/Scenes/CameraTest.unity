@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b392569d5174bf40a1efbb30c0c8903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1389755440}
+  trackedTarget: {fileID: 1389755440}
   zOffset: -5
   smoothTime: 10
   velocityMultiplier: 1

@@ -7,7 +7,7 @@ namespace Tom
 {
     public class CameraTracking : CameraBase
     {
-        public Transform player;
+        public Transform trackedTarget;
         public float zOffset = -10f;
         private Vector3 offset;
         public float smoothTime = 10f;
@@ -20,7 +20,7 @@ namespace Tom
         {
             base.AssignTarget(target);
 
-            player = target;
+            trackedTarget = target;
 
             if (target.GetComponent<Rigidbody>())
             {
@@ -33,25 +33,31 @@ namespace Tom
         {
             if (hasRigidbody)
             {
-                rb = player.GetComponent<Rigidbody>();
+                rb = trackedTarget.GetComponent<Rigidbody>();
             }
         }
 
         private void LateUpdate()
         {
-            if (hasRigidbody)
+            if (trackedTarget != null)
             {
-                float xVelocity = rb.velocity.x * velocityMultiplier;
-                float yVelocity = rb.velocity.y * velocityMultiplier;
-                float magnitude = rb.velocity.magnitude * zoomMultiplier;
+                if (hasRigidbody)
+                {
+                    float xVelocity = rb.velocity.x * velocityMultiplier;
+                    float yVelocity = rb.velocity.y * velocityMultiplier;
+                    float magnitude = rb.velocity.magnitude * zoomMultiplier;
                 
-                offset = new Vector3(xVelocity, yVelocity, zOffset - magnitude);
+                    offset = new Vector3(xVelocity, yVelocity, zOffset - magnitude);
+                }
             }
         }
 
         private void FixedUpdate()
         {
-            transform.position = Vector3.Lerp(transform.position, player.position + offset, Time.deltaTime * smoothTime);
+            if (trackedTarget != null)
+            {
+                transform.position = Vector3.Lerp(transform.position, trackedTarget.position + offset, Time.deltaTime * smoothTime);
+            }
         }
     }
 }

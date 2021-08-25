@@ -143,11 +143,14 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   levels: []
-  gameModeName: 
-  description: 
-  cameraToSpawn: {fileID: 0}
-  countdownToSpawn: {fileID: 0}
+  gameModeName: Battle Mode
+  description: Be the last base standing
+  cameraToSpawn: {fileID: 2747312625153652201, guid: cd274d135ada5564aace6ffb92f24175, type: 3}
   sceneToSpawn: {fileID: 0}
+  startingState: {fileID: 7631233679066580564}
+  localPlayerBase: {fileID: 3915315106799847296, guid: 4a5e73d95724a7648af41eb44bf3f51f, type: 3}
+  localPlayerArrow: {fileID: 7217746322073023614, guid: 5ba4e500b2564834e874cd64b4fbddb2, type: 3}
+  leaderboard: []
 --- !u!114 &3605811171884208536
 MonoBehaviour:
   m_ObjectHideFlags: 0
