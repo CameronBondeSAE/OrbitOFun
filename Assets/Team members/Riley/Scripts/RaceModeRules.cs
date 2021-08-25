@@ -100,7 +100,7 @@ namespace RileyMcGowan
 			//Client Setup Camera
 			NetworkIdentity player        = NetworkClient.localPlayer;
 
-			if (cameraSpawned)
+			if (cameraSpawned == null)
 			{
 				cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
 			}

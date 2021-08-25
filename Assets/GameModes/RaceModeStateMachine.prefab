@@ -79,8 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d3cd5fb150e4c47aba85002ada66bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  nextState: {fileID: 0}
+  speed: 5
+  nextState: {fileID: -8417025057330831913}
 --- !u!114 &-8417025057330831913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,11 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5883a24232d1af847b1167523f400322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endRaceTimer: {fileID: 0}
   countDownAmount: 10
   countDownTo: 0
-  nextState: {fileID: 0}
-  scoreBoard: {fileID: 0}
+  nextState: {fileID: 2498757984222312513}
   showScoreBoardTime: 5
 --- !u!114 &2498757984222312513
 MonoBehaviour:
@@ -126,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67db4804d3b99c468dea7431f5f5b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 7815748015566797854}
+  currentState: {fileID: 0}
 --- !u!114 &-8335928879420694405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +153,7 @@ MonoBehaviour:
   startingState: {fileID: 5858792199962200558}
   localPlayerBase: {fileID: 0}
   localPlayerArrow: {fileID: 0}
+  leaderboard: []
 --- !u!114 &427190987856179964
 MonoBehaviour:
   m_ObjectHideFlags: 0
