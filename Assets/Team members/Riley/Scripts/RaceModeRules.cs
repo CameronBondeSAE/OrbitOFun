@@ -28,15 +28,18 @@ namespace RileyMcGowan
         public GameObject cameraToSpawn;
         public GameObject sceneToSpawn;
         public AaronMcDougall.StateBase startingState;
+        public PlayerBase playerBase;
+        public PlayerArrow playerArrow;
         
         //Might need to add ActivateAllIGameModeInteractables so we can use common game objects
         
         public override void Activate()
         {
             base.Activate(); //Activate the mode
-            GetComponent<RaceModeStateManager>().ChangeState(startingState);
             ActivateAllIGameModeInteractables();
             //General Code
+            playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
+            playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
             if (mainNetworkManager == null)
             {
                 mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
@@ -55,16 +58,15 @@ namespace RileyMcGowan
                 EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
                 endTrigger.TriggerEnterEvent += EndGame;
             }
+            GetComponent<RaceModeStateManager>().ChangeState(startingState);
         }
 
         [ClientRpc]
         public void RpcEnableArrowControls()
         {
             //Enable player controls
-            PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
             playerBase.DisableControls();
             //Enable arrow controls
-            PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
             playerArrow.EnableControls();
         }
         
@@ -72,10 +74,8 @@ namespace RileyMcGowan
         public void RpcEnablePlayerControls()
         {
             //Disable arrow controls
-            PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
             playerArrow.DisableControls();
             //Enable player controls
-            PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
             playerBase.EnableControls();
         }
 
