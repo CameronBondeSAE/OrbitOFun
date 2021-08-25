@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  zOffset: -16.21
+  zOffset: -36.1
   smoothTime: 5.02
   velocityMultiplier: 1.57
   zoomMultiplier: 2
