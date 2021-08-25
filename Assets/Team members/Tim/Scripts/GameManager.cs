@@ -79,6 +79,13 @@ namespace Tim
 		public void UnLoadLevel(string level)
 		{
 			SceneManager.UnloadSceneAsync(level);
+            
+            if (NetworkServer.active)
+            {
+                // notify all clients about the new scene
+                NetworkServer.SendToAll(new SceneMessage { sceneName = level, sceneOperation = SceneOperation.UnloadAdditive});
+            }
+
 		}
 
         /*public void SetGameState(GameState state)
