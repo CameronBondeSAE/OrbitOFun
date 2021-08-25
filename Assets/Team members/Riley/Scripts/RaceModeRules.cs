@@ -78,6 +78,15 @@ namespace RileyMcGowan
             //Enable player controls
             playerBase.EnableControls();
         }
+        
+        [ClientRpc]
+        public void RpcDisableAllControls()
+        {
+            //Enable player controls
+            playerBase.DisableControls();
+            //Enable arrow controls
+            playerArrow.DisableControls();
+        }
 
         public override void EndGame()
         {
