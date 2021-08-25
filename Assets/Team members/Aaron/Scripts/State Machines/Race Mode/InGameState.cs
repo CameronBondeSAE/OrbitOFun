@@ -18,6 +18,13 @@ namespace AaronMcDougall
         private PlayerBase player;
         private int numberOfShips;
         private int deathCounter;
+        private CustomNetworkManager customNetworkManager;
+
+
+        private void Awake()
+        {
+            customNetworkManager = FindObjectOfType<CustomNetworkManager>();
+        }
 
         public override void Enter()
         {
@@ -26,21 +33,21 @@ namespace AaronMcDougall
             
             EnablePlayerControls();
 
-            numberOfShips = FindObjectOfType<CustomNetworkManager>().playerInstances.Count;
+            numberOfShips = customNetworkManager.playerInstances.Count;
 
-            foreach (GameObject playerToUnFreeze in FindObjectOfType<CustomNetworkManager>().playerInstances)
+            foreach (GameObject playerToUnFreeze in customNetworkManager.playerInstances)
             {
                 GetComponent<RaceModeRules>().UnFreezePlayer(playerToUnFreeze.GetComponent<PlayerBase>());
             }
 
-            foreach (var playerInstance in FindObjectOfType<CustomNetworkManager>().playerInstances)
+            foreach (var playerInstance in customNetworkManager.playerInstances)
             {
                 playerInstance.GetComponent<Rigidbody>()
                     .AddForce(playerInstance.transform.up * speed, ForceMode.VelocityChange);
-                FindObjectOfType<Health>().deathEvent += OndeathEvent;
+                GetComponent<Health>().deathEvent += OndeathEvent;
             }
 
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
+            GetComponent<EndTrigger>().TriggerEnterEvent += GoalReached;
 
             player = GetComponent<PlayerBase>();
 
@@ -55,16 +62,20 @@ namespace AaronMcDougall
             base.Execute();
             if (deathCounter >= numberOfShips)
             {
-                FindObjectOfType<RaceModeRules>().Activate();
+                GetComponent<RaceModeRules>().Activate();
             }
         }
 
         public override void Exit()
         {
             base.Exit();
-            FindObjectOfType<GameManager>().GameEnd();
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent -= GoalReached;
-            FindObjectOfType<Health>().deathEvent -= OndeathEvent;
+            //FindObjectOfType<GameManager>().GameEnd();
+            GetComponent<EndTrigger>().TriggerEnterEvent -= GoalReached;
+            foreach (var playerInstance in customNetworkManager.playerInstances)
+            {
+                FindObjectOfType<Health>().deathEvent -= OndeathEvent;
+            }
+            
         }
 
         public void EnablePlayerControls()
