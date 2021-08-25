@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using John;
 using Mirror;
+using RileyMcGowan;
 using Tom;
 
 namespace AaronMcDougall
@@ -12,7 +13,6 @@ namespace AaronMcDougall
     {
         public GameObject countdownPrefab;
         private Countdown spawnedCountdown;
-        private PlayerArrow[] arrows;
         public StateBase nextState;
         
         public override void Enter()
@@ -37,7 +37,6 @@ namespace AaronMcDougall
             base.Exit();
             
             DestroyCountdown();
-            DisableArrowControls();
         }
 
         public void SpawnCountdown()
@@ -56,19 +55,7 @@ namespace AaronMcDougall
 
         public void EnableArrowControls()
         {
-            arrows = FindObjectsOfType<PlayerArrow>();
-            foreach (PlayerArrow a in arrows)
-            {
-                a.EnableControls();
-            }
-        }
-
-        public void DisableArrowControls()
-        {
-            foreach (PlayerArrow a in arrows)
-            {
-                a.DisableControls();
-            }
+            GetComponent<RaceModeRules>().RpcEnableArrowControls();
         }
 
         public void StartGameState()
