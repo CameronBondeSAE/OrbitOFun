@@ -28,7 +28,26 @@ namespace RileyMcGowan
 
         //So we can check if health changed
         private float previousHealth;
-        
+        public float currentHealthGetSet
+        {
+            get
+            {
+                return currentHealth;
+            }
+            set
+            {
+                currentHealth = value;
+                if (currentHealth > maxHealth)
+                {
+                    currentHealth = maxHealth;
+                }
+                else if(currentHealth < 0)
+                {
+                    currentHealth = 0;
+                }
+            }
+        }
+
         void Start()
         {
             ResetStartingHealth();
@@ -48,22 +67,16 @@ namespace RileyMcGowan
         void FixedUpdate()
         {
             //Did the value of health change in the last update
-            if (Math.Abs(currentHealth - previousHealth) > .001f)
+            if (Math.Abs(currentHealthGetSet - previousHealth) > .001f)
             {
                 //If so check health variables
-                if (currentHealth <= 0 && invincible != true)
+                if (currentHealthGetSet <= 0 && invincible != true)
                 {
                     //Has health hit 0
-                    currentHealth = 0;
                     DestroyObject();
                 }
-                if (currentHealth > maxHealth)
-                {
-                    //Is health over the maximum
-                    currentHealth = maxHealth;
-                }
             }
-            previousHealth = currentHealth;
+            previousHealth = currentHealthGetSet;
         }
         
         /// DO DAMAGE AND HEALING ///
@@ -72,25 +85,22 @@ namespace RileyMcGowan
         {
             if (invincible != true)
             {
-                currentHealth -= damageDealt;
+                currentHealthGetSet -= damageDealt;
                 damagedEvent?.Invoke(this, damageDealt, damageType);
             }
         }
         //DoHeal function to apply healing to the object until max
         public void DoHeal(float healApply)
         {
-            if (currentHealth + healApply <= maxHealth && invincible != true)
+            if (currentHealthGetSet + healApply <= maxHealth && invincible != true)
             {
-                currentHealth += healApply;
+                currentHealthGetSet += healApply;
                 healedEvent?.Invoke(this);
             }
-            else
+            else if (currentHealthGetSet < maxHealth && invincible != true)
             {
-                if (currentHealth < maxHealth && invincible != true)
-                {
-                    currentHealth = maxHealth;
-                    healedEvent?.Invoke(this);
-                }
+                currentHealthGetSet = maxHealth;
+                healedEvent?.Invoke(this);
             }
         }
         
@@ -112,13 +122,13 @@ namespace RileyMcGowan
             {
                 startingHealth = 100;
             }
-            currentHealth = startingHealth;
+            currentHealthGetSet = startingHealth;
         }
         
         //Separate health trigger for editor and functionality
         public void ResetMaxHealth()
         {
-            currentHealth = maxHealth;
+            currentHealthGetSet = maxHealth;
         }
         
         //Separated death function for editor
