@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using LukeBaker;
 using Mirror;
+using RileyMcGowan;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using Zach;
 
 namespace AaronMcDougall
 {
@@ -16,16 +19,21 @@ namespace AaronMcDougall
         public float readyTime;
 
         public StateBase nextState;
-        
+
         public override void Enter()
         {
             base.Enter();
-
 
             if (messagePrefab != null)
             {
                 StartCoroutine(GetReadyMessage());
             }
+
+            foreach (GameObject playerToFreeze in FindObjectOfType<CustomNetworkManager>().playerInstances)
+            {
+                GetComponent<RaceModeRules>().FreezePlayer(playerToFreeze.GetComponent<PlayerBase>());
+            }
+            
         }
 
         public override void Execute()
