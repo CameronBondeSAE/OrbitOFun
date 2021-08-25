@@ -29,10 +29,7 @@ namespace AaronMcDougall
                 StartCoroutine(GetReadyMessage());
             }
 
-            foreach (GameObject playerToFreeze in FindObjectOfType<CustomNetworkManager>().playerInstances)
-            {
-                GetComponent<RaceModeRules>().FreezePlayer(playerToFreeze.GetComponent<PlayerBase>());
-            }
+            PlayerFreeze();
         }
 
         public override void Execute()
@@ -67,6 +64,14 @@ namespace AaronMcDougall
         void ChangeToNextState()
         {
             GetComponent<RaceModeStateManager>().ChangeState(nextState);
+        }
+
+        void PlayerFreeze()
+        {
+            foreach (GameObject playerToFreeze in FindObjectOfType<CustomNetworkManager>().playerInstances)
+            {
+                GetComponent<RaceModeRules>().FreezePlayer(playerToFreeze.GetComponent<PlayerBase>());
+            }
         }
     }
 }
