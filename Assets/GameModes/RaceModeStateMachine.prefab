@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endGameUIPrefab: {fileID: 1725008755748294725, guid: aaaa9c0e5506d1e448faef6597c18287, type: 3}
   showUITime: 10
-  nextState: {fileID: 0}
+  nextState: {fileID: 5858792199962200558}
 --- !u!114 &1075709674421912821
 MonoBehaviour:
   m_ObjectHideFlags: 0
