@@ -6,11 +6,9 @@ namespace Rob
 {
     public class EndRaceState : AaronMcDougall.StateBase
     {
-        public GameObject endRaceTimer;
         public float countDownAmount;
         public float countDownTo;
         public StateBase nextState;
-        public GameObject scoreBoard;
         public float showScoreBoardTime;
 
 
@@ -51,7 +49,6 @@ namespace Rob
 
         public void ShowScoreBoard()
         {
-            Instantiate(scoreBoard);
             StartCoroutine(CountdownToSwitchState());
         }
 
