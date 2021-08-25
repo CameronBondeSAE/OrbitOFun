@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using RileyMcGowan;
 using UnityEngine;
 
-namespace Rob
+namespace AaronMcDougall
 {
-    public class EndRaceState : AaronMcDougall.StateBase
+    public class EndRaceState : StateBase
     {
         public float countDownAmount;
         public float countDownTo;
@@ -36,7 +36,7 @@ namespace Rob
         public void GoalReached()
         {
             //stop race timer if there is one
-            Debug.Log(GetComponent<RaceModeRules>().leaderboard);
+            Debug.Log(GetComponent<RaceModeRules>().leaderboard + " finished");
             StartCoroutine(SpawnEndRaceTimer());
         }
 
@@ -63,7 +63,7 @@ namespace Rob
 
         public void SwitchState()
         {
-            GetComponent<StateManager>().ChangeState(nextState);
+            GetComponent<RaceModeStateManager>().ChangeState(nextState);
         }
     }
 }
