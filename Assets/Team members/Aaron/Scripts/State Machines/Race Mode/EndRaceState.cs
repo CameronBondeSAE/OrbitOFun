@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace Rob
 {
-    public class EndRaceState : Tom.StateBase
+    public class EndRaceState : AaronMcDougall.StateBase
     {
         public GameObject endRaceTimer;
         public float countDownAmount;

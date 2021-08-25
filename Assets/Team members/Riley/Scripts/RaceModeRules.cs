@@ -30,6 +30,7 @@ namespace RileyMcGowan
         public AaronMcDougall.StateBase startingState;
         public PlayerBase localPlayerBase;
         public PlayerArrow localPlayerArrow;
+        public List <PlayerBase> leaderboard;
         
         //Might need to add ActivateAllIGameModeInteractables so we can use common game objects
         
@@ -121,6 +122,7 @@ namespace RileyMcGowan
         public override void EndGame()
         {
             base.EndGame();
+            
             StartCoroutine(EndOfGame(timeToWait, waitTimerToUI));
         }
         

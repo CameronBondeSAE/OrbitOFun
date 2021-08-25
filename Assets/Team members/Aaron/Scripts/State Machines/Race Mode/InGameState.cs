@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using LukeBaker;
 using Tim;
 using Zach;
 using Tom;
@@ -12,25 +13,24 @@ namespace AaronMcDougall
     public class InGameState : StateBase
     {
         private ZachsPlayerActions zachsPlayerActions;
-        private PlayerBase playerBase;
-        private PlayerArrow playerArrow;
-        private RaceModePlayer player;
-        private Rigidbody rb;
         public float speed;
         public StateBase nextState;
+        private PlayerBase player;
 
         public override void Enter()
         {
             base.Enter();
             EnablePlayerControls();
-            player = FindObjectOfType<RaceModePlayer>();
-            rb = player.GetComponent<Rigidbody>();
-            
-            player.transform.eulerAngles = playerArrow.GetEulerAngles();
-            rb.AddForce(transform.position * speed);
+
+            foreach (var playerInstance in FindObjectOfType<CustomNetworkManager>().playerInstances)
+            {
+                playerInstance.GetComponent<Rigidbody>().AddForce(playerInstance.transform.up * speed, ForceMode.VelocityChange);
+            }
             
             FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
-        
+
+            player = GetComponent<PlayerBase>();
+
 
             //enter RaceControlState
             //not sure about initialising gravity etc, whether that's controlled here or outside
@@ -58,7 +58,9 @@ namespace AaronMcDougall
         private void GoalReached()
         {
             Debug.Log("Reached Goal");
-            
+            GetComponent<RaceModeRules>().leaderboard.Add(player);
+            GetComponent<RaceModeRules>().FreezePlayer(player);
+
         }
 
         private void StartEndGame()
