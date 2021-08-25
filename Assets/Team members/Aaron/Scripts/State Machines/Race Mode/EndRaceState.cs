@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RileyMcGowan;
 using UnityEngine;
 
 namespace Rob
@@ -35,6 +36,7 @@ namespace Rob
         public void GoalReached()
         {
             //stop race timer if there is one
+            Debug.Log(GetComponent<RaceModeRules>().leaderboard);
             StartCoroutine(SpawnEndRaceTimer());
         }
 
@@ -49,6 +51,7 @@ namespace Rob
 
         public void ShowScoreBoard()
         {
+            
             StartCoroutine(CountdownToSwitchState());
         }
 
