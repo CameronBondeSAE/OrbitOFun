@@ -38,8 +38,7 @@ namespace RileyMcGowan
             base.Activate(); //Activate the mode
             ActivateAllIGameModeInteractables();
             //General Code
-            playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
-            playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
+            
             if (mainNetworkManager == null)
             {
                 mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
@@ -58,12 +57,15 @@ namespace RileyMcGowan
                 EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
                 endTrigger.TriggerEnterEvent += EndGame;
             }
+            playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
+            playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
             GetComponent<RaceModeStateManager>().ChangeState(startingState);
         }
 
         [ClientRpc]
         public void RpcEnableArrowControls()
         {
+            ControlNullCheck();
             //Enable player controls
             playerBase.DisableControls();
             //Enable arrow controls
@@ -73,6 +75,7 @@ namespace RileyMcGowan
         [ClientRpc]
         public void RpcEnablePlayerControls()
         {
+            ControlNullCheck();
             //Disable arrow controls
             playerArrow.DisableControls();
             //Enable player controls
@@ -82,10 +85,24 @@ namespace RileyMcGowan
         [ClientRpc]
         public void RpcDisableAllControls()
         {
+            ControlNullCheck();
             //Disable player controls
             playerBase.DisableControls();
             //Disable arrow controls
             playerArrow.DisableControls();
+        }
+
+        private void ControlNullCheck()
+        {
+            if (playerBase == null)
+            {
+                playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
+            }
+
+            if (playerArrow == null)
+            {
+                playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
+            }
         }
 
         public override void EndGame()
