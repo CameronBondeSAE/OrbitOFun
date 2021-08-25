@@ -13,7 +13,7 @@ namespace LukeBaker
         //Variables
         public List<string> playerIP;
         //Needed for Riley's script?
-        public List<GameObject> playablePrefabs;
+        public List<GameObject> playerInstances;
         public List<NetworkConnection> lobbiedPlayers = new List<NetworkConnection>();
         public CamMode camMode;
         public int currentPlayers;
@@ -63,7 +63,7 @@ namespace LukeBaker
                     ? Instantiate(camMode.playablePrefab, startPos.position, startPos.rotation)
                     : Instantiate(camMode.playablePrefab);
 
-                playablePrefabs.Add(playerInstance);
+                playerInstances.Add(playerInstance);
 
                 // instantiating a "Player" prefab gives it the name "Player(clone)"
                 // => appending the connectionId is WAY more useful for debugging!

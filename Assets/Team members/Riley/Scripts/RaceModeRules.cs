@@ -28,8 +28,8 @@ namespace RileyMcGowan
         public GameObject cameraToSpawn;
         public GameObject sceneToSpawn;
         public AaronMcDougall.StateBase startingState;
-        public PlayerBase playerBase;
-        public PlayerArrow playerArrow;
+        public PlayerBase localPlayerBase;
+        public PlayerArrow localPlayerArrow;
         
         //Might need to add ActivateAllIGameModeInteractables so we can use common game objects
         
@@ -44,7 +44,7 @@ namespace RileyMcGowan
                 mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
                 mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
             }
-            foreach (GameObject playerGO in mainNetworkManager.playablePrefabs)
+            foreach (GameObject playerGO in mainNetworkManager.playerInstances)
             {
                 Vector3 cameraVector = new Vector3(playerGO.transform.position.x, playerGO.transform.position.y, playerGO.transform.position.z - 10);
                 GameObject cameraSpawned = Instantiate(cameraToSpawn, cameraVector, quaternion.identity);
@@ -57,8 +57,8 @@ namespace RileyMcGowan
                 EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
                 endTrigger.TriggerEnterEvent += EndGame;
             }
-            playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
-            playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
+            localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
+            localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
             GetComponent<RaceModeStateManager>().ChangeState(startingState);
         }
 
@@ -67,9 +67,9 @@ namespace RileyMcGowan
         {
             ControlNullCheck();
             //Enable player controls
-            playerBase.DisableControls();
+            localPlayerBase.DisableControls();
             //Enable arrow controls
-            playerArrow.EnableControls();
+            localPlayerArrow.EnableControls();
         }
         
         [ClientRpc]
@@ -77,9 +77,9 @@ namespace RileyMcGowan
         {
             ControlNullCheck();
             //Disable arrow controls
-            playerArrow.DisableControls();
+            localPlayerArrow.DisableControls();
             //Enable player controls
-            playerBase.EnableControls();
+            localPlayerBase.EnableControls();
         }
         
         [ClientRpc]
@@ -87,23 +87,34 @@ namespace RileyMcGowan
         {
             ControlNullCheck();
             //Disable player controls
-            playerBase.DisableControls();
+            localPlayerBase.DisableControls();
             //Disable arrow controls
-            playerArrow.DisableControls();
+            localPlayerArrow.DisableControls();
+        }
+
+        public void FreezePlayer(PlayerBase playerToFreeze)
+        {
+            playerToFreeze.GetComponent<Rigidbody>().velocity    = Vector3.zero;
+            playerToFreeze.GetComponent<Rigidbody>().isKinematic = true;
+        }
+        public void UnFreezePlayer(PlayerBase playerToFreeze)
+        {
+            // playerToFreeze.GetComponent<Rigidbody>().velocity    = Vector3.zero;
+            playerToFreeze.GetComponent<Rigidbody>().isKinematic = false;
         }
 
         private void ControlNullCheck()
         {
-            if (playerBase == null)
+            if (localPlayerBase == null)
             {
                 Debug.LogError(this + " does not hold a reference for PlayerBase, attempting to find.");
-                playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
+                localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
             }
 
-            if (playerArrow == null)
+            if (localPlayerArrow == null)
             {
                 Debug.LogError(this + " does not hold a reference for PlayerArrow, attempting to find.");
-                playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
+                localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
             }
         }
 

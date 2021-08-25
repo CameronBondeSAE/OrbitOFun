@@ -32,7 +32,7 @@ namespace RileyMcGowan
             isActive = true;
             gravityObject = GetComponentInParent<Gravity>().gameObject;
             gravityManager = FindObjectOfType<GravityManager>();
-            players = FindObjectOfType<CustomNetworkManager>().playablePrefabs;
+            players = FindObjectOfType<CustomNetworkManager>().playerInstances;
             currentMaterial = GetComponent<Renderer>().material;
             Vector3 bounds = gravityObject.GetComponent<Renderer>().bounds.size;
             transform.localScale = new Vector3(bounds.x,bounds.y,0)*(2+gravityManager.areaToAffectGravity/10);
