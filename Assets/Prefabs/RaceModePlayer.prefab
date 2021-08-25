@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 332016160263242430}
   - component: {fileID: 3874881081104680612}
   - component: {fileID: 4982238700180688281}
-  - component: {fileID: 1726068751538293963}
+  - component: {fileID: 955515100469630324}
   m_Layer: 0
   m_Name: RaceModePlayer
   m_TagString: Untagged
@@ -182,7 +182,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!114 &1726068751538293963
+--- !u!114 &955515100469630324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

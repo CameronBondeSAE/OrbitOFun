@@ -72,6 +72,11 @@ namespace Tim
             //level = "Levels/" + "";
             //loads the specified scene
             // SceneManager.LoadSceneAsync(level);
+
+            if (SceneManager.sceneCount>1) // Level already loaded
+            {
+                UnLoadLevel(SceneManager.GetSceneAt(1).name);
+            }
 			customNetworkManager.ServerChangeScene(currentLevel);
 		}
  
