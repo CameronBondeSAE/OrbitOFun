@@ -36,15 +36,6 @@ namespace AaronMcDougall
 
     private void LateUpdate()
         {
-            /*if (hasRigidbody)
-            {
-                //gets values for x & y offsets
-                float xVelOffset = rb.velocity.x * velocityOffset;
-                float yVelOffset = rb.velocity.y * velocityOffset;
-
-                cameraOffset = new Vector3(xVelOffset, yVelOffset);
-            }*/
-            
             //stores camera coordinates
             Vector3 cameraPosition = targetObject.position + cameraOffset;
             //lerps camera position for smooth movement
