@@ -142,15 +142,19 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   levels:
-  - Cams test
+  - Zach's Level
+  - John's Level
+  - Luke's Level
+  - Tom's Level
   - Riley's Level
+  - Tim's Level
   gameModeName: Race to the finish
   description: First to get to the finish line
-  cameraToSpawn: {fileID: 1777151498988790387, guid: ffd60aff257d1e44ca1b284987a38a42, type: 3}
+  cameraToSpawn: {fileID: 2747312625153652201, guid: cd274d135ada5564aace6ffb92f24175, type: 3}
   sceneToSpawn: {fileID: 0}
   startingState: {fileID: 5858792199962200558}
-  playerBase: {fileID: 0}
-  playerArrow: {fileID: 0}
+  localPlayerBase: {fileID: 0}
+  localPlayerArrow: {fileID: 0}
 --- !u!114 &427190987856179964
 MonoBehaviour:
   m_ObjectHideFlags: 0

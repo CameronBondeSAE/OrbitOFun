@@ -25,7 +25,7 @@ namespace RileyMcGowan
         private bool isActive = false;
 
         //Public Vars
-        public GameObject cameraToSpawn;
+        public CameraBase cameraToSpawn;
         public GameObject sceneToSpawn;
         public AaronMcDougall.StateBase startingState;
         public PlayerBase localPlayerBase;
@@ -45,12 +45,6 @@ namespace RileyMcGowan
                 mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
                 mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
             }
-            foreach (GameObject playerGO in mainNetworkManager.playerInstances)
-            {
-                Vector3 cameraVector = new Vector3(playerGO.transform.position.x, playerGO.transform.position.y, playerGO.transform.position.z - 10);
-                GameObject cameraSpawned = Instantiate(cameraToSpawn, cameraVector, quaternion.identity);
-                cameraSpawned.transform.parent = playerGO.transform;
-            }
             isActive = true;
             //Subscriptions
             //if ()
@@ -61,6 +55,7 @@ namespace RileyMcGowan
             localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
             localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
             GetComponent<RaceModeStateManager>().ChangeState(startingState);
+            RpcSetupClient(); //TODO can be changed to states managed
         }
 
         [ClientRpc]
@@ -91,6 +86,16 @@ namespace RileyMcGowan
             localPlayerBase.DisableControls();
             //Disable arrow controls
             localPlayerArrow.DisableControls();
+        }
+        
+        [ClientRpc]
+        public void RpcSetupClient()
+        {
+            //Client Setup Camera
+            NetworkIdentity player = NetworkClient.localPlayer;
+            CameraBase cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
+            cameraSpawned.AssignTarget(player.gameObject.transform);
+            //
         }
 
         public void FreezePlayer(PlayerBase playerToFreeze)

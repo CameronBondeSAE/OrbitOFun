@@ -369,5 +369,5 @@ MonoBehaviour:
   syncInterval: 0.1
   networkManager: {fileID: 0}
   gameManager: {fileID: 0}
-  roundTimer: 20
+  roundTimer: 5
   UIText: {fileID: 5511365367861320266}
