@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using RileyMcGowan;
 using Tom;
 using UnityEngine;
 
@@ -13,8 +14,6 @@ namespace Rob
         public float countAmount;
         public StateBase nextState;
 
-        private PlayerArrow[] playerArrows;
-        
         public override void Enter()
         {
             base.Enter();
@@ -22,7 +21,7 @@ namespace Rob
 
             SpawnCountdown();
             StartCoroutine(CountDownTimer());
-            ArrowControlEnable();
+            GetComponent<RaceModeRules>().RpcEnableArrowControls();
         }
 
         public override void Execute()
@@ -46,14 +45,12 @@ namespace Rob
             for (int i = 0; i < countAmount; i++)
             {
                 Debug.Log(i);
-                //allow controls
-                //show count on IO
                 yield return new WaitForSeconds(1);
             }
 
             DestroyCountdownTimer();
             NextState();
-            ArrowControlDisable();
+            //ArrowControlDisable();
         }
 
         void DestroyCountdownTimer()
@@ -66,23 +63,12 @@ namespace Rob
             GetComponent<StateManager>().ChangeState(nextState);
         }
 
-        void ArrowControlEnable()
-        {
-            playerArrows = FindObjectsOfType<PlayerArrow>();
-            foreach (PlayerArrow a in  playerArrows)
-            {
-                a.EnableControls();
-            }
-        }
-
-        void ArrowControlDisable()
+        /*void ArrowControlDisable()
         {
             foreach (PlayerArrow a in playerArrows)
             {
                 a.DisableControls();
             }
-        }
-
-
+        }*/
     }
 }
