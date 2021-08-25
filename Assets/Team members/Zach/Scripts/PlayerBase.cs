@@ -1,4 +1,5 @@
 using Mirror;
+using RileyMcGowan;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,12 +14,20 @@ namespace Zach
 
         public float forwardFloat;
         private ZachsPlayerActions zachsPlayerActions;
-
+        
         public void Awake()
         {            
             zachsPlayerActions = new ZachsPlayerActions();
             zachsPlayerActions.Enable();
 
+            // Interact with Health events
+            GetComponent<Health>().deathEvent += OnDeathEvent;
+        }
+
+        void OnDeathEvent(Health obj)
+        {
+            Destroy(gameObject);
+            // gameObject.SetActive(false);
         }
 
         public void EnableControls()

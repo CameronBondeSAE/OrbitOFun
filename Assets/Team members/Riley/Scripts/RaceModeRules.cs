@@ -33,6 +33,8 @@ namespace RileyMcGowan
 		public PlayerArrow              localPlayerArrow;
 		public List<PlayerBase>         leaderboard;
 
+		CameraBase cameraSpawned;
+
 		//Might need to add ActivateAllIGameModeInteractables so we can use common game objects
 
 		public override void Activate()
@@ -48,14 +50,9 @@ namespace RileyMcGowan
 			}
 
 			isActive = true;
-			//Subscriptions
-			//if ()
-			{
-				EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
-				endTrigger.TriggerEnterEvent += EndGame;
-			}
-			localPlayerBase  = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();  //Controls for player
-			localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
+
+			// localPlayerBase  = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();  //Controls for player
+			// localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
 			GetComponent<RaceModeStateManager>().ChangeState(startingState);
 			RpcSetupClient(); //TODO can be changed to states managed
 		}
@@ -102,7 +99,11 @@ namespace RileyMcGowan
 		{
 			//Client Setup Camera
 			NetworkIdentity player        = NetworkClient.localPlayer;
-			CameraBase      cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
+
+			if (cameraSpawned)
+			{
+				cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
+			}
 			cameraSpawned.AssignTarget(player.gameObject.transform);
 			//
 		}
