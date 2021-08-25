@@ -31,6 +31,7 @@ namespace AaronMcDougall
         public override void Exit()
         {
             base.Exit();
+            FindObjectOfType<EndTrigger>().TriggerEnterEvent -= GoalReached;
         }
 
         public void GoalReached()
