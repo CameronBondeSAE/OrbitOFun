@@ -22,8 +22,6 @@ namespace AaronMcDougall
         {
             base.AssignTarget(target);
             targetObject = target;
-
-
         }
 
         private void Start()
@@ -38,14 +36,14 @@ namespace AaronMcDougall
 
     private void LateUpdate()
         {
-            if (hasRigidbody)
+            /*if (hasRigidbody)
             {
                 //gets values for x & y offsets
                 float xVelOffset = rb.velocity.x * velocityOffset;
                 float yVelOffset = rb.velocity.y * velocityOffset;
 
                 cameraOffset = new Vector3(xVelOffset, yVelOffset);
-            }
+            }*/
             
             //stores camera coordinates
             Vector3 cameraPosition = targetObject.position + cameraOffset;
