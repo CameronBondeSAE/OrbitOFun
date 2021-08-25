@@ -39,13 +39,16 @@ namespace Tom
 
         private void LateUpdate()
         {
-            if (hasRigidbody)
+            if (trackedTarget != null)
             {
-                float xVelocity = rb.velocity.x * velocityMultiplier;
-                float yVelocity = rb.velocity.y * velocityMultiplier;
-                float magnitude = rb.velocity.magnitude * zoomMultiplier;
+                if (hasRigidbody)
+                {
+                    float xVelocity = rb.velocity.x * velocityMultiplier;
+                    float yVelocity = rb.velocity.y * velocityMultiplier;
+                    float magnitude = rb.velocity.magnitude * zoomMultiplier;
                 
-                offset = new Vector3(xVelocity, yVelocity, zOffset - magnitude);
+                    offset = new Vector3(xVelocity, yVelocity, zOffset - magnitude);
+                }
             }
         }
 
