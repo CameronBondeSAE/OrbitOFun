@@ -44,10 +44,10 @@ namespace AaronMcDougall
             {
                 playerInstance.GetComponent<Rigidbody>()
                     .AddForce(playerInstance.transform.up * speed, ForceMode.VelocityChange);
-                GetComponent<Health>().deathEvent += OndeathEvent;
+                playerInstance.GetComponent<Health>().deathEvent += OndeathEvent;
             }
 
-            GetComponent<EndTrigger>().TriggerEnterEvent += GoalReached;
+            FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
 
             player = GetComponent<PlayerBase>();
 
@@ -62,7 +62,7 @@ namespace AaronMcDougall
             base.Execute();
             if (deathCounter >= numberOfShips)
             {
-                GetComponent<RaceModeRules>().Activate();
+               FindObjectOfType<RaceModeRules>().Activate();
             }
         }
 
@@ -70,10 +70,10 @@ namespace AaronMcDougall
         {
             base.Exit();
             //FindObjectOfType<GameManager>().GameEnd();
-            GetComponent<EndTrigger>().TriggerEnterEvent -= GoalReached;
+            FindObjectOfType<EndTrigger>().TriggerEnterEvent -= GoalReached;
             foreach (var playerInstance in customNetworkManager.playerInstances)
             {
-                FindObjectOfType<Health>().deathEvent -= OndeathEvent;
+                playerInstance.GetComponent<Health>().deathEvent -= OndeathEvent;
             }
             
         }
