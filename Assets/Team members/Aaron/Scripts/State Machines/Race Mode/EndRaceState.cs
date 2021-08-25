@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 
 namespace Rob
 {
-    public class EndRaceState : StateBase
+    public class EndRaceState : Tom.StateBase
     {
-
         public GameObject endRaceTimer;
         public float countDownAmount;
         public float countDownTo;
@@ -45,7 +43,7 @@ namespace Rob
 
         public IEnumerator SpawnEndRaceTimer()
         {
-            for (float i = countDownAmount; i > countDownTo ; i--)
+            for (float i = countDownAmount; i > countDownTo; i--)
             {
                 Debug.Log(i);
                 yield return new WaitForSeconds(1);
