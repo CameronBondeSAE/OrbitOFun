@@ -64,6 +64,7 @@ namespace RileyMcGowan
                 {
                     Rigidbody gravRB = gravRef.rb;
                     Rigidbody influencedRB = influencedRef.rb;
+                    influencedRB.centerOfMass = Vector3.zero;
                     directionToObject = gravRB.position - influencedRB.position; //Take the position difference to find the direction
                     distanceToObject = directionToObject.magnitude;
                     if (distanceToObject < gravityArea && gravRef.gameObject != influencedRef.gameObject)
