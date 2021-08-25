@@ -33,7 +33,6 @@ namespace AaronMcDougall
             {
                 GetComponent<RaceModeRules>().FreezePlayer(playerToFreeze.GetComponent<PlayerBase>());
             }
-            
         }
 
         public override void Execute()

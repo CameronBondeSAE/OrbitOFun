@@ -7,7 +7,7 @@ using Zach;
 public class EndTrigger : MonoBehaviour
 {
     public event Action TriggerEnterEvent;
-    public bool isPlayer;
+    public bool isPlayer = true;
     private void OnTriggerEnter(Collider other)
     {
         if (isPlayer)
