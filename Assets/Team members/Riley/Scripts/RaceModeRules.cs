@@ -96,11 +96,13 @@ namespace RileyMcGowan
         {
             if (playerBase == null)
             {
+                Debug.LogError(this + " does not hold a reference for PlayerBase, attempting to find.");
                 playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
             }
 
             if (playerArrow == null)
             {
+                Debug.LogError(this + " does not hold a reference for PlayerArrow, attempting to find.");
                 playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
             }
         }
