@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Mirror;
+using RileyMcGowan;
 
 namespace AaronMcDougall
 {
@@ -21,6 +22,7 @@ namespace AaronMcDougall
             //enter RaceEndState?
             
             SpawnEndGameUI();
+            DisablePlayerControls();
             StartCoroutine(ShowUICountdown());
         }
 
@@ -55,6 +57,11 @@ namespace AaronMcDougall
         {
             yield return new WaitForSeconds(showUITime);
             GetComponent<RaceModeStateManager>().ChangeState(nextState);
+        }
+
+        public void DisablePlayerControls()
+        {
+            GetComponent<RaceModeRules>().RpcDisableAllControls();
         }
     }
 

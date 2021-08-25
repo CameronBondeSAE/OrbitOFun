@@ -33,6 +33,7 @@ namespace Rob
 
         public void DisablePlayerArrows()
         {
+            // TODO: Replace with DisableControls function from BattleModeRules when it gets written
             PlayerArrow[] arrows = FindObjectsOfType<PlayerArrow>();
             foreach (PlayerArrow a in arrows)
             {
