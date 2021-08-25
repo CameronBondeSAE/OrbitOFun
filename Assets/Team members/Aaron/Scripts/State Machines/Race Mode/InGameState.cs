@@ -5,6 +5,7 @@ using System;
 using Tim;
 using Zach;
 using Tom;
+using RileyMcGowan;
 
 namespace AaronMcDougall
 {
@@ -22,8 +23,6 @@ namespace AaronMcDougall
         {
             base.Enter();
             EnablePlayerControls();
-            playerBase = FindObjectOfType<PlayerBase>();
-            playerArrow = FindObjectOfType<PlayerArrow>();
             player = FindObjectOfType<RaceModePlayer>();
             rb = player.GetComponent<Rigidbody>();
             
@@ -52,12 +51,14 @@ namespace AaronMcDougall
 
         public void EnablePlayerControls()
         {
-            playerBase.EnableControls();
+            GetComponent<RaceModeRules>().RpcEnablePlayerControls();
+            
         }
 
         private void GoalReached()
         {
             Debug.Log("Reached Goal");
+            
         }
 
         private void StartEndGame()
