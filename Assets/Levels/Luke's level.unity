@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 61071341}
   - component: {fileID: 61071340}
   - component: {fileID: 61071339}
+  - component: {fileID: 61071345}
   m_Layer: 0
   m_Name: Planet Can Gravitate(Clone)
   m_TagString: Untagged
@@ -350,6 +351,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.418352
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &61071345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61071337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseMass: 0
+  increaseSize: 0
 --- !u!1 &89576426
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +382,7 @@ GameObject:
   - component: {fileID: 89576430}
   - component: {fileID: 89576429}
   - component: {fileID: 89576428}
+  - component: {fileID: 89576436}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -545,6 +561,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89576426}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &89576436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89576426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &92891768
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,13 +689,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1355949773}
-  - {fileID: 1801579775}
+  - {fileID: 1493177377}
   - {fileID: 1519334007}
   - {fileID: 788609550}
-  - {fileID: 2127274946}
+  - {fileID: 1576634272}
   - {fileID: 404887751}
   - {fileID: 22630390}
-  - {fileID: 1576634272}
+  - {fileID: 983217792}
   - {fileID: 598582316}
   - {fileID: 240622604}
   - {fileID: 337312382}
@@ -706,6 +738,7 @@ GameObject:
   - component: {fileID: 138228602}
   - component: {fileID: 138228601}
   - component: {fileID: 138228600}
+  - component: {fileID: 138228606}
   m_Layer: 0
   m_Name: Planet Can Gravitate(Clone)
   m_TagString: Untagged
@@ -832,6 +865,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.418352
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &138228606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138228598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseMass: 0
+  increaseSize: 0
 --- !u!1 &142235033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1196,7 @@ GameObject:
   - component: {fileID: 240622607}
   - component: {fileID: 240622606}
   - component: {fileID: 240622605}
+  - component: {fileID: 240622613}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -1327,6 +1375,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240622603}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &240622613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240622603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &274635536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,6 +1408,7 @@ GameObject:
   - component: {fileID: 274635540}
   - component: {fileID: 274635539}
   - component: {fileID: 274635538}
+  - component: {fileID: 274635546}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -1522,6 +1587,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274635536}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &274635546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274635536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &287186417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,6 +1620,7 @@ GameObject:
   - component: {fileID: 287186421}
   - component: {fileID: 287186420}
   - component: {fileID: 287186419}
+  - component: {fileID: 287186427}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -1717,6 +1799,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287186417}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &287186427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287186417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &326843443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1832,7 @@ GameObject:
   - component: {fileID: 326843447}
   - component: {fileID: 326843446}
   - component: {fileID: 326843445}
+  - component: {fileID: 326843453}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -1912,6 +2011,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326843443}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &326843453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326843443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &337312381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,6 +2044,7 @@ GameObject:
   - component: {fileID: 337312385}
   - component: {fileID: 337312384}
   - component: {fileID: 337312383}
+  - component: {fileID: 337312391}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -2107,6 +2223,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337312381}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &337312391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337312381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &347574723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2256,7 @@ GameObject:
   - component: {fileID: 347574727}
   - component: {fileID: 347574726}
   - component: {fileID: 347574725}
+  - component: {fileID: 347574733}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -2302,6 +2435,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347574723}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &347574733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347574723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1001 &404887750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2957,6 +3106,7 @@ GameObject:
   - component: {fileID: 598582319}
   - component: {fileID: 598582318}
   - component: {fileID: 598582317}
+  - component: {fileID: 598582325}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -3135,6 +3285,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598582315}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &598582325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598582315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &620477180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3427,7 @@ GameObject:
   - component: {fileID: 696635373}
   - component: {fileID: 696635372}
   - component: {fileID: 696635371}
+  - component: {fileID: 696635379}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -3439,6 +3606,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696635369}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &696635379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696635369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &727454776
 GameObject:
   m_ObjectHideFlags: 0
@@ -3538,6 +3721,7 @@ GameObject:
   - component: {fileID: 743538894}
   - component: {fileID: 743538893}
   - component: {fileID: 743538892}
+  - component: {fileID: 743538900}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -3716,6 +3900,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743538890}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &743538900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743538890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &745365516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,67 +4193,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788609549}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &879333282
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 129134767}
-    m_Modifications:
-    - target: {fileID: 3658296380101885757, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_Name
-      value: End goal
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 209.84001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 225.57104
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.292909
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
 --- !u!1 &894673601
 GameObject:
   m_ObjectHideFlags: 0
@@ -4468,15 +4607,31 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 129134767}
     m_Modifications:
     - target: {fileID: 1203386468863419105, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: sceneId
       value: 3970829704
       objectReference: {fileID: 0}
     - target: {fileID: 1313348190000622744, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 220.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313348190000622744, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313348190000622744, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021259284152750437, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 56.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021259284152750437, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.2
       objectReference: {fileID: 0}
     - target: {fileID: 8021259284152750437, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4484,15 +4639,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.592693
+      value: -133.02165
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 54.2
+      value: 68.99291
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4504,15 +4659,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4532,6 +4687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+--- !u!4 &983217792 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
+  m_PrefabInstance: {fileID: 983217791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &987640780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4547,6 +4707,7 @@ GameObject:
   - component: {fileID: 987640784}
   - component: {fileID: 987640783}
   - component: {fileID: 987640782}
+  - component: {fileID: 987640788}
   m_Layer: 0
   m_Name: Planet Can Gravitate(Clone)
   m_TagString: Untagged
@@ -4673,6 +4834,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.418352
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &987640788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987640780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseMass: 0
+  increaseSize: 0
 --- !u!1 &1031395605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4772,6 +4947,7 @@ GameObject:
   - component: {fileID: 1042025905}
   - component: {fileID: 1042025904}
   - component: {fileID: 1042025903}
+  - component: {fileID: 1042025911}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -4950,6 +5126,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042025901}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1042025911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042025901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1066253116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,6 +5457,7 @@ GameObject:
   - component: {fileID: 1079353092}
   - component: {fileID: 1079353091}
   - component: {fileID: 1079353090}
+  - component: {fileID: 1079353096}
   m_Layer: 0
   m_Name: Planet Can Gravitate(Clone)
   m_TagString: Untagged
@@ -5391,6 +5584,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.418352
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1079353096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079353088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseMass: 0
+  increaseSize: 0
 --- !u!1 &1119403091
 GameObject:
   m_ObjectHideFlags: 0
@@ -5408,6 +5615,7 @@ GameObject:
   - component: {fileID: 1119403095}
   - component: {fileID: 1119403094}
   - component: {fileID: 1119403093}
+  - component: {fileID: 1119403101}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -5586,6 +5794,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119403091}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1119403101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119403091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1137589561
 GameObject:
   m_ObjectHideFlags: 0
@@ -5913,117 +6137,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164321287}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1211438317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1211438318}
-  - component: {fileID: 1211438322}
-  - component: {fileID: 1211438321}
-  - component: {fileID: 1211438320}
-  - component: {fileID: 1211438319}
-  m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1211438318
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211438317}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.628952, y: 120.79291, z: 0}
-  m_LocalScale: {x: 485.54004, y: 7.2599, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1801579775}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1211438319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211438317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d7343eeb5185c4889f9c656582ecf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oppositeBarrier: {fileID: 1388191367}
-  direction: {x: 0, y: 0, z: 0}
---- !u!65 &1211438320
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211438317}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1211438321
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211438317}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1211438322
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211438317}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1306359657
 GameObject:
   m_ObjectHideFlags: 0
@@ -6359,117 +6472,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1 &1388191367
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1388191372}
-  - component: {fileID: 1388191371}
-  - component: {fileID: 1388191370}
-  - component: {fileID: 1388191369}
-  - component: {fileID: 1388191368}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1388191368
+--- !u!114 &1363211470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388191367}
+  m_GameObject: {fileID: 1363211465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d7343eeb5185c4889f9c656582ecf0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oppositeBarrier: {fileID: 1211438317}
-  direction: {x: 0, y: 0, z: 0}
---- !u!65 &1388191369
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388191367}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1388191370
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388191367}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1388191371
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388191367}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1388191372
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388191367}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.628952, y: -94.20709, z: 0}
-  m_LocalScale: {x: 485.54004, y: 7.2599, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1801579775}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1391463288
 GameObject:
   m_ObjectHideFlags: 0
@@ -6663,6 +6681,76 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404494573}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1493177376
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 129134767}
+    m_Modifications:
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6739
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.0747
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -181.60596
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.19291
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036114558155436861, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_Name
+      value: Borders and end goal structure
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+--- !u!4 &1493177377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3036114558155436860, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+  m_PrefabInstance: {fileID: 1493177376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507419328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6984,6 +7072,7 @@ GameObject:
   - component: {fileID: 1539319832}
   - component: {fileID: 1539319831}
   - component: {fileID: 1539319830}
+  - component: {fileID: 1539319838}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -7162,6 +7251,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539319828}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1539319838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539319828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1564979973
 GameObject:
   m_ObjectHideFlags: 0
@@ -7177,6 +7282,7 @@ GameObject:
   - component: {fileID: 1564979977}
   - component: {fileID: 1564979976}
   - component: {fileID: 1564979975}
+  - component: {fileID: 1564979981}
   m_Layer: 0
   m_Name: Planet Can Gravitate(Clone)
   m_TagString: Untagged
@@ -7303,6 +7409,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.418352
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1564979981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564979973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseMass: 0
+  increaseSize: 0
 --- !u!1 &1575870365
 GameObject:
   m_ObjectHideFlags: 0
@@ -7318,6 +7438,7 @@ GameObject:
   - component: {fileID: 1575870369}
   - component: {fileID: 1575870368}
   - component: {fileID: 1575870367}
+  - component: {fileID: 1575870373}
   m_Layer: 0
   m_Name: Planet Can Gravitate(Clone)
   m_TagString: Untagged
@@ -7444,6 +7565,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.418352
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1575870373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575870365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseMass: 0
+  increaseSize: 0
 --- !u!1 &1576634271
 GameObject:
   m_ObjectHideFlags: 0
@@ -7461,6 +7596,7 @@ GameObject:
   - component: {fileID: 1576634275}
   - component: {fileID: 1576634274}
   - component: {fileID: 1576634273}
+  - component: {fileID: 1576634281}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -7481,7 +7617,7 @@ Transform:
   m_Children:
   - {fileID: 1156228655}
   m_Father: {fileID: 129134767}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1576634273
 MonoBehaviour:
@@ -7639,6 +7775,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576634271}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1576634281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576634271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1576908839
 GameObject:
   m_ObjectHideFlags: 0
@@ -7656,6 +7808,7 @@ GameObject:
   - component: {fileID: 1576908843}
   - component: {fileID: 1576908842}
   - component: {fileID: 1576908841}
+  - component: {fileID: 1576908849}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -7834,6 +7987,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576908839}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1576908849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576908839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1627972576
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,6 +8161,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1698627221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698627216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1703885683
 GameObject:
   m_ObjectHideFlags: 0
@@ -8009,6 +8194,7 @@ GameObject:
   - component: {fileID: 1703885687}
   - component: {fileID: 1703885686}
   - component: {fileID: 1703885685}
+  - component: {fileID: 1703885693}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -8187,6 +8373,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703885683}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1703885693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703885683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1725203095
 GameObject:
   m_ObjectHideFlags: 0
@@ -8288,6 +8490,7 @@ GameObject:
   - component: {fileID: 1770203865}
   - component: {fileID: 1770203864}
   - component: {fileID: 1770203863}
+  - component: {fileID: 1770203871}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -8466,38 +8669,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770203861}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1801579774
-GameObject:
+--- !u!114 &1770203871
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1801579775}
-  m_Layer: 0
-  m_Name: Barriers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1801579775
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801579774}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1388191372}
-  - {fileID: 1211438318}
-  m_Father: {fileID: 129134767}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1770203861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1837427683
 GameObject:
   m_ObjectHideFlags: 0
@@ -8956,6 +9143,7 @@ GameObject:
   - component: {fileID: 1907161110}
   - component: {fileID: 1907161109}
   - component: {fileID: 1907161108}
+  - component: {fileID: 1907161116}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -9134,6 +9322,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907161106}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1907161116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907161106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1913357892
 GameObject:
   m_ObjectHideFlags: 0
@@ -9667,6 +9871,7 @@ GameObject:
   - component: {fileID: 2054052203}
   - component: {fileID: 2054052202}
   - component: {fileID: 2054052201}
+  - component: {fileID: 2054052207}
   m_Layer: 0
   m_Name: Planet Can Gravitate(Clone)
   m_TagString: Untagged
@@ -9793,8 +9998,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.418352
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &2127274946 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7500168093015119162, guid: 6a23ed512a8626a44ad4a05f14d22e0e, type: 3}
-  m_PrefabInstance: {fileID: 879333282}
+--- !u!114 &2054052207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054052199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseMass: 0
+  increaseSize: 0
