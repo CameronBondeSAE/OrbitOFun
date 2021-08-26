@@ -1,5 +1,6 @@
 using Mirror;
 using RileyMcGowan;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
@@ -25,6 +26,12 @@ namespace Zach
 
             // Interact with Health events
             GetComponent<Health>().deathEvent += OnDeathEvent;
+        }
+
+        void OnDestroy()
+        {
+            GetComponent<Health>().deathEvent -= OnDeathEvent;
+            RpcDisableControls();
         }
 
         void OnDeathEvent(Health obj)
