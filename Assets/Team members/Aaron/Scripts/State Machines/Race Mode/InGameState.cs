@@ -41,8 +41,9 @@ namespace AaronMcDougall
 
             foreach (var playerInstance in customNetworkManager.playerInstances)
             {
-                playerInstance.GetComponent<Rigidbody>()
-                    .AddForce(playerInstance.transform.up * speed, ForceMode.VelocityChange);
+                Rigidbody rb = playerInstance.GetComponent<Rigidbody>();
+                // rb.AddForce(playerInstance.transform.up * speed, ForceMode.VelocityChange);
+                rb.velocity                                      =  playerInstance.transform.up * speed;
                 playerInstance.GetComponent<Health>().deathEvent += OndeathEvent;
             }
 
