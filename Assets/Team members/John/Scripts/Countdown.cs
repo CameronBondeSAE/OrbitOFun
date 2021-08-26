@@ -34,7 +34,7 @@ namespace John
 
         public void Update()
         {
-            if (isClient)
+            if (isServer)
             {
                 //able to delay the timer for the game
                 if (startCount)
@@ -51,7 +51,7 @@ namespace John
                 } 
             }
             
-            if (isServer)
+            if (isClient)
             {
                 //formatting timer in minutes and seconds
                 int minutes = Mathf.FloorToInt(roundTimer / 60F);
