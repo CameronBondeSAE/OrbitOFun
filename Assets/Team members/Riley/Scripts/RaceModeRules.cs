@@ -40,7 +40,7 @@ namespace RileyMcGowan
 		public override void Activate()
 		{
 			base.Activate(); //Activate the mode
-			if (mainNetworkManager == null)
+			//if (mainNetworkManager == null)
 			{
 				mainNetworkManager = FindObjectOfType<CustomNetworkManager>();
 			}
@@ -62,13 +62,15 @@ namespace RileyMcGowan
 		public void RpcEnableArrowControls()
 		{
 			// ControlNullCheck();
-
-			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
+			if (isServer)
 			{
-				if (playerInstance != null)
+				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 				{
-					playerInstance.GetComponent<PlayerBase>().DisableControls();
-					playerInstance.GetComponent<PlayerArrow>().EnableControls();
+					//if (playerInstance != null)
+					{
+						playerInstance.GetComponent<PlayerBase>().DisableControls();
+						playerInstance.GetComponent<PlayerArrow>().EnableControls();
+					}
 				}
 			}
 		}
@@ -78,13 +80,15 @@ namespace RileyMcGowan
 		{
 			// ControlNullCheck();
 			//Disable arrow controls
-
-			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
+			if (isServer)
 			{
-				if (playerInstance != null)
+				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 				{
-					playerInstance.GetComponent<PlayerBase>().EnableControls();
-					playerInstance.GetComponent<PlayerArrow>().DisableControls();
+					//if (playerInstance != null)
+					{
+						playerInstance.GetComponent<PlayerBase>().EnableControls();
+						playerInstance.GetComponent<PlayerArrow>().DisableControls();
+					}
 				}
 			}
 		}
@@ -92,13 +96,16 @@ namespace RileyMcGowan
 		[ClientRpc]
 		public void RpcDisableAllControls()
 		{
-			// ControlNullCheck();
-			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
+			if (isServer)
 			{
-				if (playerInstance != null)
+				// ControlNullCheck();
+				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 				{
-					playerInstance.GetComponent<PlayerBase>().DisableControls();
-					playerInstance.GetComponent<PlayerArrow>().DisableControls();
+					//if (playerInstance != null)
+					{
+						playerInstance.GetComponent<PlayerBase>().DisableControls();
+						playerInstance.GetComponent<PlayerArrow>().DisableControls();
+					}
 				}
 			}
 		}
