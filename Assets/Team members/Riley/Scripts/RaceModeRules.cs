@@ -66,39 +66,30 @@ namespace RileyMcGowan
 			{
 				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 				{
-					playerInstance.GetComponent<PlayerBase>().DisableControls();
-					playerInstance.GetComponent<PlayerArrow>().EnableControls();
-					
+					playerInstance.GetComponent<PlayerBase>().RpcDisableControls();
+					playerInstance.GetComponent<PlayerArrow>().RpcEnableControls();
 				}
 			}
 		}
 
-		[ClientRpc]
-		public void RpcEnablePlayerControls()
+		public void EnablePlayerControls()
 		{
 			// ControlNullCheck();
 			//Disable arrow controls
-			if (isServer)
+			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 			{
-				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
-				{
-					playerInstance.GetComponent<PlayerBase>().EnableControls();
-					playerInstance.GetComponent<PlayerArrow>().DisableControls();
-				}
+				playerInstance.GetComponent<PlayerBase>().RpcEnableControls();
+				playerInstance.GetComponent<PlayerArrow>().RpcDisableControls();
 			}
 		}
 
-		[ClientRpc]
-		public void RpcDisableAllControls()
+		public void DisableAllControls()
 		{
-			if (isServer)
+			// ControlNullCheck();
+			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 			{
-				// ControlNullCheck();
-				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
-				{
-					playerInstance.GetComponent<PlayerBase>().DisableControls();
-					playerInstance.GetComponent<PlayerArrow>().DisableControls();
-				}
+				playerInstance.GetComponent<PlayerBase>().RpcDisableControls();
+				playerInstance.GetComponent<PlayerArrow>().RpcDisableControls();
 			}
 		}
 
@@ -117,13 +108,15 @@ namespace RileyMcGowan
 			//
 		}
 
-		public void FreezePlayer(PlayerBase playerToFreeze)
+		[ClientRpc]
+		public void RpcFreezePlayer(NetworkIdentity playerToFreeze)
 		{
 			playerToFreeze.GetComponent<Rigidbody>().velocity    = Vector3.zero;
 			playerToFreeze.GetComponent<Rigidbody>().isKinematic = true;
 		}
 
-		public void UnFreezePlayer(PlayerBase playerToFreeze)
+		[ClientRpc]
+		public void RpcUnFreezePlayer(NetworkIdentity playerToFreeze)
 		{
 			// playerToFreeze.GetComponent<Rigidbody>().velocity    = Vector3.zero;
 			playerToFreeze.GetComponent<Rigidbody>().isKinematic = false;

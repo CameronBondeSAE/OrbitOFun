@@ -6,7 +6,8 @@ using Zach;
 
 public class EndTrigger : MonoBehaviour
 {
-    public event Action TriggerEnterEvent;
+    public event Action<PlayerBase> PlayerTriggerEnterEvent;
+    public event Action<GameObject> TriggerEnterEvent;
     public bool isPlayer = true;
     private void OnTriggerEnter(Collider other)
     {
@@ -14,12 +15,12 @@ public class EndTrigger : MonoBehaviour
         {
             if (other.GetComponentInParent<PlayerBase>())
             {
-                TriggerEnterEvent?.Invoke();
+                PlayerTriggerEnterEvent?.Invoke(other.GetComponentInParent<PlayerBase>());
             }
         }
         else
         {
-            TriggerEnterEvent?.Invoke();
+            TriggerEnterEvent?.Invoke(other.transform.root.gameObject);
         }
     }
 }

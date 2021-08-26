@@ -61,7 +61,7 @@ namespace AaronMcDougall
 
         public void DisablePlayerControls()
         {
-            GetComponent<RaceModeRules>().RpcDisableAllControls();
+            GetComponent<RaceModeRules>().DisableAllControls();
         }
     }
 

@@ -37,7 +37,7 @@ namespace Rob
             PlayerArrow[] arrows = FindObjectsOfType<PlayerArrow>();
             foreach (PlayerArrow a in arrows)
             {
-                a.DisableControls();
+                a.RpcDisableControls();
             }
         }
 

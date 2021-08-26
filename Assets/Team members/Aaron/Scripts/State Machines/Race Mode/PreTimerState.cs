@@ -70,7 +70,7 @@ namespace AaronMcDougall
         {
             foreach (GameObject playerToFreeze in FindObjectOfType<CustomNetworkManager>().playerInstances)
             {
-                GetComponent<RaceModeRules>().FreezePlayer(playerToFreeze.GetComponent<PlayerBase>());
+                GetComponent<RaceModeRules>().RpcFreezePlayer(playerToFreeze.GetComponent<NetworkIdentity>());
             }
         }
     }

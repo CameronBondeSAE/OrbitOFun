@@ -50,7 +50,7 @@ namespace Rob
 
             DestroyCountdownTimer();
             NextState();
-            GetComponent<RaceModeRules>().RpcDisableAllControls();
+            GetComponent<RaceModeRules>().DisableAllControls();
         }
 
         void DestroyCountdownTimer()

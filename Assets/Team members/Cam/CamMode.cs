@@ -36,7 +36,7 @@ public class CamMode : GameModeBase
 	public void RpcEnableLocalPlayerControls()
 	{
 		PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
-		playerBase.EnableControls();
+		playerBase.RpcEnableControls();
 		
 		PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
 		// playerArrow.EnableControls();
