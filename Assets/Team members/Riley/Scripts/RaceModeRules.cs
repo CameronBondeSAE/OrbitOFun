@@ -105,6 +105,7 @@ namespace RileyMcGowan
 				cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
 			}
 
+			cameraSpawned.GetComponent<Tom.CameraTracking>().hasRigidbody = false;
 			cameraSpawned.AssignTarget(FindObjectOfType<Overview>().transform);
 			//
 		}
@@ -120,6 +121,7 @@ namespace RileyMcGowan
 				cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
 			}
 
+			cameraSpawned.GetComponent<Tom.CameraTracking>().hasRigidbody = true;
 			cameraSpawned.AssignTarget(player.gameObject.transform);
 			//
 		}
