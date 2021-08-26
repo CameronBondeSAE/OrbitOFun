@@ -20,7 +20,6 @@ namespace AaronMcDougall
         private int deathCounter;
         private CustomNetworkManager customNetworkManager;
 
-
         private void Awake()
         {
             customNetworkManager = FindObjectOfType<CustomNetworkManager>();

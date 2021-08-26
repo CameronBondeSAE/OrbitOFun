@@ -55,7 +55,7 @@ namespace RileyMcGowan
 			// localPlayerBase  = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();  //Controls for player
 			// localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
 			GetComponent<RaceModeStateManager>().ChangeState(startingState);
-			RpcSetupClientGameplay(); //TODO can be changed to states managed
+			//RpcSetupClientGameplay(); //TODO can be changed to states managed
 		}
 
 		[ClientRpc]

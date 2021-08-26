@@ -21,6 +21,8 @@ namespace AaronMcDougall
             
             SpawnCountdown();
             EnableArrowControls();
+            
+            GetComponent<RaceModeRules>().RpcSetupClientGameplay();
 
             //is this where ArrowAimState is entered?
             //also need to enter LaunchState at some point through here perhaps

@@ -30,6 +30,7 @@ namespace AaronMcDougall
             }
 
             PlayerFreeze();
+            GetComponent<RaceModeRules>().RpcSetupClientOverview();
         }
 
         public override void Execute()
@@ -44,6 +45,7 @@ namespace AaronMcDougall
 
         IEnumerator GetReadyMessage()
         {
+            //NetworkServer.Spawn(messagePrefab);
             messageCopy = Instantiate(messagePrefab);
 
             for (int i = 0; i < readyTime; i++)
@@ -52,6 +54,7 @@ namespace AaronMcDougall
                 yield return new WaitForSeconds(1);
             }
             
+            //NetworkServer.UnSpawn(messagePrefab);
             DestroyMessage();
             ChangeToNextState();
         }
