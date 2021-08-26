@@ -65,8 +65,11 @@ namespace RileyMcGowan
 
 			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 			{
-				playerInstance.GetComponent<PlayerBase>().DisableControls();
-				playerInstance.GetComponent<PlayerArrow>().EnableControls();
+				if (playerInstance != null)
+				{
+					playerInstance.GetComponent<PlayerBase>().DisableControls();
+					playerInstance.GetComponent<PlayerArrow>().EnableControls();
+				}
 			}
 		}
 
@@ -78,8 +81,11 @@ namespace RileyMcGowan
 
 			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 			{
-				playerInstance.GetComponent<PlayerBase>().EnableControls();
-				playerInstance.GetComponent<PlayerArrow>().DisableControls();
+				if (playerInstance != null)
+				{
+					playerInstance.GetComponent<PlayerBase>().EnableControls();
+					playerInstance.GetComponent<PlayerArrow>().DisableControls();
+				}
 			}
 		}
 
@@ -87,11 +93,13 @@ namespace RileyMcGowan
 		public void RpcDisableAllControls()
 		{
 			// ControlNullCheck();
-
 			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 			{
-				playerInstance.GetComponent<PlayerBase>().DisableControls();
-				playerInstance.GetComponent<PlayerArrow>().DisableControls();
+				if (playerInstance != null)
+				{
+					playerInstance.GetComponent<PlayerBase>().DisableControls();
+					playerInstance.GetComponent<PlayerArrow>().DisableControls();
+				}
 			}
 		}
 
