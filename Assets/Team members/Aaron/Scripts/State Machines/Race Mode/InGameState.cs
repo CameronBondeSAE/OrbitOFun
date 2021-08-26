@@ -30,11 +30,10 @@ namespace AaronMcDougall
         {
             base.Enter();
             deathCounter = 0;
-            
             EnablePlayerControls();
-
+            FindObjectOfType<GameModeBase>().ActivateAllIGameModeInteractables();
             numberOfShips = customNetworkManager.playerInstances.Count;
-
+            
             foreach (GameObject playerToUnFreeze in customNetworkManager.playerInstances)
             {
                 GetComponent<RaceModeRules>().UnFreezePlayer(playerToUnFreeze.GetComponent<PlayerBase>());
@@ -48,10 +47,7 @@ namespace AaronMcDougall
             }
 
             FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
-
             player = GetComponent<PlayerBase>();
-
-
             //enter RaceControlState
             //not sure about initialising gravity etc, whether that's controlled here or outside
         }
@@ -62,7 +58,7 @@ namespace AaronMcDougall
             base.Execute();
             if (deathCounter >= numberOfShips)
             {
-               FindObjectOfType<RaceModeRules>().Activate();
+                FindObjectOfType<RaceModeRules>().Activate();
             }
         }
 
@@ -75,7 +71,6 @@ namespace AaronMcDougall
             {
                 playerInstance.GetComponent<Health>().deathEvent -= OndeathEvent;
             }
-            
         }
 
         public void EnablePlayerControls()
