@@ -49,6 +49,10 @@ namespace Tom
                 
                     offset = new Vector3(xVelocity, yVelocity, zOffset - magnitude);
                 }
+                else
+                {
+                    offset = new Vector3(0, 0, zOffset);
+                }
             }
         }
 
