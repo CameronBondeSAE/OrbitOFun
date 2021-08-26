@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 408542409350615452, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 408542409350615452, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
       propertyPath: m_LocalScale.x
@@ -360,11 +360,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 61071337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseMass: 0
-  increaseSize: 0
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &89576426
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,12 +692,12 @@ Transform:
   m_Children:
   - {fileID: 1355949773}
   - {fileID: 1493177377}
-  - {fileID: 1519334007}
-  - {fileID: 788609550}
-  - {fileID: 1576634272}
   - {fileID: 404887751}
   - {fileID: 22630390}
   - {fileID: 983217792}
+  - {fileID: 1519334007}
+  - {fileID: 788609550}
+  - {fileID: 1576634272}
   - {fileID: 598582316}
   - {fileID: 240622604}
   - {fileID: 337312382}
@@ -874,11 +876,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 138228598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseMass: 0
-  increaseSize: 0
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &142235033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,7 +2464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 408542409350615452, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 408542409350615452, guid: b7ac5847fd3d6d44f8002ae6dec1963d, type: 3}
       propertyPath: m_LocalScale.x
@@ -4015,6 +4019,7 @@ GameObject:
   - component: {fileID: 788609553}
   - component: {fileID: 788609552}
   - component: {fileID: 788609551}
+  - component: {fileID: 788609559}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -4035,7 +4040,7 @@ Transform:
   m_Children:
   - {fileID: 1913357893}
   m_Father: {fileID: 129134767}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &788609551
 MonoBehaviour:
@@ -4193,6 +4198,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788609549}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &788609559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788609549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &894673601
 GameObject:
   m_ObjectHideFlags: 0
@@ -4639,7 +4660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8819702025219497083, guid: c0001a7e632b61a42a0efd1946e29dda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4843,11 +4864,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 987640780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseMass: 0
-  increaseSize: 0
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1031395605
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,11 +5616,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079353088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseMass: 0
-  increaseSize: 0
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1119403091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6893,6 +6918,7 @@ GameObject:
   - component: {fileID: 1519334010}
   - component: {fileID: 1519334009}
   - component: {fileID: 1519334008}
+  - component: {fileID: 1519334016}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -6913,7 +6939,7 @@ Transform:
   m_Children:
   - {fileID: 1854337151}
   m_Father: {fileID: 129134767}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1519334008
 MonoBehaviour:
@@ -7071,6 +7097,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519334006}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1519334016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519334006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1539319828
 GameObject:
   m_ObjectHideFlags: 0
@@ -7434,11 +7476,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1564979973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseMass: 0
-  increaseSize: 0
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1575870365
 GameObject:
   m_ObjectHideFlags: 0
@@ -7590,11 +7634,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1575870365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseMass: 0
-  increaseSize: 0
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
 --- !u!1 &1576634271
 GameObject:
   m_ObjectHideFlags: 0
@@ -7613,6 +7659,7 @@ GameObject:
   - component: {fileID: 1576634274}
   - component: {fileID: 1576634273}
   - component: {fileID: 1576634281}
+  - component: {fileID: 1576634282}
   m_Layer: 0
   m_Name: Gravitating Planet(Clone)
   m_TagString: Untagged
@@ -7633,7 +7680,7 @@ Transform:
   m_Children:
   - {fileID: 1156228655}
   m_Father: {fileID: 129134767}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1576634273
 MonoBehaviour:
@@ -7792,6 +7839,22 @@ MeshFilter:
   m_GameObject: {fileID: 1576634271}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1576634281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576634271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
+--- !u!114 &1576634282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10023,8 +10086,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2054052199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1789822355ce034db257ca636ceb24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ad5d7d6c2dc1a840b4f9d75a4c666db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseMass: 0
-  increaseSize: 0
+  syncMode: 0
+  syncInterval: 0.1
+  amount: 100000
+  continuousDamage: 1
