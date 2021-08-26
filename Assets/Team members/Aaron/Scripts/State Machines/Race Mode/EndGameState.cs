@@ -23,6 +23,7 @@ namespace AaronMcDougall
             
             SpawnEndGameUI();
             DisablePlayerControls();
+            FindObjectOfType<RaceModeRules>().RpcSetupClientOverview();
             StartCoroutine(ShowUICountdown());
         }
 
