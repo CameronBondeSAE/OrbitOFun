@@ -18,17 +18,17 @@ namespace RileyMcGowan
         private void OnTriggerEnter(Collider other)
         {
             // Only support moving physics objects
-            if (!other.GetComponent<Rigidbody>())
+            if (!other.GetComponentInParent<Rigidbody>())
                 return;
 
             //if (other.GetComponent<Zach.PlayerBase>() != null)
             {
-                if (otherBarrierDirection.y > 0 && other.transform.root.GetComponent<Rigidbody>().velocity.y > 0)
+                if (otherBarrierDirection.y > 0 && other.transform.root.GetComponent<Rigidbody>().velocity.y < 0)
                 {
                     //If the other barrier is down add up
                     Teleport(other);
                 }
-                else if (otherBarrierDirection.y < 0 && other.transform.root.GetComponent<Rigidbody>().velocity.y < 0)
+                else if (otherBarrierDirection.y < 0 && other.transform.root.GetComponent<Rigidbody>().velocity.y > 0)
                 {
                     //If the other barrier is up add down
                     Teleport(other);
