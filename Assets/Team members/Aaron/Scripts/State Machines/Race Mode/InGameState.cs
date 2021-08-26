@@ -31,7 +31,7 @@ namespace AaronMcDougall
             base.Enter();
             deathCounter = 0;
             EnablePlayerControls();
-            FindObjectOfType<GameModeBase>().ActivateAllIGameModeInteractables();
+            customNetworkManager.gameManager.gameModeBase.ActivateAllIGameModeInteractables();
             numberOfShips = customNetworkManager.playerInstances.Count;
             
             foreach (GameObject playerToUnFreeze in customNetworkManager.playerInstances)
