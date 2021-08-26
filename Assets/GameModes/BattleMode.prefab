@@ -142,9 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  levels: []
+  levels:
+  - Tom's Battle
   gameModeName: Battle Mode
   description: Be the last base standing
+  playablePrefab: {fileID: 0}
   cameraToSpawn: {fileID: 2747312625153652201, guid: cd274d135ada5564aace6ffb92f24175, type: 3}
   sceneToSpawn: {fileID: 0}
   startingState: {fileID: 7631233679066580564}
