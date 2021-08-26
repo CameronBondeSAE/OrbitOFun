@@ -2,6 +2,7 @@ using Mirror;
 using RileyMcGowan;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 namespace Zach
 {
@@ -14,11 +15,13 @@ namespace Zach
 
         public float forwardFloat;
         private ZachsPlayerActions zachsPlayerActions;
+        public VisualEffect particle;
         
         public void Awake()
         {            
             zachsPlayerActions = new ZachsPlayerActions();
             zachsPlayerActions.Enable();
+            particle.Stop();
 
             // Interact with Health events
             GetComponent<Health>().deathEvent += OnDeathEvent;
@@ -68,6 +71,14 @@ namespace Zach
         {
             //velocity = new Vector3(0, 0, speed * obj.ReadValue<float>());
             forwardFloat = obj.ReadValue<float>();
+            if (obj.ReadValue<float>() > 0)
+            {
+                particle.Play();
+            }
+            else
+            {
+                particle.Stop();
+            }
         }
 
         private void RotateOnPerformed(InputAction.CallbackContext obj)
