@@ -6744,6 +6744,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Borders and end goal structure
       objectReference: {fileID: 0}
+    - target: {fileID: 4856367315245266381, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0082238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856367315245266381, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0023374143
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913536597730109764, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: sceneId
+      value: 2258746983
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005385510417505790, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: sceneId
+      value: 493302286
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde0221879efc1446b58bc7750f63218, type: 3}
 --- !u!4 &1493177377 stripped
