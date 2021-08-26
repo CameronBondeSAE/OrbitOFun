@@ -48,7 +48,6 @@ namespace RileyMcGowan
 			// For restarting the round. Destroy old Ships
 			mainNetworkManager.DespawnPlayers();
 
-			ActivateAllIGameModeInteractables();
 			mainNetworkManager.SpawnPlayers(); //Spawn Players > Network Manager
 
 			isActive = true;
