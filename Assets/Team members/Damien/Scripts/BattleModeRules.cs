@@ -42,58 +42,58 @@ namespace Damien
             }
             isActive = true;
             
-            EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
-            endTrigger.TriggerEnterEvent += EndGame;
+            // EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
+            // endTrigger.PlayerTriggerEnterEvent += EndGame;
             
             localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
             localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
             GetComponent<StateManager>().ChangeState(startingState);
             RpcSetupClient();
-            RpcEnableLocalPlayerControls();
+            // RpcEnableLocalPlayerControls();
         }
 
-        [ClientRpc]
-        public void RpcEnableArrowControls()
-        {
-            ControlNullCheck();
-            //Enable player controls
-            localPlayerBase.DisableControls();
-            //Enable arrow controls
-            localPlayerArrow.EnableControls();
-        }
-
-        [ClientRpc]
-        public void RpcEnableLocalPlayerControls()
-        {
-            PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
-            playerBase.enabled = false;
-		
-            PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
-            // playerArrow.EnableControls();
-            playerArrow.enabled = true;
-            
-        }
-
-        [ClientRpc]
-        public void RpcDisableControls()
-        {
-            ControlNullCheck();
-            //Disables arrow controls
-            localPlayerArrow.DisableControls();
-        }
-
-        private void ControlNullCheck()
-        {
-            if (localPlayerBase == null)
-            {
-                localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
-            }
-
-            if (localPlayerArrow == null)
-            {
-                localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
-            }
-        }
+        // [ClientRpc]
+        // public void RpcEnableArrowControls()
+        // {
+        //     ControlNullCheck();
+        //     //Enable player controls
+        //     localPlayerBase.DisableControls();
+        //     //Enable arrow controls
+        //     localPlayerArrow.RpcEnableControls();
+        // }
+        //
+        // [ClientRpc]
+        // public void RpcEnableLocalPlayerControls()
+        // {
+        //     PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
+        //     playerBase.enabled = false;
+		      //
+        //     PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
+        //     // playerArrow.EnableControls();
+        //     playerArrow.enabled = true;
+        //     
+        // }
+        //
+        // [ClientRpc]
+        // public void RpcDisableControls()
+        // {
+        //     ControlNullCheck();
+        //     //Disables arrow controls
+        //     localPlayerArrow.DisableControls();
+        // }
+        //
+        // private void ControlNullCheck()
+        // {
+        //     if (localPlayerBase == null)
+        //     {
+        //         localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
+        //     }
+        //
+        //     if (localPlayerArrow == null)
+        //     {
+        //         localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
+        //     }
+        // }
         
         [ClientRpc]
         public void RpcSetupClient()

@@ -55,7 +55,7 @@ namespace RileyMcGowan
 			// localPlayerBase  = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();  //Controls for player
 			// localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
 			GetComponent<RaceModeStateManager>().ChangeState(startingState);
-			RpcSetupClient(); //TODO can be changed to states managed
+			RpcSetupClientGameplay(); //TODO can be changed to states managed
 		}
 
 		[ClientRpc]
@@ -66,44 +66,51 @@ namespace RileyMcGowan
 			{
 				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 				{
-					playerInstance.GetComponent<PlayerBase>().DisableControls();
-					playerInstance.GetComponent<PlayerArrow>().EnableControls();
-					
+					playerInstance.GetComponent<PlayerBase>().RpcDisableControls();
+					playerInstance.GetComponent<PlayerArrow>().RpcEnableControls();
 				}
 			}
 		}
 
-		[ClientRpc]
-		public void RpcEnablePlayerControls()
+		public void EnablePlayerControls()
 		{
 			// ControlNullCheck();
 			//Disable arrow controls
-			if (isServer)
+			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 			{
-				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
-				{
-					playerInstance.GetComponent<PlayerBase>().EnableControls();
-					playerInstance.GetComponent<PlayerArrow>().DisableControls();
-				}
+				playerInstance.GetComponent<PlayerBase>().RpcEnableControls();
+				playerInstance.GetComponent<PlayerArrow>().RpcDisableControls();
 			}
 		}
 
-		[ClientRpc]
-		public void RpcDisableAllControls()
+		public void DisableAllControls()
 		{
-			if (isServer)
+			// ControlNullCheck();
+			foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
 			{
-				// ControlNullCheck();
-				foreach (GameObject playerInstance in mainNetworkManager.playerInstances)
-				{
-					playerInstance.GetComponent<PlayerBase>().DisableControls();
-					playerInstance.GetComponent<PlayerArrow>().DisableControls();
-				}
+				playerInstance.GetComponent<PlayerBase>().RpcDisableControls();
+				playerInstance.GetComponent<PlayerArrow>().RpcDisableControls();
 			}
 		}
 
+		
 		[ClientRpc]
-		public void RpcSetupClient()
+		public void RpcSetupClientOverview()
+		{
+			//Client Setup Camera
+			NetworkIdentity player = NetworkClient.localPlayer;
+
+			if (cameraSpawned == null)
+			{
+				cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
+			}
+
+			cameraSpawned.AssignTarget(FindObjectOfType<Overview>().transform);
+			//
+		}
+		
+		[ClientRpc]
+		public void RpcSetupClientGameplay()
 		{
 			//Client Setup Camera
 			NetworkIdentity player = NetworkClient.localPlayer;
@@ -117,13 +124,15 @@ namespace RileyMcGowan
 			//
 		}
 
-		public void FreezePlayer(PlayerBase playerToFreeze)
+		[ClientRpc]
+		public void RpcFreezePlayer(NetworkIdentity playerToFreeze)
 		{
 			playerToFreeze.GetComponent<Rigidbody>().velocity    = Vector3.zero;
 			playerToFreeze.GetComponent<Rigidbody>().isKinematic = true;
 		}
 
-		public void UnFreezePlayer(PlayerBase playerToFreeze)
+		[ClientRpc]
+		public void RpcUnFreezePlayer(NetworkIdentity playerToFreeze)
 		{
 			// playerToFreeze.GetComponent<Rigidbody>().velocity    = Vector3.zero;
 			playerToFreeze.GetComponent<Rigidbody>().isKinematic = false;

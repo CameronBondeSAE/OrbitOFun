@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using RileyMcGowan;
 using UnityEngine;
+using Zach;
 
 namespace AaronMcDougall
 {
@@ -16,7 +17,7 @@ namespace AaronMcDougall
         public override void Enter()
         {
             base.Enter();
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
+            FindObjectOfType<EndTrigger>().PlayerTriggerEnterEvent += GoalReached;
         }
 
         public override void Execute()
@@ -31,10 +32,10 @@ namespace AaronMcDougall
         public override void Exit()
         {
             base.Exit();
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent -= GoalReached;
+            FindObjectOfType<EndTrigger>().PlayerTriggerEnterEvent -= GoalReached;
         }
 
-        public void GoalReached()
+        public void GoalReached(PlayerBase playerBase)
         {
             //stop race timer if there is one
             Debug.Log(GetComponent<RaceModeRules>().leaderboard + " finished");

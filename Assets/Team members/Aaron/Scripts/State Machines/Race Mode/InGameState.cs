@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using LukeBaker;
+using Mirror;
 using Tim;
 using Zach;
 using Tom;
@@ -15,7 +16,6 @@ namespace AaronMcDougall
         private ZachsPlayerActions zachsPlayerActions;
         public float speed;
         public StateBase nextState;
-        private PlayerBase player;
         private int numberOfShips;
         private int deathCounter;
         private CustomNetworkManager customNetworkManager;
@@ -36,7 +36,7 @@ namespace AaronMcDougall
             
             foreach (GameObject playerToUnFreeze in customNetworkManager.playerInstances)
             {
-                GetComponent<RaceModeRules>().UnFreezePlayer(playerToUnFreeze.GetComponent<PlayerBase>());
+                GetComponent<RaceModeRules>().RpcUnFreezePlayer(playerToUnFreeze.GetComponent<NetworkIdentity>());
             }
 
             foreach (var playerInstance in customNetworkManager.playerInstances)
@@ -46,8 +46,7 @@ namespace AaronMcDougall
                 playerInstance.GetComponent<Health>().deathEvent += OndeathEvent;
             }
 
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent += GoalReached;
-            player = GetComponent<PlayerBase>();
+            FindObjectOfType<EndTrigger>().PlayerTriggerEnterEvent += GoalReached;
             //enter RaceControlState
             //not sure about initialising gravity etc, whether that's controlled here or outside
         }
@@ -66,7 +65,7 @@ namespace AaronMcDougall
         {
             base.Exit();
             //FindObjectOfType<GameManager>().GameEnd();
-            FindObjectOfType<EndTrigger>().TriggerEnterEvent -= GoalReached;
+            FindObjectOfType<EndTrigger>().PlayerTriggerEnterEvent -= GoalReached;
             foreach (var playerInstance in customNetworkManager.playerInstances)
             {
                 playerInstance.GetComponent<Health>().deathEvent -= OndeathEvent;
@@ -75,14 +74,14 @@ namespace AaronMcDougall
 
         public void EnablePlayerControls()
         {
-            GetComponent<RaceModeRules>().RpcEnablePlayerControls();
+            GetComponent<RaceModeRules>().EnablePlayerControls();
         }
 
-        private void GoalReached()
+        private void GoalReached(PlayerBase playerBase)
         {
             Debug.Log("Reached Goal");
-            GetComponent<RaceModeRules>().leaderboard.Add(player);
-            GetComponent<RaceModeRules>().FreezePlayer(player);
+            GetComponent<RaceModeRules>().leaderboard.Add(playerBase);
+            GetComponent<RaceModeRules>().RpcFreezePlayer(playerBase.GetComponent<NetworkIdentity>());
         }
 
         private void StartEndGame()

@@ -32,10 +32,11 @@ namespace Zach
             // Destroy(gameObject);
             // TODO: Turn off on client probably
             // gameObject.SetActive(false);
-            DisableControls();
+            RpcDisableControls();
         }
 
-        public void EnableControls()
+        [ClientRpc]
+        public void RpcEnableControls()
         {
             //todo refactor to work with system wide new input system
             
@@ -45,7 +46,8 @@ namespace Zach
             zachsPlayerActions.GeneralMovement.Rotate.canceled += RotateOnPerformed;
         }
 
-        public void DisableControls()
+        [ClientRpc]
+        public void RpcDisableControls()
         {
             //todo refactor to work with system wide new input system
          
