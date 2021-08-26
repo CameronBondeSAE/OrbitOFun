@@ -1778,6 +1778,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Borders and end goal structure
       objectReference: {fileID: 0}
+    - target: {fileID: 5913536597730109764, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: sceneId
+      value: 4110272772
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005385510417505790, guid: dde0221879efc1446b58bc7750f63218, type: 3}
+      propertyPath: sceneId
+      value: 1461591043
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde0221879efc1446b58bc7750f63218, type: 3}
 --- !u!1001 &568424985

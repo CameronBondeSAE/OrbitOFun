@@ -596,6 +596,10 @@ PrefabInstance:
       propertyPath: oppositeBarrier
       value: 
       objectReference: {fileID: 3126626666657477285}
+    - target: {fileID: 8590030178178369354, guid: b9c8866106e3fb04a9fcdcabb92d287b, type: 3}
+      propertyPath: m_AssetId
+      value: dde0221879efc1446b58bc7750f63218
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9c8866106e3fb04a9fcdcabb92d287b, type: 3}
 --- !u!1 &3036114558372464159 stripped
@@ -671,6 +675,10 @@ PrefabInstance:
       propertyPath: oppositeBarrier
       value: 
       objectReference: {fileID: 3036114558372464159}
+    - target: {fileID: 8590030178178369354, guid: b9c8866106e3fb04a9fcdcabb92d287b, type: 3}
+      propertyPath: m_AssetId
+      value: dde0221879efc1446b58bc7750f63218
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9c8866106e3fb04a9fcdcabb92d287b, type: 3}
 --- !u!1 &3126626666657477285 stripped

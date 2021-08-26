@@ -1,3 +1,4 @@
+using Mirror;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,13 +6,18 @@ using UnityEngine;
 
 namespace RileyMcGowan
 {
-    public class BarrierTeleport : MonoBehaviour
+    public class BarrierTeleport : NetworkBehaviour
     {
         public GameObject oppositeBarrier;
         public Vector3 otherBarrierDirection;
 
-        private void Start()
+        private void Awake()
         {
+            if (!isServer)
+            {
+                enabled = false;
+            }
+
             otherBarrierDirection = (oppositeBarrier.transform.position - gameObject.transform.position).normalized;
         }
 
@@ -23,12 +29,12 @@ namespace RileyMcGowan
 
             //if (other.GetComponent<Zach.PlayerBase>() != null)
             {
-                if (otherBarrierDirection.y > 0 && other.transform.root.GetComponentInParent<Rigidbody>().velocity.y < 0)
+                if (otherBarrierDirection.y > 0 && other.GetComponentInParent<Rigidbody>().velocity.y < 0)
                 {
                     //If the other barrier is down add up
                     Teleport(other);
                 }
-                else if (otherBarrierDirection.y < 0 && other.transform.root.GetComponentInParent<Rigidbody>().velocity.y > 0)
+                else if (otherBarrierDirection.y < 0 && other.GetComponentInParent<Rigidbody>().velocity.y > 0)
                 {
                     //If the other barrier is up add down
                     Teleport(other);
