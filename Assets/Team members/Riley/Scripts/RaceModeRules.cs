@@ -55,7 +55,7 @@ namespace RileyMcGowan
 			// localPlayerBase  = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();  //Controls for player
 			// localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
 			GetComponent<RaceModeStateManager>().ChangeState(startingState);
-			RpcSetupClient(); //TODO can be changed to states managed
+			RpcSetupClientGameplay(); //TODO can be changed to states managed
 		}
 
 		[ClientRpc]
@@ -93,8 +93,24 @@ namespace RileyMcGowan
 			}
 		}
 
+		
 		[ClientRpc]
-		public void RpcSetupClient()
+		public void RpcSetupClientOverview()
+		{
+			//Client Setup Camera
+			NetworkIdentity player = NetworkClient.localPlayer;
+
+			if (cameraSpawned == null)
+			{
+				cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
+			}
+
+			cameraSpawned.AssignTarget(FindObjectOfType<Overview>().transform);
+			//
+		}
+		
+		[ClientRpc]
+		public void RpcSetupClientGameplay()
 		{
 			//Client Setup Camera
 			NetworkIdentity player = NetworkClient.localPlayer;
