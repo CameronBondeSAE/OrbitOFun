@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Tim's Level.unity
     guid: 5b6d75641c07eed4d897ec226c008aaa
+  - enabled: 1
+    path: Assets/Levels/Tom's Battle.unity
+    guid: 4557516ee168ca04690b98854d146f82
+  - enabled: 1
+    path: Assets/Levels/Damien's Level.unity
+    guid: e33a259c3c5b5da46a7ff010de39cb59
   m_configObjects: {}

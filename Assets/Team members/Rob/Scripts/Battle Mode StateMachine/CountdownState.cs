@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Damien;
 using RileyMcGowan;
 using Tom;
 using UnityEngine;
@@ -21,7 +22,8 @@ namespace Rob
 
             SpawnCountdown();
             StartCoroutine(CountDownTimer());
-            GetComponent<RaceModeRules>().RpcEnableArrowControls();
+            GetComponent<BattleModeRules>().RpcEnableArrowControls();
+            GetComponent<RaceModeRules>();
         }
 
         public override void Execute()

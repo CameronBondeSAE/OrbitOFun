@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
-using AaronMcDougall;
 using John;
 using LukeBaker;
 using Mirror;
 using Tom;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zach;
 using StateManager = Rob.StateManager;
 
@@ -21,107 +20,81 @@ namespace Damien
         private GameObject endGoal;
         private bool isActive = false;
         private int maxPlayers = 4;
+        private BaseSpawner baseSpawner;
 
         public CameraBase cameraToSpawn;
         public GameObject sceneToSpawn;
         public Rob.StateBase startingState;
         public PlayerBase localPlayerBase;
         public PlayerArrow localPlayerArrow;
-        public List <PlayerBase> leaderboard;
-        
-        
+        public List<PlayerBase> leaderboard;
+
+
         public override void Activate()
         {
             base.Activate();
-            ActivateAllIGameModeInteractables();
+            ActivateAllIGameModeInteractables(); // State should do this
+            baseSpawner = GetComponent<BaseSpawner>();
 
             if (networkManager == null)
             {
                 networkManager = FindObjectOfType<CustomNetworkManager>();
+                networkManager.DespawnPlayers(); //Despawn to clear from last round
                 networkManager.SpawnPlayers(); //Spawn Players > Network Manager
             }
+
             isActive = true;
-            
             // EndTrigger endTrigger = FindObjectOfType<EndTrigger>();
             // endTrigger.PlayerTriggerEnterEvent += EndGame;
-            
-            localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
-            localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
+            foreach (var player in networkManager.playerInstances)
+            {
+                baseSpawner.SpawnPlayerBases(player);
+            }
+
             GetComponent<StateManager>().ChangeState(startingState);
-            RpcSetupClient();
-            // RpcEnableLocalPlayerControls();
+            //RpcSetupClient(); // State should do this
         }
 
-        // [ClientRpc]
-        // public void RpcEnableArrowControls()
-        // {
-        //     ControlNullCheck();
-        //     //Enable player controls
-        //     localPlayerBase.DisableControls();
-        //     //Enable arrow controls
-        //     localPlayerArrow.RpcEnableControls();
-        // }
-        //
-        // [ClientRpc]
-        // public void RpcEnableLocalPlayerControls()
-        // {
-        //     PlayerBase playerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>();
-        //     playerBase.enabled = false;
-		      //
-        //     PlayerArrow playerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>();
-        //     // playerArrow.EnableControls();
-        //     playerArrow.enabled = true;
-        //     
-        // }
-        //
-        // [ClientRpc]
-        // public void RpcDisableControls()
-        // {
-        //     ControlNullCheck();
-        //     //Disables arrow controls
-        //     localPlayerArrow.DisableControls();
-        // }
-        //
-        // private void ControlNullCheck()
-        // {
-        //     if (localPlayerBase == null)
-        //     {
-        //         localPlayerBase = NetworkClient.localPlayer.GetComponentInChildren<PlayerBase>(); //Controls for player
-        //     }
-        //
-        //     if (localPlayerArrow == null)
-        //     {
-        //         localPlayerArrow = NetworkClient.localPlayer.GetComponentInChildren<PlayerArrow>(); //Controls for arrows
-        //     }
-        // }
-        
+        [ClientRpc]
+        public void RpcEnableArrowControls()
+        {
+            if (isServer)
+            {
+                foreach (var player in networkManager.playerInstances)
+                {
+                    player.GetComponent<PlayerArrow>().RpcEnableControls();
+                }
+            }
+        }
+
+        [ClientRpc]
+        public void RpcDisableControls()
+        {
+            //Disables arrow controls
+            foreach (var player in networkManager.playerInstances)
+            {
+                player.GetComponent<PlayerArrow>().RpcDisableControls();
+            }
+        }
+
+
         [ClientRpc]
         public void RpcSetupClient()
         {
             //Client Setup Camera
-            NetworkIdentity player = NetworkClient.localPlayer;
-            CameraBase cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity).GetComponent<CameraBase>();
-            cameraSpawned.AssignTarget(player.gameObject.transform);
-            //
-        }
-        public void FreezePlayer(PlayerBase playerToFreeze)
-        {
-            playerToFreeze.GetComponent<Rigidbody>().velocity    = Vector3.zero;
-            playerToFreeze.GetComponent<Rigidbody>().isKinematic = true;
+            CameraBase cameraSpawned = Instantiate(cameraToSpawn, Vector3.zero, quaternion.identity)
+                .GetComponent<CameraBase>();
+
+            //stop movement on overview
+            cameraSpawned.GetComponent<Tom.CameraTracking>().hasRigidbody = false;
+            cameraSpawned.AssignTarget(FindObjectOfType<Overview>().transform);
         }
 
         public override void EndGame()
         {
             base.EndGame();
-            StartCoroutine(EndGame(timeToWait, waitTimerToUI));
-        }
-
-        private IEnumerator EndGame(float waitUIToMain, float waitTimerToUI)
-        {
-            yield return new WaitForSeconds(waitTimerToUI + 1f); //Wait for UI
-            //TODO Show Win UI
-            yield return new WaitForSeconds(waitUIToMain); //Wait for exit to main
-            //TODO Exit to main menu
+            networkManager.clientLoadedScene = false;
+            networkManager.ServerChangeScene("Core");
         }
     }
 }

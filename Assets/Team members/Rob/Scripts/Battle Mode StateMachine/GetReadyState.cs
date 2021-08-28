@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Damien;
 using Tom;
 using UnityEngine;
 
@@ -9,12 +10,14 @@ namespace Rob
     {
         public float readyTime = 5f;
         public StateBase nextState;
+        private BaseSpawner _baseSpawner;
+        private BattleModeRules bmRules;
+        
         
         public override void Enter()
         {
             base.Enter();
             Debug.Log("Entered GetReady");
-            
             DisablePlayerArrows();
             StartCoroutine(GetReadyCountdown());
         }

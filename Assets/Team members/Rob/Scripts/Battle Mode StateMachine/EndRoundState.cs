@@ -16,7 +16,6 @@ namespace Rob
             base.Enter();
             Debug.Log("Entered EndRound");
             ShowScore();
-            
         }
 
         public override void Execute()
@@ -43,6 +42,5 @@ namespace Rob
             yield return new WaitForSeconds(showScore);
             GetComponent<StateManager>().ChangeState(nextState);
         }
-        
     }
 }

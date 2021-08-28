@@ -6,16 +6,20 @@ namespace Damien
 {
     public class BaseSpawner : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        public GameObject playerBasePiece;
+        private Vector3 playerPos;
+
+        public void SpawnPlayerBases(GameObject player)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            playerPos = player.transform.position;
+            Instantiate(playerBasePiece, new Vector3(playerPos.x - 10, playerPos.y, playerPos.z), 
+                Quaternion.identity);
+            Instantiate(playerBasePiece, new Vector3(playerPos.x - 20, playerPos.y, playerPos.z), 
+                Quaternion.identity);
+            Instantiate(playerBasePiece, new Vector3(playerPos.x + 10, playerPos.y, playerPos.z), 
+                Quaternion.identity);
+            Instantiate(playerBasePiece, new Vector3(playerPos.x + 20, playerPos.y, playerPos.z), 
+                Quaternion.identity);
         }
     }
 }
