@@ -4,6 +4,7 @@ using John;
 using LukeBaker;
 using Mirror;
 using RileyMcGowan;
+using Sirenix.OdinInspector;
 using Tom;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -37,6 +38,7 @@ namespace Damien
         public GameObject meteor;
         public int baseCount;
         public List<GameObject> bases;
+        public float shootForce; 
 
 
         public override void Activate()
@@ -89,7 +91,7 @@ namespace Damien
                     GameObject spawnedMeteor = Instantiate(meteor, spawnPos,
                         playerArrow.transform.localRotation);
                     NetworkServer.Spawn(spawnedMeteor);
-                    spawnedMeteor.GetComponent<Rigidbody>().AddRelativeForce(0, 300, 0);
+                    spawnedMeteor.GetComponent<Rigidbody>().AddRelativeForce(0, shootForce, 0);
                 }
             }
         }

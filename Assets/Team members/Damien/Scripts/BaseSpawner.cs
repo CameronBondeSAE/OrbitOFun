@@ -10,7 +10,8 @@ namespace Damien
         private Vector3 playerPos;
 
         public void SpawnPlayerBases(GameObject player)
-        {
+        { //Redundant Code
+            //Not Used
             playerPos = player.transform.position;
             Instantiate(playerBasePiece, new Vector3(playerPos.x - 10, playerPos.y, playerPos.z), 
                 Quaternion.identity);

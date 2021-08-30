@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4589264315184438197, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
       propertyPath: camFactor
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4589264315184438197, guid: bdd69d28fafc9394ea6a0b5dbdd221fa, type: 3}
       propertyPath: areaToAffectGravity
@@ -566,6 +566,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3471021191268824746, guid: 9a1f86d77caff0a4ea732100bac79b9d, type: 3}
     - target: {fileID: -3959997719091135423, guid: 3cc35f5c416079746a97047d9e96bd68, type: 3}
+      propertyPath: shootForce
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -3959997719091135423, guid: 3cc35f5c416079746a97047d9e96bd68, type: 3}
       propertyPath: playablePrefab
       value: 
       objectReference: {fileID: 2937240167682955872, guid: 36425a7ef6af5a643a7e8920431668b5, type: 3}
@@ -649,6 +653,10 @@ PrefabInstance:
       propertyPath: nextState
       value: 
       objectReference: {fileID: 216778951}
+    - target: {fileID: 8738299693885712397, guid: 3cc35f5c416079746a97047d9e96bd68, type: 3}
+      propertyPath: shootDelay
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8738299693885712397, guid: 3cc35f5c416079746a97047d9e96bd68, type: 3}
       propertyPath: countdownState
       value: 

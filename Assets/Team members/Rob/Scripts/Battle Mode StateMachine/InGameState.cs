@@ -10,8 +10,8 @@ namespace Rob
     public class InGameState : StateBase
     {
         private float countAmount = 3f;
-        public StateBase repeatState;
         private bool inGame;
+        public int shootDelay;
         public StateBase nextState;
         private BattleModeRules bmRules;
 
@@ -22,7 +22,7 @@ namespace Rob
             bmRules = FindObjectOfType<BattleModeRules>();
             
             GetComponent<BattleModeRules>().RpcEnableArrowControls();
-            StartCoroutine(Counter(3));
+            StartCoroutine(Counter(shootDelay));
             Debug.Log("Entered InGame");
         }
 
