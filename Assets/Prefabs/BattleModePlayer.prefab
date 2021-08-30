@@ -215,7 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  rotationSpeed: 180
+  rotationSpeed: 60
   rotationLimit: 45
   rotateVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &9115517353939953363

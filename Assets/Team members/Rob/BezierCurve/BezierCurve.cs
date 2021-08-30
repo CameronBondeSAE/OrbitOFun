@@ -108,12 +108,13 @@ namespace Rob
             PlayCurve();
         }
 
-
+#if UNITY_EDITOR
         public void OnDrawGizmos()
         {
             Handles.DrawBezier(point1.position, point4.position, point2.position, point3.position, Color.black, null,
                 2f);
 
         }
+        #endif
     }
 }
