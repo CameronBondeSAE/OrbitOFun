@@ -60,8 +60,6 @@ namespace Damien
                 RpcSpawnPlayerBases(player);
             }
 
-            
-          
 
             GetComponent<StateManager>().ChangeState(startingState);
             //RpcSetupClient(); // State should do this
@@ -96,14 +94,16 @@ namespace Damien
             }
         }
 
-        
 
         void Death(Health defenceBase)
         {
             baseCount--;
+            defenceBase.deathEvent -= Death;
+            if (isLocalPlayer)
+            {
+                DisableControls();
+            }
         }
-
-        
 
 
         public void DisableControls()

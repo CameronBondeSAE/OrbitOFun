@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Damien;
 using Mirror;
 using UnityEngine;
 
@@ -52,7 +53,8 @@ namespace Rob
         public IEnumerator ShowUICountdown()
         {
             yield return new WaitForSeconds(showUITime);
-            GetComponent<StateManager>().ChangeState(nextState);
+            //GetComponent<StateManager>().ChangeState(nextState);
+            FindObjectOfType<BattleModeRules>().EndGame();
         }
     }
 }
