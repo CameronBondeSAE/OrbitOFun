@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 9115517353939953363}
   - component: {fileID: 332016160263242430}
   - component: {fileID: 4982238700180688281}
-  - component: {fileID: 955515100469630324}
+  - component: {fileID: 237885992690278305}
   m_Layer: 0
   m_Name: BattleModePlayer
   m_TagString: Untagged
@@ -279,24 +279,67 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!114 &955515100469630324
+--- !u!114 &237885992690278305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2937240167682955872}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bfe5ff7549f8684792df4a5eb5d9a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  startingHealth: 100
-  maxHealth: 100
+  startingHealth: 0
+  maxHealth: 0
   currentHealth: 0
   invincible: 0
+--- !u!1 &3582120268342351507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4689877203639250773}
+  - component: {fileID: 5702313786596317584}
+  m_Layer: 0
+  m_Name: MeteorSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4689877203639250773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582120268342351507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3851586666168650147}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5702313786596317584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582120268342351507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbc94acbdee7ec46820d4cf3d075cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5861720390569983522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,6 +514,7 @@ PrefabInstance:
     - {fileID: 7262893005716157391, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
     - {fileID: -7545912348094081944, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
     - {fileID: 7262893005716157389, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
+    - {fileID: 6350535078104934618, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1cc81aeb604ac3846a0d1209d82a9886, type: 3}
 --- !u!4 &1810316444847492207 stripped
 Transform:

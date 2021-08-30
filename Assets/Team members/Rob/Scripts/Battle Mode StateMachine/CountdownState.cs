@@ -4,6 +4,7 @@ using Damien;
 using RileyMcGowan;
 using Tom;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Rob
 {
@@ -11,7 +12,7 @@ namespace Rob
     {
 
         public GameObject countdownPrefab;
-        public GameObject countdownCopy;
+        public GameObject spawnedCountdown;
         public float countAmount;
         public StateBase nextState;
 
@@ -23,7 +24,7 @@ namespace Rob
             SpawnCountdown();
             StartCoroutine(CountDownTimer());
             GetComponent<BattleModeRules>().RpcEnableArrowControls();
-            GetComponent<RaceModeRules>();
+            GetComponent<BattleModeRules>();
         }
 
         public override void Execute()
@@ -39,7 +40,7 @@ namespace Rob
 
         public void SpawnCountdown()
         {
-            countdownCopy = Instantiate(countdownPrefab);
+            spawnedCountdown = Instantiate(countdownPrefab);
         }
 
         IEnumerator CountDownTimer()
@@ -52,12 +53,12 @@ namespace Rob
 
             DestroyCountdownTimer();
             NextState();
-            GetComponent<RaceModeRules>().DisableAllControls();
+            GetComponent<BattleModeRules>().DisableControls();
         }
 
         void DestroyCountdownTimer()
         {
-            Destroy(countdownCopy.gameObject);
+            Destroy(spawnedCountdown);
         }
 
         void NextState()

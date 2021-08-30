@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using AaronMcDougall;
 using John;
 using LukeBaker;
 using Mirror;
+using RileyMcGowan;
 using Tom;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zach;
@@ -21,13 +24,19 @@ namespace Damien
         private bool isActive = false;
         private int maxPlayers = 4;
         private BaseSpawner baseSpawner;
+        private Vector3 spawnPos;
+        private GameObject spawnedBase;
 
+        public GameObject playerBasePiece;
         public CameraBase cameraToSpawn;
         public GameObject sceneToSpawn;
         public Rob.StateBase startingState;
         public PlayerBase localPlayerBase;
         public PlayerArrow localPlayerArrow;
         public List<PlayerBase> leaderboard;
+        public GameObject meteor;
+        public int baseCount;
+        public List<GameObject> bases;
 
 
         public override void Activate()
@@ -48,8 +57,11 @@ namespace Damien
             // endTrigger.PlayerTriggerEnterEvent += EndGame;
             foreach (var player in networkManager.playerInstances)
             {
-                baseSpawner.SpawnPlayerBases(player);
+                RpcSpawnPlayerBases(player);
             }
+
+            
+          
 
             GetComponent<StateManager>().ChangeState(startingState);
             //RpcSetupClient(); // State should do this
@@ -68,12 +80,54 @@ namespace Damien
         }
 
         [ClientRpc]
-        public void RpcDisableControls()
+        public void RpcFireMeteor()
+        {
+            if (isServer)
+            {
+                foreach (GameObject player in networkManager.playerInstances)
+                {
+                    GameObject playerArrow = player.GetComponent<PlayerArrow>().gameObject;
+                    Vector3 spawnPos = player.GetComponentInChildren<meteorSpawn>().transform.position;
+                    GameObject spawnedMeteor = Instantiate(meteor, spawnPos,
+                        playerArrow.transform.localRotation);
+                    NetworkServer.Spawn(spawnedMeteor);
+                    spawnedMeteor.GetComponent<Rigidbody>().AddRelativeForce(0, 300, 0);
+                }
+            }
+        }
+
+        
+
+        void Death(Health defenceBase)
+        {
+            baseCount--;
+        }
+
+        
+
+
+        public void DisableControls()
         {
             //Disables arrow controls
             foreach (var player in networkManager.playerInstances)
             {
                 player.GetComponent<PlayerArrow>().RpcDisableControls();
+            }
+        }
+
+
+        [ClientRpc]
+        public void RpcSpawnPlayerBases(GameObject player)
+        {
+            if (isServer)
+            {
+                spawnPos = new Vector3(player.transform.localPosition.x, player.transform.localPosition.y,
+                    player.transform.localPosition.z);
+                spawnedBase = Instantiate(playerBasePiece, spawnPos, player.transform.localRotation);
+                NetworkServer.Spawn(spawnedBase);
+                bases.Add(spawnedBase);
+                baseCount = bases.Count;
+                spawnedBase.GetComponent<Health>().deathEvent += Death;
             }
         }
 
@@ -93,8 +147,7 @@ namespace Damien
         public override void EndGame()
         {
             base.EndGame();
-            networkManager.clientLoadedScene = false;
-            networkManager.ServerChangeScene("Core");
+            Debug.Log("Game Has Ended");
         }
     }
 }

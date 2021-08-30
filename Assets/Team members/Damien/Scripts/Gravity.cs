@@ -165,7 +165,7 @@ namespace Damien
                 {
                     if (gravity.isPlanet == false)
                     {
-                        Destroy(other.gameObject);
+                        //Destroy(other.gameObject);
                     }
                 }
             }
